@@ -1,0 +1,10 @@
+Hey Michali! Hopefully this tutorial will be good enough!
+Let’s get started.
+
+1. Follow this link to download MySQL, php, Apache
+https://coolestguidesontheplanet.com/get-apache-mysql-php-and-phpmyadmin-working-on-osx-10-11-el-capitan/
+
+2. Once you installed all the software needed to run and host a website, you need to download a powerful editor. IntelliJ IDEA is one of them. It is not a free IDE, but I could create a free account with me ucy email as a student and download everything they have for free. Download IntelliJ IDEA by following this link.
+https://www.jetbrains.com/idea/download/
+
+3. When you open a php file in IntelliJ you will get a message that you need to download a PHP plugin! Go on, download it!
