@@ -46,7 +46,7 @@ include "setSelectionLists.php";
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#four">Help</a></li>
                 <li><a href="#"></a></li>
-                <li><a href="#two" class="button special">Retrieve Results</a></li>
+                <li><a href="/member_functionality/login.php" class="button special">Log In</a></li>
             </ul>
         </nav>
     </header>
