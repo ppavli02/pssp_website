@@ -8,14 +8,24 @@ $( document ).ready(function() {
 
     });
 
-    $('#signUp_form').submit(function() {
+    $("#user_password").focus(function(){
+        var temp = $("#user_password").val();
+        // alert(temp);
+        if (temp == 123)
+            $("#user_password").val("");
 
+    });
+
+    $('#signUp_form').submit(function() {
+        var pathname = window.location.pathname;
+        alert (pathname);
         $.ajax({
-            url: "members/php_signup.php",
+            url: 'php_signup.php',
             type: "POST",
             data: signUpFormToJSON(),
             async: false,
             success: function (data) {
+                alert(data);
                 if (data==2){
 
                     alert("skata");
