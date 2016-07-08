@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Irene
- * Date: 12-Jan-16
- * Time: 3:24 PM
- */
-
 //let's start the session
 session_start();
 //finally, let's store our posted values in the session variables
@@ -23,12 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $_SESSION['test'] = $test;
 
 }
-function test_input($data) {
+function test_input($data)
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
+
 ?>
 <!DOCTYPE html>
 
@@ -42,14 +37,15 @@ function test_input($data) {
 
     <link rel="stylesheet" href="css/reset.css">
 
-    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch'
+          href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="css/style.css">
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    <script src="js/index.js"></script>
-    <script src="js/handleRegistration.js"></script>
-    <script src="js/handleLogIn.js"></script>
+    <script src="member_functionality/logInAppearance.js"></script>
+    <script src="member_functionality/handleRegistration.js"></script>
+    <script src="member_functionality/handleLogIn.js"></script>
 
 </head>
 <body>
@@ -62,11 +58,11 @@ function test_input($data) {
 
         <!--Choose Model/Training Algorithm Form-->
 
-        <form id="createNetwork_form" >
-            <p><?php echo $_SESSION['model']?></p>
-            <p><?php echo $_SESSION['tAlgorithm']?></p>
-           <!-- <p><?php /*echo $_SESSION['train']*/?></p>-->
-            <p><?php echo $_SESSION['test']?></p>
+        <form id="createNetwork_form">
+            <p><?php echo $_SESSION['model'] ?></p>
+            <p><?php echo $_SESSION['tAlgorithm'] ?></p>
+            <!-- <p><?php /*echo $_SESSION['train']*/ ?></p>-->
+            <p><?php echo $_SESSION['test'] ?></p>
         </form>
     </div>
 
@@ -79,7 +75,7 @@ function test_input($data) {
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+<script src="js/core_js/bootstrap.min.js"></script>
 </body>
 </html>
 

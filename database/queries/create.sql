@@ -4,7 +4,8 @@ CREATE TABLE `USER` (
 	lastname VARCHAR(20) NOT NULL,
 	email VARCHAR(60) NOT NULL, 
 	`password` VARCHAR(50) NOT NULL,
-	timesVisited INT NOT NULL
+	timesVisited INT NOT NULL,
+    accountType ENUM('ADV', 'ADMIN', 'UNKOWN')
 );
 
 CREATE TABLE `TESTSET` (

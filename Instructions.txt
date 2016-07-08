@@ -8,3 +8,10 @@ https://coolestguidesontheplanet.com/get-apache-mysql-php-and-phpmyadmin-working
 https://www.jetbrains.com/idea/download/
 
 3. When you open a php file in IntelliJ you will get a message that you need to download a PHP plugin! Go on, download it!
+
+4. Before start editing the code, you have to create the database. Everything you need for the database is currently under the folder named ‘database’. Run ‘create.sql’ to create all the tables needed and then ‘insert.sql’ to add some rows in the database.
+
+5. To open the website, just type http://localhost/~YOURUSERNAMEHERE/pssp_website/
+OR if you install a php interpreter on IntelliJ you can open the website directly from the IDE (I personally don’t have the interpreter).
+
+6. That was it! You are there!

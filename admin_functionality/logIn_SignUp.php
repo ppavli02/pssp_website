@@ -1,26 +1,27 @@
 <? php ?>
 <!DOCTYPE html>
-<html >
-    <head>
-        <meta charset="UTF-8">
-        <title>Material Login Form</title>
-        
-        
-        <link rel="stylesheet" href="css/reset.css">
-
-        <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
-        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-        <link rel="stylesheet" href="css/style.css">
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<!--        <script src="js/jquery-1.7.1.min.js"></script>-->
-        <script src="js/index.js"></script>
-        <script src="js/handleRegistration.js"></script>
-        <script src="js/handleLogIn.js"></script>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Material Login Form</title>
 
 
-    </head>
+    <link rel="stylesheet" href="css/reset.css">
 
-    <body class="landing">
+    <link rel='stylesheet prefetch'
+          href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!--        <script src="js/jquery-1.7.1.min.js"></script>-->
+    <script src="js/index.js"></script>
+    <script src="js/handleRegistration.js"></script>
+    <script src="js/handleLogIn.js"></script>
+
+
+</head>
+
+<body class="landing">
 
 
 <div class="rerun"><a href="index.php">Back Home</a></div>
@@ -91,9 +92,6 @@
     </div>
 
 
-    
-
-
 </div>
-    </body>
+</body>
 </html>
