@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b3850c5-0594-46b3-80d5-85d9fed5e516" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/member_functionality/verify.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/queries/create.sql" afterPath="$PROJECT_DIR$/database/queries/create.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/queries/insert.sql" afterPath="$PROJECT_DIR$/database/queries/insert.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/handleLogIn.js" afterPath="$PROJECT_DIR$/member_functionality/handleLogIn.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/handleRegistration.js" afterPath="$PROJECT_DIR$/member_functionality/handleRegistration.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/login.php" afterPath="$PROJECT_DIR$/member_functionality/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/php_signup.php" afterPath="$PROJECT_DIR$/member_functionality/php_signup.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/send_mail.php" afterPath="$PROJECT_DIR$/member_functionality/send_mail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/php_login.php" afterPath="$PROJECT_DIR$/member_functionality/php_login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/verify.php" afterPath="$PROJECT_DIR$/member_functionality/verify.php" />
     </list>
     <ignored path="pssp_website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,21 +30,65 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/member_functionality/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="86" column="50" selection-start-line="86" selection-start-column="39" selection-end-line="86" selection-end-column="50" />
+            <state relative-caret-position="959">
+              <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="verify.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="php_login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/member_functionality/php_login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+              <folding>
+                <marker date="1468188256000" expanded="true" signature="690:763" ph="SELECT * FRO... USER" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="handleRegistration.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/member_functionality/handleRegistration.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="handleLogIn.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/member_functionality/handleLogIn.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="verify.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/member_functionality/verify.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+            <state relative-caret-position="240">
+              <caret line="16" column="36" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="36" />
               <folding>
-                <marker date="1468172571000" expanded="true" signature="97:147" ph="SELECT * FRO... USER" />
-                <marker date="1468172571000" expanded="true" signature="323:390" ph="UPDATE `USER... " />
+                <marker date="1468187978000" expanded="true" signature="97:147" ph="SELECT * FRO... USER" />
+                <marker date="1468187978000" expanded="true" signature="422:489" ph="UPDATE `USER... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="check_results.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/md5_functionality/check_results.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+              <folding>
+                <marker date="1462457194000" expanded="true" signature="113:164" ph="SELECT * FRO... PENDING_RESULTS" />
               </folding>
             </state>
           </provider>
@@ -80,10 +119,12 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/member_functionality/aaa.php" />
         <option value="$PROJECT_DIR$/member_functionality/login.php" />
-        <option value="$PROJECT_DIR$/member_functionality/handleRegistration.js" />
         <option value="$PROJECT_DIR$/member_functionality/aa.php" />
         <option value="$PROJECT_DIR$/member_functionality/php_signup.php" />
         <option value="$PROJECT_DIR$/member_functionality/verify.php" />
+        <option value="$PROJECT_DIR$/member_functionality/handleRegistration.js" />
+        <option value="$PROJECT_DIR$/member_functionality/php_login.php" />
+        <option value="$PROJECT_DIR$/member_functionality/handleLogIn.js" />
       </list>
     </option>
   </component>
@@ -98,7 +139,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="37" />
+    <option name="x" value="65" />
     <option name="y" value="23" />
     <option name="width" value="1321" />
     <option name="height" value="848" />
@@ -641,15 +682,15 @@
       <updated>1467889643355</updated>
       <workItem from="1467889646325" duration="1036000" />
       <workItem from="1467992620590" duration="3073000" />
-      <workItem from="1468157913559" duration="7373000" />
+      <workItem from="1468157913559" duration="8521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11482000" />
+    <option name="totallyTimeSpent" value="12630000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="23" width="1321" height="848" extended-state="0" />
+    <frame x="65" y="23" width="1321" height="848" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -744,20 +785,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.txt" />
-    <entry file="file://$PROJECT_DIR$/member_functionality/php_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1453566563000" expanded="true" signature="767:840" ph="SELECT * FRO... USER" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setSelectionLists.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -776,6 +808,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -832,13 +865,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/member_functionality/scss/style.scss" />
     <entry file="file://$PROJECT_DIR$/member_functionality/config.rb" />
-    <entry file="file://$PROJECT_DIR$/member_functionality/handleLogIn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/member_functionality/logInAppearance.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -959,16 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/md5_functionality/check_results.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-          <folding>
-            <marker date="1462457194000" expanded="true" signature="113:164" ph="SELECT * FRO... PENDING_RESULTS" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/member_functionality/php_signup.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31">
@@ -979,30 +995,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/member_functionality/handleRegistration.js">
+    <entry file="file://$PROJECT_DIR$/md5_functionality/check_results.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/member_functionality/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="86" column="50" selection-start-line="86" selection-start-column="39" selection-end-line="86" selection-end-column="50" />
-          <folding />
+        <state relative-caret-position="30">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding>
+            <marker date="1462457194000" expanded="true" signature="113:164" ph="SELECT * FRO... PENDING_RESULTS" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/member_functionality/verify.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="240">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="36" />
           <folding>
-            <marker date="1468172571000" expanded="true" signature="97:147" ph="SELECT * FRO... USER" />
-            <marker date="1468172571000" expanded="true" signature="323:390" ph="UPDATE `USER... " />
+            <marker date="1468187978000" expanded="true" signature="97:147" ph="SELECT * FRO... USER" />
+            <marker date="1468187978000" expanded="true" signature="422:489" ph="UPDATE `USER... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="959">
+          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/handleRegistration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/php_login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+          <folding>
+            <marker date="1468188256000" expanded="true" signature="690:763" ph="SELECT * FRO... USER" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/handleLogIn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>

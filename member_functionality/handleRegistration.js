@@ -10,7 +10,6 @@ $( document ).ready(function() {
 
     $("#user_password").focus(function(){
         var temp = $("#user_password").val();
-        // alert(temp);
         if (temp == 123)
             $("#user_password").val("");
     });
@@ -24,10 +23,10 @@ $( document ).ready(function() {
             data: signUpFormToJSON(),
             async: false,
             success: function (data) {
-                if (data==2){
+                if (data==1){
                     alert("error 1");
                 }
-                else if (data==1){
+                else if (data==2){
 
                     alert("error 2");
                 }
@@ -44,7 +43,6 @@ $( document ).ready(function() {
     });
 
     function signUpFormToJSON() {
-        alert($('#reason').val());
         return JSON.stringify({
             "user_firstname": $('#user_firstname').val(),
             "user_lastname": $('#user_lastname').val(),

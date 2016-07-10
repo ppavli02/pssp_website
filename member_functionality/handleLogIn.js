@@ -1,14 +1,14 @@
-$( document ).ready(function() {
+$(document).ready(function () {
 
-    $("#username_login").focus(function(){
+    $("#username_login").focus(function () {
         var temp = $("#username_login").val();
-        if (temp.localeCompare("a@a.com")==0)
+        if (temp.localeCompare("a@a.com") == 0)
             $("#username_login").val("");
 
     });
 
 
-    $('#logIn_form').submit(function() {
+    $('#logIn_form').submit(function () {
 
         $.ajax({
             url: "members/php_login.php",
@@ -17,11 +17,13 @@ $( document ).ready(function() {
             async: false,
             success: function (data) {
                 alert(data);
-                if (data==1){
-
+                if (data == 1) {
+                    alert("Your account has not been verified yet.");
+                }
+                else if (data == 2) {
                     alert("Wrong Email or Password");
                 }
-                else{
+                else {
                     alert("ok");
                 }
             },

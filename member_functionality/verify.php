@@ -14,11 +14,15 @@ try {
         exit;
     }
 
-    $result = $stmt->fetchColumn(1);
-
-    $stmt = $conn->prepare("UPDATE `USER` SET `accountType`='ADV' WHERE `verification`='$token'");
-    $stmt->execute();
-
+    $result = $stmt->fetchColumn(7);
+    if ($result=='ADV'){
+        echo "This member has already been verified.";
+    }
+    else{
+        $stmt = $conn->prepare("UPDATE `USER` SET `accountType`='ADV' WHERE `verification`='$token'");
+        $stmt->execute();
+        echo "SUCCESS.";
+    }
 
 }
 catch(PDOException $e) {
@@ -26,7 +30,3 @@ catch(PDOException $e) {
 }
 
 $conn = null;
-echo "SUCCESS.";
-
-
-
