@@ -139,6 +139,7 @@ h3{
 }
 .container.active .card.alt .title,
 .container.active .card.alt .input-container,
+.container.active .card.alt .big-input-container,
 .container.active .card.alt .button-container {
     left: 0;
     opacity: 1;
@@ -162,10 +163,23 @@ h3{
     -webkit-transition-delay: .6s;
                     transition-delay: .6s;
 }
-.container.active .card.alt .button-container {
+.container.active .card.alt .input-container:nth-child(4) {
     -webkit-transition-delay: .7s;
-                    transition-delay: .7s;
+    transition-delay: .7s;
 }
+.container.active .card.alt .input-container:nth-child(5) {
+    -webkit-transition-delay: .8s;
+    transition-delay: .8s;
+}
+.container.active .card.alt .big-input-container {
+    -webkit-transition-delay: .9s;
+    transition-delay: .9s;
+}
+.container.active .card.alt .button-container {
+    -webkit-transition-delay: 1s;
+                    transition-delay: 1s;
+}
+
 
 /**/
 /**/
@@ -296,6 +310,7 @@ h3{
     font-size: 24px;
     font-weight: 400;
 }
+
 .card .input-container input:focus ~ label {
     color: #9d9d9d;
     -webkit-transform: translate(-12%, -50%) scale(0.75);
@@ -345,6 +360,93 @@ h3{
 .card .input-container .bar:after {
     right: 50%;
 }
+
+
+/*#####*/
+.card .big-input-container {
+    position: relative;
+    margin: 0 60px 50px;
+}
+.card .big-input-container input {
+    outline: none;
+    z-index: 1;
+    position: relative;
+    background: none;
+    width: 100%;
+    height: 60px;
+    border: 0;
+    color: #212121;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.card .big-input-container input {
+    outline: none;
+    z-index: 1;
+    position: relative;
+    background: none;
+    width: 100%;
+    height: 90px;
+    /*top: 100px;*/
+    border: 0;
+    color: #212121;
+    font-size: 14px;
+    font-weight: 400;
+    overflow-y: scroll;
+
+}
+
+.card .big-input-container input:focus ~ label {
+    color: #ffffff;
+    -webkit-transform: translate(-12%, -65%) scale(0.75);
+    -ms-transform: translate(-12%, -65%) scale(0.75);
+    transform: translate(-12%, -65%) scale(0.75);
+}
+.card .big-input-container input:focus ~ .bar:before, .card .big-input-container input:focus ~ .bar:after {
+    width: 50%;
+}
+.card .big-input-container input:valid ~ label {
+    color: #ffffff;
+    -webkit-transform: translate(-12%, -65%) scale(0.75);
+    -ms-transform: translate(-12%, -65%) scale(0.75);
+    transform: translate(-12%, -65%) scale(0.75);
+}
+.card .big-input-container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 60px;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+}
+.card .big-input-container .bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #757575;
+    width: 100%;
+    height: 1px;
+}
+.card .big-input-container .bar:before, .card .big-input-container .bar:after {
+    content: '';
+    position: absolute;
+    background: #DC7B52;
+    width: 0;
+    height: 2px;
+    -webkit-transition: .2s ease;
+    transition: .2s ease;
+}
+.card .big-input-container .bar:before {
+    left: 50%;
+}
+.card .big-input-container .bar:after {
+    right: 50%;
+}
+/*######*/
+
 .card .button-container {
     margin: 0 60px;
     text-align: center;
@@ -464,6 +566,7 @@ h3{
 }
 .card.alt .title,
 .card.alt .input-container,
+.card.alt .big-input-container,
 .card.alt .button-container {
     left: 100px;
     opacity: 0;

@@ -83,6 +83,11 @@
                 <label for="Repeat Password">Repeat Password</label>
                 <div class="bar"></div>
             </div>
+            <div class="big-input-container">
+                <input type="text" id="user_reason" required="required"/>
+                <label for="Reason">Why you want to use this app?</label>
+                <div class="bar"></div>
+            </div>
 
             <div class="button-container">
                 <button><span>Sign Up Now!</span></button>
