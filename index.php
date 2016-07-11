@@ -13,14 +13,7 @@ include "setSelectionLists.php";
     <title>PSSP by ucy.</title>
     <meta charset="utf-8"/>
     <meta _="viewport" content="width=device-width, initial-scale=1"/>
-
-    <!--        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">-->
-    <!--        <link rel="icon" href="/favicon.ico" type="image/x-icon">-->
-
-
     <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="16x16">
-
-
     <!--[if lte IE 8]>
     <script src="js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -40,13 +33,13 @@ include "setSelectionLists.php";
 <div id="page-wrapper">
     <!-- Header -->
     <header id="header">
-        <h1 id="logo"><a href="index.php">Landed</a></h1>
+<!--        <h1 id="logo"><a href="index.php">Landed</a></h1>-->
         <nav id="nav">
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <!--                <li><a href="index.php">Home</a></li>-->
+                <!--                <li><a href="#"></a></li>-->
                 <li><a href="#four">Help</a></li>
-                <li><a href="#"></a></li>
-                <li><a href="/member_functionality/login.php" class="button special">Log In</a></li>
+                <li><a href="./member_functionality/login.php" class="button special">Log In</a></li>
             </ul>
         </nav>
     </header>
@@ -184,7 +177,6 @@ include "setSelectionLists.php";
                 </div>
                 <!--                        <div class="row" id="div_GenerateCode">-->
                 <!--<!--                            <label for="generatedCode" id="emailLabel" >Generated Code:</label>-->
-                -->
                 <!--                            <input class="form-control" type="text"  name="generatedCode" id="generatedCode" value="" readonly />-->
                 <!--                        </div>-->
                 <label class="control-label" style="display: none;width:100%" id="choose">* You must choose email or
