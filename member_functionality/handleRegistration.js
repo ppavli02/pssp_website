@@ -45,16 +45,13 @@ $( document ).ready(function() {
                     });
                 }
                 else{
-                    alert('Thank you! Please wait for approval.');
+                    alert('Thank you! Please wait for approval. An email will be sent to you shortly.');
                 }
-
             },
             cache: false,
             contentType: false,
             processData: false
         });
-
-
     });
 
     function signUpFormToJSON() {
@@ -67,7 +64,4 @@ $( document ).ready(function() {
             "user_reason": $('#user_reason').val()
         })
     }
-
-
 });
-
