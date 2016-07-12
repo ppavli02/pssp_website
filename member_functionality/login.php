@@ -24,7 +24,7 @@
 <body class="landing">
 
 
-<div class="rerun"><a href="index.php">Back Home</a></div>
+<div class="rerun"><a href="../index.php">Back Home</a></div>
 <div class="container">
     <div class="card"></div>
     <div class="card">

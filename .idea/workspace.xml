@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b3850c5-0594-46b3-80d5-85d9fed5e516" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aa.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/member_functionality/aa.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/queries/drop.sql" afterPath="$PROJECT_DIR$/database/queries/drop.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/handleRegistration.js" afterPath="$PROJECT_DIR$/member_functionality/handleRegistration.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/login.php" afterPath="$PROJECT_DIR$/member_functionality/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/php_login.php" afterPath="$PROJECT_DIR$/member_functionality/php_login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/php_signup.php" afterPath="$PROJECT_DIR$/member_functionality/php_signup.php" />
     </list>
     <ignored path="pssp_website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,21 +31,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/member_functionality/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="287">
+              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aa.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aa.php">
+      <file leaf-file-name="handleRegistration.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/member_functionality/handleRegistration.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            <state relative-caret-position="585">
+              <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="php_signup.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/member_functionality/php_signup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-585">
+              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+              <folding>
+                <marker date="1468315828000" expanded="true" signature="1529:1770" ph="INSERT INTO `USER`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -93,15 +121,15 @@
         <option value="$PROJECT_DIR$/member_functionality/send_mail.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/member_functionality/aaa.php" />
-        <option value="$PROJECT_DIR$/member_functionality/login.php" />
         <option value="$PROJECT_DIR$/member_functionality/aa.php" />
-        <option value="$PROJECT_DIR$/member_functionality/php_signup.php" />
         <option value="$PROJECT_DIR$/member_functionality/verify.php" />
-        <option value="$PROJECT_DIR$/member_functionality/handleRegistration.js" />
-        <option value="$PROJECT_DIR$/member_functionality/php_login.php" />
         <option value="$PROJECT_DIR$/member_functionality/handleLogIn.js" />
-        <option value="$PROJECT_DIR$/aa.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/member_functionality/login.php" />
+        <option value="$PROJECT_DIR$/member_functionality/php_login.php" />
+        <option value="$PROJECT_DIR$/aa.php" />
+        <option value="$PROJECT_DIR$/member_functionality/handleRegistration.js" />
+        <option value="$PROJECT_DIR$/member_functionality/php_signup.php" />
       </list>
     </option>
   </component>
@@ -116,7 +144,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
+    <option name="x" value="99" />
     <option name="y" value="23" />
     <option name="width" value="1321" />
     <option name="height" value="848" />
@@ -163,6 +191,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pssp_website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pssp_website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pssp_website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="member_functionality" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -617,15 +659,15 @@
       <updated>1467889643355</updated>
       <workItem from="1467889646325" duration="1036000" />
       <workItem from="1467992620590" duration="3073000" />
-      <workItem from="1468157913559" duration="9456000" />
+      <workItem from="1468157913559" duration="14020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13565000" />
+    <option name="totallyTimeSpent" value="18129000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="23" width="1321" height="848" extended-state="0" />
+    <frame x="99" y="23" width="1321" height="848" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -904,16 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/member_functionality/php_signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding>
-            <marker date="1468172074000" expanded="true" signature="753:994" ph="INSERT INTO `USER`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/md5_functionality/check_results.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -921,51 +953,6 @@
           <folding>
             <marker date="1462457194000" expanded="true" signature="113:164" ph="SELECT * FRO... PENDING_RESULTS" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/member_functionality/verify.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="36" />
-          <folding>
-            <marker date="1468187978000" expanded="true" signature="97:147" ph="SELECT * FRO... USER" />
-            <marker date="1468187978000" expanded="true" signature="422:489" ph="UPDATE `USER... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/member_functionality/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="959">
-          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/member_functionality/php_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
-          <folding>
-            <marker date="1468188256000" expanded="true" signature="690:763" ph="SELECT * FRO... USER" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/member_functionality/handleRegistration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -985,11 +972,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_PLUGINS_DIR$/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="281" column="9" selection-start-line="281" selection-start-column="9" selection-end-line="281" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/php_login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="45" selection-end-column="1" />
+          <folding>
+            <marker date="1468227742000" expanded="true" signature="590:663" ph="SELECT * FRO... USER" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding>
+            <element signature="e#7#40#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/verify.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="36" />
+          <folding>
+            <marker date="1468187978000" expanded="true" signature="97:147" ph="SELECT * FRO... USER" />
+            <marker date="1468187978000" expanded="true" signature="422:489" ph="UPDATE `USER... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/handleRegistration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/php_signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-585">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+          <folding>
+            <marker date="1468315828000" expanded="true" signature="1529:1770" ph="INSERT INTO `USER`... " />
+          </folding>
         </state>
       </provider>
     </entry>

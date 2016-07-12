@@ -13,12 +13,10 @@ $json_encoded = file_get_contents('php://input');
 $json_decoded = json_decode($json_encoded);
 
 $username = $json_decoded->{'username_login'};
-$username = stripslashes($username);
-$username = mysql_real_escape_string($username);
+$username = strip_input($username);
 
 $password = $json_decoded->{'password_login'};
-$password = stripslashes($password);
-$password = mysql_real_escape_string($password);
+$password = strip_input($password);
 $password = md5($password);
 
 try {
@@ -40,5 +38,9 @@ try {
 
 $conn = null;
 
-
-
+function strip_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}

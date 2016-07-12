@@ -15,24 +15,39 @@ $( document ).ready(function() {
     });
 
     $('#signUp_form').submit(function() {
-        var ds = $("#user_reason").val();
-        alert(ds);
         $.ajax({
             url: 'php_signup.php',
             type: "POST",
             data: signUpFormToJSON(),
             async: false,
             success: function (data) {
-                if (data==1){
-                    alert("error 1");
-                }
-                else if (data==2){
-
-                    alert("error 2");
+                if (data != "") {
+                    var pushedErrors = JSON.parse(data);
+                    $.each(pushedErrors, function (i, errorNumber) {
+                        if (errorNumber == 1) {
+                            alert('First name contains something else than letters.');
+                        }
+                        if (errorNumber == 2) {
+                            alert('Last name contains something else than letters.');
+                        }
+                        if (errorNumber == 3) {
+                            alert('Password and Repeat Password are not the same.');
+                        }
+                        if (errorNumber == 4) {
+                            alert('Invalid email format.');
+                        }
+                        if (errorNumber == 5) {
+                            alert('There is something wrong with the database. Please contact an engineer.');
+                        }
+                        if (errorNumber == 6) {
+                            alert('Email can not be sent. Please contact an engineer.');
+                        }
+                    });
                 }
                 else{
-                    alert(data);
+                    alert('Thank you! Please wait for approval.');
                 }
+
             },
             cache: false,
             contentType: false,
