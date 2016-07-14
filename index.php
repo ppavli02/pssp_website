@@ -82,12 +82,26 @@ include "setSelectionLists.php";
                             </div>
                         </div>
                     </div>
-
+                    <div class="container center_label">
+                        <label for="Training file">Choose a training file:</label>
+                    </div>
+                    <div class="container center_input">
+                        <div class="form-group">
+                            <input type="file" name="trainingUpload" id="trainingUpload">
+                        </div>
+                    </div>
+                    <div class="container center_label">
+                        <label for="Testing file">Choose a testing file:</label>
+                    </div>
+                    <div class="container center_input">
+                        <div class="form-group">
+                            <input type="file" name="testingUpload" id="testingUpload">
+                        </div>
+                    </div>
                     <div class="12u$">
                         <ul class="actions">
                             <li><input type="reset" id="reset1" value="Reset"/></li>
                             <li><a href="#banner" id="results" class="button ">Get Results</a></li>
-
                         </ul>
                     </div>
 
