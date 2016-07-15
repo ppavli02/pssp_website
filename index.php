@@ -57,6 +57,7 @@ include "setSelectionLists.php";
                     }
                     ?></li>
                 <li><a href="#four">Help</a></li>
+                <li id="create_network"></li>
 <!--                <li id="login_btn"><a href="./member_functionality/login.php" class="button special">Log In</a></li>-->
                 <li id="login_btn"></li>
             </ul>
