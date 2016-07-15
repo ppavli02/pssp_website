@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <!--        <script src="js/jquery-1.7.1.min.js"></script>-->
+
+    <!--Sweetalert-->
+    <script src="../_/libs/sweetalert/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_/libs/sweetalert/sweetalert.css">
+    <!-- My code -->
     <script src="logInAppearance.js"></script>
     <script src="handleRegistration.js"></script>
     <script src="handleLogIn.js"></script>

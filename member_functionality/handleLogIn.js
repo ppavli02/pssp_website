@@ -7,27 +7,46 @@ $(document).ready(function () {
 
     });
 
+    $("#password_login").focus(function(){
+        var temp = $("#password_login").val();
+        if (temp == 123)
+            $("#password_login").val("");
+    });
 
     $('#logIn_form').submit(function () {
-
         $.ajax({
-            url: "members/php_login.php",
+            url: "php_login.php",
             type: "POST",
             data: logInFormToJSON(),
             async: false,
             success: function (data) {
-                alert(data);
-                if (data == 1) {
-                    alert("Your account has not been verified yet.");
+                if (data != "") {
+                    var pushedErrors = JSON.parse(data);
+                    $.each(pushedErrors, function (i, errorNumber) {
+                        if (errorNumber == 1) {
+                            alert('You have not been verified yet. Please contact the administrator.');
+                        }
+                        if (errorNumber == 2) {
+                            alert('Member not found.');
+                        }
+                        if (errorNumber == 3) {
+                            alert('There is something wrong with the database. Please contact an engineer.');
+                        }
+                    });
                 }
-                else if (data == 2) {
-                    alert("Wrong Email or Password");
+                else{
+                    location.reload();
                 }
-                else {
-                    alert("ok");
-                }
+                // else{
+                //     alert("f");
+                //     var url = window.location.href;
+                //     alert(url);
+                //     var res = url.split("/");
+                //     var newURL = res[0]+"/"+res[1]+"/"+res[2]+"/"+res[3]+"/"+res[4]+"/";
+                //     alert(newURL);
+                //     window.location = newURL;
+                // }
             },
-
             cache: false,
             contentType: false,
             processData: false

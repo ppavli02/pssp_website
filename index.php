@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (isset($_SESSION['isLoggedIn'])) {
+    echo "<script>flag=true;</script>";
+} else {
+    echo "<script>flag=false;</script>";
+}
 include "setSelectionLists.php";
 ?>
 
@@ -22,9 +28,16 @@ include "setSelectionLists.php";
     <link rel="stylesheet" href="css/ie9.css"/><![endif]-->
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="css/ie8.css"/><![endif]-->
+    <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!--Bootstrap-->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--Sweetalert-->
+    <script src="_/libs/sweetalert/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="_/libs/sweetalert/sweetalert.css">
+    <!-- My code -->
     <script src="js/runAlgorithm.js"></script>
+    <script src="handleIndex.js"></script>
 
 
 </head>
@@ -33,13 +46,19 @@ include "setSelectionLists.php";
 <div id="page-wrapper">
     <!-- Header -->
     <header id="header">
-<!--        <h1 id="logo"><a href="index.php">Landed</a></h1>-->
+        <!--        <h1 id="logo"><a href="index.php">Landed</a></h1>-->
         <nav id="nav">
             <ul>
                 <!--                <li><a href="index.php">Home</a></li>-->
                 <!--                <li><a href="#"></a></li>-->
+                <li><?php
+                    if (isset($_SESSION['isLoggedIn'])) {
+                        echo $_SESSION['user_email'];
+                    }
+                    ?></li>
                 <li><a href="#four">Help</a></li>
-                <li><a href="./member_functionality/login.php" class="button special">Log In</a></li>
+<!--                <li id="login_btn"><a href="./member_functionality/login.php" class="button special">Log In</a></li>-->
+                <li id="login_btn"></li>
             </ul>
         </nav>
     </header>
@@ -80,14 +99,6 @@ include "setSelectionLists.php";
                                     } ?>
                                 </select>
                             </div>
-                        </div>
-                    </div>
-                    <div class="container center_label">
-                        <label for="Training file">Choose a training file:</label>
-                    </div>
-                    <div class="container center_input">
-                        <div class="form-group">
-                            <input type="file" name="trainingUpload" id="trainingUpload">
                         </div>
                     </div>
                     <div class="container center_label">
@@ -244,6 +255,8 @@ include "setSelectionLists.php";
 <!-- Scripts -->
 <script>
     $(document).ready(function () {
+
+
         $("#submit").click(function () {
             if ($("#getResults").val() != "") {
                 retrieveResults();

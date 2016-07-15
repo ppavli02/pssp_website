@@ -13,6 +13,7 @@ try {
         echo "No such member.";
         exit;
     }
+    
     $row = $stmt->fetchAll();
 
     $user_firstname = $row[0]['firstname'];

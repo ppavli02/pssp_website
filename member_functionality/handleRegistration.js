@@ -1,20 +1,19 @@
-$( document ).ready(function() {
-
-
-    $("#user_username").focus(function(){
+$(document).ready(function () {
+    
+    $("#user_username").focus(function () {
         var temp = $("#user_username").val();
-        if (temp.localeCompare("a@a.com")==0)
+        if (temp.localeCompare("a@a.com") == 0)
             $("#user_username").val("");
 
     });
 
-    $("#user_password").focus(function(){
+    $("#user_password").focus(function () {
         var temp = $("#user_password").val();
         if (temp == 123)
             $("#user_password").val("");
     });
 
-    $('#signUp_form').submit(function() {
+    $('#signUp_form').submit(function () {
         $.ajax({
             url: 'php_signup.php',
             type: "POST",
@@ -44,7 +43,7 @@ $( document ).ready(function() {
                         }
                     });
                 }
-                else{
+                else {
                     alert('Thank you! Please wait for approval. An email will be sent to you shortly.');
                 }
             },

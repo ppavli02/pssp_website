@@ -4,8 +4,8 @@ INSERT INTO `USER` (`verification`, `firstname`, `lastname`, `email`, `password`
   ('50abfd54643e199edfec382a2d4d021b', 'koullis', 'xatzis', 'a@a.com', '44', '0', 'UNKNOWN')
 ;
 
-INSERT INTO `USER` (`firstname`, `lastname`, `email`, `password`, `timesVisited`, `accountType`) VALUES
-  ('Panayiotis', 'Pavlides', 'pavlides_13@hotmail.com', '11', '0', 'ADMIN')
+INSERT INTO `USER` (`verification`, `firstname`, `lastname`, `email`, `password`, `timesVisited`, `accountType`) VALUES
+  ('50e1c42638098417b68d1f4f6a2a107e', 'Panayiotis', 'Pavlides', 'x', '11', '0', 'ADV')
 ;
 
 INSERT INTO `MODEL` (`id`, `title`) VALUES

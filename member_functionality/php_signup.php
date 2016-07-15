@@ -75,7 +75,7 @@ $conn = null;
 require_once('class.phpmailer.php');
 require_once('class.smtp.php');
 
-#Set email settings
+#Set email settingsarray_push($form_errors,"2");
 $mail = new PHPMailer();
 $mail->IsSMTP();
 $mail->SMTPAuth = true;
