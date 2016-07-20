@@ -4157,3 +4157,12 @@ DC7B52
 	border-color: #9d9d9d;
 }*/
 
+.help-block{
+	font-size: 10px;
+	color: #0f0f0f;
+	font-weight: bold;
+}
+
+.top-buffer {
+	margin-top: 1em;
+}

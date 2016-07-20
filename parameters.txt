@@ -13,3 +13,18 @@ Layer 10:60:-:6:I:1:1:0.1:0.1:1:B
 maxIterations 2000
 train_File trainSet.txt
 test_File testSet.txt
+
+
+osa leyers thelei.
+max layers: 
+
+arithmos nevronwn
+poia leyers proigountai
+poia next layers
+INPUT, HIDDEN, OUTPUT, CONTEXT: FLAGS
+error function
+activation function
+learning rate
+momentum
+visible - delay unit
+C (CENTER), B (BACKWARD), F(FORWARD), O (OUTPUT) :FLAGS
