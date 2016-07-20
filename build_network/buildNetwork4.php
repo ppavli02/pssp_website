@@ -88,7 +88,8 @@ include "../setSelectionLists.php";
                                 <!-- Layers -->
                                 <label class="col-md-2" for="no_layers">No. of Layers</label>
                                 <div class="col-md-2">
-                                    <select id="no_layers" name="no_layers" class="form-control" onchange="customizeCarousel();">
+                                    <select id="no_layers" name="no_layers" class="form-control"
+                                            onchange="createCarousel()">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -111,144 +112,249 @@ include "../setSelectionLists.php";
 
                             </div>
 
-                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <div id="formCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
                                 <!-- Indicators -->
                                 <ol class="carousel-indicators">
-                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                                    <li data-target="#formCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#formCarousel" data-slide-to="1"></li>
+                                    <!--                                    <li data-target="#formCarousel" data-slide-to="2"></li>-->
+                                    <!--                                    <li data-target="#formCarousel" data-slide-to="3"></li>-->
                                 </ol>
 
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" role="listbox">
                                     <div class="item active">
-                                        <img src="img_chania.jpg" alt="Chania">
+                                        <!-- Row 2 -->
+                                        <div class="form-group row top-buffer">
+
+                                            <!-- No of Neurons -->
+                                            <label class="col-md-2" for="no_neurons">No. of Neurons</label>
+                                            <div class="col-md-2">
+                                                <input id="no_neurons" name="no_neurons" placeholder="60"
+                                                       class="form-control input-md" required="" type="text">
+
+                                            </div>
+
+                                            <!-- Prev. Layers -->
+                                            <label class="col-md-2" for="prev_layers">Previous Layers</label>
+                                            <div class="col-md-2">
+                                                <input id="prev_layers" name="prev_layers" placeholder="1, 3"
+                                                       class="form-control input-md" required="" type="text">
+                                            </div>
+
+                                            <!-- Next Layer -->
+                                            <label class="col-md-2" for="next_layer">Next Layers</label>
+                                            <div class="col-md-2">
+                                                <input id="next_layer" name="next_layer" placeholder="2, 5"
+                                                       class="form-control input-md" required="" type="text">
+                                            </div>
+                                        </div>
+
+                                        <!-- Row 3 -->
+                                        <div class="form-group row top-buffer">
+                                            <!-- Flag -->
+                                            <label class="col-sm-2" for="layer_type">Layer Type</label>
+                                            <div class="col-sm-2">
+                                                <select id="layer_type" name="layer_type" class="form-control">
+                                                    <option value="1">Input</option>
+                                                    <option value="2">Hidden</option>
+                                                    <option value="3">Context</option>
+                                                    <option value="4">Output</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Error Function -->
+                                            <label class="col-sm-2" for="error_function">Error Function</label>
+                                            <div class="col-sm-2">
+                                                <select id="error_function" name="error_function" class="form-control">
+                                                    <option value="1">Gaussian</option>
+                                                    <option value="2">Ln</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Activation Function -->
+                                            <label class="col-sm-2" for="activation_function">Activation
+                                                Function</label>
+                                            <div class="col-sm-2">
+                                                <select id="activation_function" name="activation_function"
+                                                        class="form-control">
+                                                    <option value="1">Sigmoid</option>
+                                                    <option value="2">ReLU</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- Row 4 -->
+                                        <div class="form-group row top-buffer">
+                                            <!-- Learning Rate -->
+                                            <label class="col-md-2" for="learning_rate">Learning Rate</label>
+                                            <div class="col-md-2">
+                                                <input id="learning_rate" name="learning_rate" placeholder="0.1"
+                                                       class="form-control input-md" required="" type="text">
+                                            </div>
+
+                                            <!-- Momentum -->
+                                            <label class="col-md-2" for="momentum">Momentum</label>
+                                            <div class="col-md-2">
+                                                <input id="momentum" name="momentum" placeholder="0.1"
+                                                       class="form-control input-md"
+                                                       required="" type="text">
+                                            </div>
+
+                                            <!-- Delay Unit -->
+                                            <label class="col-md-2" for="delay_unit">Delay Unit</label>
+                                            <div class="col-md-2">
+                                                <input id="delay_unit" name="delay_unit" placeholder="1"
+                                                       class="form-control input-md" required="" type="text">
+                                            </div>
+                                        </div>
+
+                                        <!-- Row 5 -->
+                                        <div class="form-group row top-buffer">
+
+
+                                            <!-- Flag -->
+                                            <label class="col-md-2" for="unknown_flag">Flag</label>
+                                            <div class="col-md-2">
+                                                <select id="unknown_flag" name="unknown_flag" class="form-control">
+                                                    <option value="1">Center</option>
+                                                    <option value="2">Backward</option>
+                                                    <option value="3">Forward</option>
+                                                    <option value="4">Output</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                     <div class="item">
-                                        <img src="img_chania2.jpg" alt="Chania">
-                                    </div>
 
-                                    <div class="item">
-                                        <img src="img_flower.jpg" alt="Flower">
-                                    </div>
+                                        <!-- Row 2 -->
+                                        <div class="form-group row top-buffer">
 
-                                    <div class="item">
-                                        <img src="img_flower2.jpg" alt="Flower">
+                                            <!-- No of Neurons -->
+                                            <label class="col-md-2" for="no_neurons">No. of Neurons</label>
+                                            <div class="col-md-2">
+                                                <input id="no_neurons" name="no_neurons" placeholder="60"
+                                                       class="form-control input-md" required="" type="text">
+
+                                            </div>
+
+                                            <!-- Prev. Layers -->
+                                            <label class="col-md-2" for="prev_layers">Previous Layers</label>
+                                            <div class="col-md-2">
+                                                <input id="prev_layers" name="prev_layers" placeholder="1, 3"
+                                                       class="form-control input-md" required="" type="text">
+                                            </div>
+
+                                            <!-- Next Layer -->
+                                            <label class="col-md-2" for="next_layer">Next Layers</label>
+                                            <div class="col-md-2">
+                                                <input id="next_layer" name="next_layer" placeholder="2, 5"
+                                                       class="form-control input-md" required="" type="text">
+                                            </div>
+                                        </div>
+
+                                        <!-- Row 3 -->
+                                        <div class="form-group row top-buffer">
+                                            <!-- Flag -->
+                                            <label class="col-sm-2" for="layer_type">Layer Type</label>
+                                            <div class="col-sm-2">
+                                                <select id="layer_type" name="layer_type" class="form-control">
+                                                    <option value="1">Input</option>
+                                                    <option value="2">Hidden</option>
+                                                    <option value="3">Context</option>
+                                                    <option value="4">Output</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Error Function -->
+                                            <label class="col-sm-2" for="error_function">Error Function</label>
+                                            <div class="col-sm-2">
+                                                <select id="error_function" name="error_function" class="form-control">
+                                                    <option value="1">Gaussian</option>
+                                                    <option value="2">Ln</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Activation Function -->
+                                            <label class="col-sm-2" for="activation_function">Activation
+                                                Function</label>
+                                            <div class="col-sm-2">
+                                                <select id="activation_function" name="activation_function"
+                                                        class="form-control">
+                                                    <option value="1">Sigmoid</option>
+                                                    <option value="2">ReLU</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- Row 4 -->
+                                        <div class="form-group row top-buffer">
+                                            <!-- Learning Rate -->
+                                            <label class="col-md-2" for="learning_rate">Learning Rate</label>
+                                            <div class="col-md-2">
+                                                <input id="learning_rate" name="learning_rate" placeholder="0.1"
+                                                       class="form-control input-md" required="" type="text">
+                                            </div>
+
+                                            <!-- Momentum -->
+                                            <label class="col-md-2" for="momentum">Momentum</label>
+                                            <div class="col-md-2">
+                                                <input id="momentum" name="momentum" placeholder="0.1"
+                                                       class="form-control input-md"
+                                                       required="" type="text">
+                                            </div>
+
+                                            <!-- Delay Unit -->
+                                            <label class="col-md-2" for="delay_unit">Delay Unit</label>
+                                            <div class="col-md-2">
+                                                <input id="delay_unit" name="delay_unit" placeholder="1"
+                                                       class="form-control input-md" required="" type="text">
+                                            </div>
+                                        </div>
+
+                                        <!-- Row 5 -->
+                                        <div class="form-group row top-buffer">
+
+
+                                            <!-- Flag -->
+                                            <label class="col-md-2" for="unknown_flag">Flag</label>
+                                            <div class="col-md-2">
+                                                <select id="unknown_flag" name="unknown_flag" class="form-control">
+                                                    <option value="1">Center</option>
+                                                    <option value="2">Backward</option>
+                                                    <option value="3">Forward</option>
+                                                    <option value="4">Output</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
                                     </div>
+                                    <!--                                    </div>-->
+
+                                    <!--                                    <div class="item">-->
+                                    <!--
+                                    <!--                                    </div>-->
+                                    <!---->
+                                    <!--                                    <div class="item">-->
+                                    <!--
+                                    <!--                                    </div>-->
+
+                                    
                                 </div>
 
                                 <!-- Left and right controls -->
-                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <a class="left carousel-control" href="#formCarousel" role="button" data-slide="prev">
                                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <a class="right carousel-control" href="#formCarousel" role="button" data-slide="next">
                                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
 
-
-                            <!-- Row 2 -->
-                            <div class="form-group row top-buffer">
-
-                                <!-- No of Neurons -->
-                                <label class="col-md-2" for="no_neurons">No. of Neurons</label>
-                                <div class="col-md-2">
-                                    <input id="no_neurons" name="no_neurons" placeholder="60"
-                                           class="form-control input-md" required="" type="text">
-
-                                </div>
-
-                                <!-- Prev. Layers -->
-                                <label class="col-md-2" for="prev_layers">Previous Layers</label>
-                                <div class="col-md-2">
-                                    <input id="prev_layers" name="prev_layers" placeholder="1, 3"
-                                           class="form-control input-md" required="" type="text">
-                                </div>
-
-                                <!-- Next Layer -->
-                                <label class="col-md-2" for="next_layer">Next Layers</label>
-                                <div class="col-md-2">
-                                    <input id="next_layer" name="next_layer" placeholder="2, 5"
-                                           class="form-control input-md" required="" type="text">
-                                </div>
-                            </div>
-
-                            <!-- Row 3 -->
-                            <div class="form-group row top-buffer">
-                                <!-- Flag -->
-                                <label class="col-sm-2" for="layer_type">Layer Type</label>
-                                <div class="col-sm-2">
-                                    <select id="layer_type" name="layer_type" class="form-control">
-                                        <option value="1">Input</option>
-                                        <option value="2">Hidden</option>
-                                        <option value="3">Context</option>
-                                        <option value="4">Output</option>
-                                    </select>
-                                </div>
-
-                                <!-- Error Function -->
-                                <label class="col-sm-2" for="error_function">Error Function</label>
-                                <div class="col-sm-2">
-                                    <select id="error_function" name="error_function" class="form-control">
-                                        <option value="1">Gaussian</option>
-                                        <option value="2">Ln</option>
-                                    </select>
-                                </div>
-
-                                <!-- Activation Function -->
-                                <label class="col-sm-2" for="activation_function">Activation
-                                    Function</label>
-                                <div class="col-sm-2">
-                                    <select id="activation_function" name="activation_function" class="form-control">
-                                        <option value="1">Sigmoid</option>
-                                        <option value="2">ReLU</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Row 4 -->
-                            <div class="form-group row top-buffer">
-                                <!-- Learning Rate -->
-                                <label class="col-md-2" for="learning_rate">Learning Rate</label>
-                                <div class="col-md-2">
-                                    <input id="learning_rate" name="learning_rate" placeholder="0.1"
-                                           class="form-control input-md" required="" type="text">
-                                </div>
-
-                                <!-- Momentum -->
-                                <label class="col-md-2" for="momentum">Momentum</label>
-                                <div class="col-md-2">
-                                    <input id="momentum" name="momentum" placeholder="0.1" class="form-control input-md"
-                                           required="" type="text">
-                                </div>
-
-                                <!-- Delay Unit -->
-                                <label class="col-md-2" for="delay_unit">Delay Unit</label>
-                                <div class="col-md-2">
-                                    <input id="delay_unit" name="delay_unit" placeholder="1"
-                                           class="form-control input-md" required="" type="text">
-                                </div>
-                            </div>
-
-                            <!-- Row 5 -->
-                            <div class="form-group row top-buffer">
-
-
-                                <!-- Flag -->
-                                <label class="col-md-2" for="unknown_flag">Flag</label>
-                                <div class="col-md-2">
-                                    <select id="unknown_flag" name="unknown_flag" class="form-control">
-                                        <option value="1">Center</option>
-                                        <option value="2">Backward</option>
-                                        <option value="3">Forward</option>
-                                        <option value="4">Output</option>
-                                    </select>
-                                </div>
-                            </div>
 
                             <!-- Row 6 -->
                             <div class="form-group row top-buffer">
