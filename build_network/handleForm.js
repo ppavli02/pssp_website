@@ -30,7 +30,7 @@ function addTabs(tabID, carouselSize){
 }
 
 function grabInfo(){
-    $(".csstable textarea").each(function(){
+    $(".no_neurons").each(function(){
         alert($(this).val());
     });
 }

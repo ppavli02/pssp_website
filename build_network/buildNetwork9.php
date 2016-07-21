@@ -135,7 +135,7 @@ include "../setSelectionLists.php";
                                             <label class="col-md-2" for="no_neurons">No. of Neurons</label>
                                             <div class="col-md-2">
                                                 <input id="no_neurons" name="no_neurons" placeholder="60"
-                                                       class="form-control input-md" required="" type="text">
+                                                       class="form-control input-md no_neurons" required="" type="text">
 
                                             </div>
 
