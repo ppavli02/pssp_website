@@ -341,7 +341,7 @@ include "../setSelectionLists.php";
                                     <!--
                                     <!--                                    </div>-->
 
-                                    
+
                                 </div>
 
                                 <!-- Left and right controls -->

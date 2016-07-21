@@ -24,7 +24,7 @@ include "../setSelectionLists.php";
     <script src="../js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/build_main.css"/>
-    <link rel="stylesheet" href="../css/build_dialog.css"/>
+    <link rel="stylesheet" href="../css/DELETE-build_dialog.css"/>
     <!--[if lte IE 9]>
     <link rel="stylesheet" href="../css/ie9.css"/><![endif]-->
     <!--[if lte IE 8]>
