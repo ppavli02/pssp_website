@@ -91,23 +91,6 @@ include "../setSelectionLists.php";
                                 <label class="col-md-1" for="no_layers" id="layers_layer">1</label>
                                 <input class="btn btn-primary col-md-offset-1 col-md-1" type="button" value="+" onclick="createCarousel()">
 
-
-<!--                                <div class="col-md-2">-->
-<!--                                    <select id="no_layers" name="no_layers" class="form-control"-->
-<!--                                            onchange="createCarousel()">-->
-<!--                                        <option value="1">1</option>-->
-<!--                                        <option value="2">2</option>-->
-<!--                                        <option value="3">3</option>-->
-<!--                                        <option value="4">4</option>-->
-<!--                                        <option value="5">5</option>-->
-<!--                                        <option value="6">6</option>-->
-<!--                                        <option value="7">7</option>-->
-<!--                                        <option value="8">8</option>-->
-<!--                                        <option value="9">9</option>-->
-<!--                                        <option value="10">10</option>-->
-<!--                                    </select>-->
-<!--                                </div>-->
-
                                 <!-- Max Iterations -->
                                 <label class="col-md-2" for="iterations">Max Iterations</label>
                                 <div class="col-md-2">
@@ -117,7 +100,7 @@ include "../setSelectionLists.php";
 
                             </div>
 
-                            <!-- Row 6 -->
+                            <!-- Row 2 -->
                             <div class="form-group row top-buffer">
                                 <!-- Training File -->
                                 <label class="col-md-2" for="training_file">Training File</label>
@@ -148,7 +131,7 @@ include "../setSelectionLists.php";
                             <div class="carousel-inner" role="listbox">
                                 <div id="tab1" class="item active">
                                     <form>
-                                        <!-- Row 2 -->
+                                        <!-- Row 3 -->
                                         <div class="form-group row top-buffer">
 
                                             <!-- No of Neurons -->
@@ -174,7 +157,7 @@ include "../setSelectionLists.php";
                                             </div>
                                         </div>
 
-                                        <!-- Row 3 -->
+                                        <!-- Row 4 -->
                                         <div class="form-group row top-buffer">
                                             <!-- Flag -->
                                             <label class="col-sm-2" for="layer_type">Layer Type</label>
@@ -208,7 +191,7 @@ include "../setSelectionLists.php";
                                             </div>
                                         </div>
 
-                                        <!-- Row 4 -->
+                                        <!-- Row 5 -->
                                         <div class="form-group row top-buffer">
                                             <!-- Learning Rate -->
                                             <label class="col-md-2" for="learning_rate">Learning Rate</label>
@@ -233,7 +216,7 @@ include "../setSelectionLists.php";
                                             </div>
                                         </div>
 
-                                        <!-- Row 5 -->
+                                        <!-- Row 6 -->
                                         <div class="form-group row top-buffer">
 
 
@@ -261,7 +244,11 @@ include "../setSelectionLists.php";
                                 <div id="tab9" ></div>
                                 <div id="tab10" ></div>
 
+                            </div>
 
+                            <div>
+                                <div></div>
+                                <input class="btn btn-primary" type="submit" value="Submit" onsubmit="grabInfo()">
                             </div>
 
                             <!-- Left and right controls -->
@@ -274,6 +261,7 @@ include "../setSelectionLists.php";
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
+
 
                     </div>
                 </div>

@@ -11,10 +11,7 @@ function createCarousel(){
         addTabs(tabID, carouselSize);
         $("#layers_layer").text(carouselSize);
     }
-
-
 }
-
 
 function addTabs(tabID, carouselSize){
     var dot = $("<li></li>");
@@ -29,5 +26,11 @@ function addTabs(tabID, carouselSize){
         url: "layer.html",
         success: function (data) { $(tabID).append(data); },
         dataType: 'html'
+    });
+}
+
+function grabInfo(){
+    $(".csstable textarea").each(function(){
+        alert($(this).val());
     });
 }

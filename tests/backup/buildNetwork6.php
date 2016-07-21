@@ -21,20 +21,20 @@ include "../setSelectionLists.php";
     <meta _="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="16x16">
     <!--[if lte IE 8]>
-    <script src="../js/ie/html5shiv.js"></script><![endif]-->
+    <script src="../../js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/build_main.css"/>
+    <link rel="stylesheet" href="../../css/build_main.css"/>
     <!--[if lte IE 9]>
-    <link rel="stylesheet" href="../css/ie9.css"/><![endif]-->
+    <link rel="stylesheet" href="../../css/ie9.css"/><![endif]-->
     <!--[if lte IE 8]>
-    <link rel="stylesheet" href="../css/ie8.css"/><![endif]-->
+    <link rel="stylesheet" href="../../css/ie8.css"/><![endif]-->
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <!--Bootstrap-->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!--Sweetalert-->
-    <script src="../_/libs/sweetalert/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../_/libs/sweetalert/sweetalert.css">
+    <script src="../../_/libs/sweetalert/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_/libs/sweetalert/sweetalert.css">
     <!-- My code -->
     <!--    <script src="../js/runAlgorithm.js"></script>-->
     <!--    <script src="../handleIndex.js"></script>-->
@@ -378,14 +378,14 @@ include "../setSelectionLists.php";
 </div>
 
 
-<script src="../js/core_js/jquery.scrolly.min.js"></script>
-<script src="../js/core_js/jquery.dropotron.min.js"></script>
-<script src="../js/core_js/jquery.scrollex.min.js"></script>
-<script src="../js/core_js/skel.min.js"></script>
-<script src="../js/core_js/util.js"></script>
+<script src="../../js/core_js/jquery.scrolly.min.js"></script>
+<script src="../../js/core_js/jquery.dropotron.min.js"></script>
+<script src="../../js/core_js/jquery.scrollex.min.js"></script>
+<script src="../../js/core_js/skel.min.js"></script>
+<script src="../../js/core_js/util.js"></script>
 <!--[if lte IE 8]>
-<script src="../js/ie/respond.min.js"></script><![endif]-->
-<script src="../js/core_js/main.js"></script>
+<script src="../../js/ie/respond.min.js"></script><![endif]-->
+<script src="../../js/core_js/main.js"></script>
 
 
 </body>
