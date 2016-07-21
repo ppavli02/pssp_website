@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b3850c5-0594-46b3-80d5-85d9fed5e516" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build_network/buildNetwork8.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/build_dialog.css" afterPath="$PROJECT_DIR$/css/DELETE-build_dialog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_network/buildNetwork4.php" afterPath="$PROJECT_DIR$/build_network/buildNetwork4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_network/buildNetwork7.php" afterPath="$PROJECT_DIR$/build_network/buildNetwork7.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_network/buildNetwork8.php" afterPath="$PROJECT_DIR$/build_network/buildNetwork8.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_network/handleForm.js" afterPath="$PROJECT_DIR$/build_network/handleForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/numbers.txt" afterPath="$PROJECT_DIR$/tests/numbers.txt" />
     </list>
     <ignored path="pssp_website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,8 +39,8 @@
       <file leaf-file-name="buildNetwork8.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build_network/buildNetwork8.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="250" column="47" selection-start-line="250" selection-start-column="47" selection-end-line="250" selection-end-column="47" />
+            <state relative-caret-position="359">
+              <caret line="135" column="82" selection-start-line="135" selection-start-column="64" selection-end-line="135" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -52,11 +49,9 @@
       <file leaf-file-name="handleForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build_network/handleForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -158,7 +153,6 @@
         <option value="$PROJECT_DIR$/handleIndex.js" />
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/parameters.txt" />
-        <option value="$PROJECT_DIR$/tests/numbers.txt" />
         <option value="$PROJECT_DIR$/build_network/buildNetwork.php" />
         <option value="$PROJECT_DIR$/build_network/buildNetwork2.php" />
         <option value="$PROJECT_DIR$/build_network/buildNetwork3.php" />
@@ -175,6 +169,7 @@
         <option value="$PROJECT_DIR$/build_network/layer.html" />
         <option value="$PROJECT_DIR$/build_network/buildNetwork8.php" />
         <option value="$PROJECT_DIR$/build_network/handleForm.js" />
+        <option value="$PROJECT_DIR$/tests/numbers.txt" />
       </list>
     </option>
   </component>
@@ -726,12 +721,12 @@
       <workItem from="1467992620590" duration="3073000" />
       <workItem from="1468157913559" duration="29299000" />
       <workItem from="1468568821461" duration="7872000" />
-      <workItem from="1468828246981" duration="19728000" />
+      <workItem from="1468828246981" duration="22477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61008000" />
+    <option name="totallyTimeSpent" value="63757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="82" y="26" width="1321" height="848" extended-state="0" />
@@ -944,14 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/numbers.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build_network/buildNetwork.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1590">
@@ -1018,14 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handleIndex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1129,14 +1108,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build_network/layer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="104" column="7" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build_network/buildNetwork4.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1145,21 +1116,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build_network/layer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="104" column="7" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handleIndex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build_network/buildNetwork8.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="250" column="47" selection-start-line="250" selection-start-column="47" selection-end-line="250" selection-end-column="47" />
+        <state relative-caret-position="359">
+          <caret line="135" column="82" selection-start-line="135" selection-start-column="64" selection-end-line="135" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/numbers.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="126" column="17" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build_network/handleForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

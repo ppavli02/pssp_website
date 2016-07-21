@@ -133,16 +133,16 @@ include "../setSelectionLists.php";
 
                         <div id="formCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
                             <!-- Indicators -->
-                            <ol class="carousel-indicators">
+                            <ol class="carousel-indicators" id="carouselIndicators">
                                 <li data-target="#formCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#formCarousel" data-slide-to="1"></li>
-                                <!--                                    <li data-target="#formCarousel" data-slide-to="2"></li>-->
+<!--                                <li data-target="#formCarousel" data-slide-to="1"></li>-->
+<!--                                <li data-target="#formCarousel" data-slide-to="2"></li>-->
                                 <!--                                    <li data-target="#formCarousel" data-slide-to="3"></li>-->
                             </ol>
 
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
-                                <div class="item active">
+                                <div id="tab1" class="item active">
                                     <form>
                                         <!-- Row 2 -->
                                         <div class="form-group row top-buffer">
@@ -247,9 +247,15 @@ include "../setSelectionLists.php";
                                     </form>
 
                                 </div>
-
-                                <div id="addOns"></div>
-
+                                <div id="tab2" ></div>
+                                <div id="tab3" ></div>
+                                <div id="tab4" ></div>
+                                <div id="tab5" ></div>
+                                <div id="tab6" ></div>
+                                <div id="tab7" ></div>
+                                <div id="tab8" ></div>
+                                <div id="tab9" ></div>
+                                <div id="tab10" ></div>
 
 
                             </div>
