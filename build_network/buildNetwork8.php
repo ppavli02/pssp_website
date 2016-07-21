@@ -87,22 +87,26 @@ include "../setSelectionLists.php";
                                 </div>
 
                                 <!-- Layers -->
-                                <label class="col-md-2" for="no_layers">No. of Layers</label>
-                                <div class="col-md-2">
-                                    <select id="no_layers" name="no_layers" class="form-control"
-                                            onchange="createCarousel()">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                    </select>
-                                </div>
+                                <label class="col-md-1" for="no_layers">Layers</label>
+                                <label class="col-md-1" for="no_layers" id="layers_layer">1</label>
+                                <input class="btn btn-primary col-md-offset-1 col-md-1" type="button" value="+" onclick="createCarousel()">
+
+
+<!--                                <div class="col-md-2">-->
+<!--                                    <select id="no_layers" name="no_layers" class="form-control"-->
+<!--                                            onchange="createCarousel()">-->
+<!--                                        <option value="1">1</option>-->
+<!--                                        <option value="2">2</option>-->
+<!--                                        <option value="3">3</option>-->
+<!--                                        <option value="4">4</option>-->
+<!--                                        <option value="5">5</option>-->
+<!--                                        <option value="6">6</option>-->
+<!--                                        <option value="7">7</option>-->
+<!--                                        <option value="8">8</option>-->
+<!--                                        <option value="9">9</option>-->
+<!--                                        <option value="10">10</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
 
                                 <!-- Max Iterations -->
                                 <label class="col-md-2" for="iterations">Max Iterations</label>

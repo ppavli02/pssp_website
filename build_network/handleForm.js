@@ -2,10 +2,17 @@ var carouselSize = 1;
 
 function createCarousel(){
     carouselSize++;
-    var tabID = 'tab'+carouselSize;
-    // alert(carouselSize);
-    tabID = '#'+tabID;
-    addTabs(tabID, carouselSize);
+    if (carouselSize>10){
+        alert('Sorry, you can only use 10 layers for now.');
+    }
+    else{
+        var tabID = 'tab'+carouselSize;
+        tabID = '#'+tabID;
+        addTabs(tabID, carouselSize);
+        $("#layers_layer").text(carouselSize);
+    }
+
+
 }
 
 
