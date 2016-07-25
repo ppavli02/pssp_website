@@ -79,7 +79,7 @@ include "../setSelectionLists.php";
                         <form>
                             <!-- Row 1 -->
                             <div class="form-group row">
-                                <label class="col-md-2" for="network">Network</label>
+                                <label class="col-md-2" for="network">Model</label>
                                 <div class="col-md-2">
                                     <select id="network" name="network" class="form-control">
                                         <option value="1">BRNN</option>
@@ -255,7 +255,8 @@ include "../setSelectionLists.php";
 
                             <div>
                                 <div></div>
-                                <input class="btn btn-primary" type="submit" value="Submit" onclick="grabInfo()">
+<!--                                <input class="btn btn-primary" type="submit" value="Submit" onclick="grabInfo()">-->
+                                <input class="btn btn-primary" value="Submit" onclick="grabInfo()">
                             </div>
 
                             <!-- Left and right controls -->
@@ -277,8 +278,6 @@ include "../setSelectionLists.php";
 
         </div>
     </section>
-
-
 </div>
 
 
