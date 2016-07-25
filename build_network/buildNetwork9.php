@@ -89,7 +89,8 @@ include "../setSelectionLists.php";
                                 <!-- Layers -->
                                 <label class="col-md-1" for="no_layers">Layers</label>
                                 <label class="col-md-1" for="no_layers" id="layers_layer">1</label>
-                                <input class="btn btn-primary col-md-offset-1 col-md-1" type="button" value="+" onclick="createCarousel()">
+                                <input class="btn btn-primary col-md-offset-1 col-md-1" type="button" value="+"
+                                       onclick="createCarousel()">
 
                                 <!-- Max Iterations -->
                                 <label class="col-md-2" for="iterations">Max Iterations</label>
@@ -114,6 +115,10 @@ include "../setSelectionLists.php";
                                 <div class="col-md-4">
                                     <input id="testing_file" name="testing_file" class="input-file" type="file">
                                 </div>
+                            </div>
+
+                            <div class="form-group row top-buffer">
+                                <img class="col-md-12" src="../_/img/line.png" alt="line">
                             </div>
 
                         </form>
@@ -143,14 +148,15 @@ include "../setSelectionLists.php";
                                             <label class="col-md-2" for="prev_layers">Previous Layers</label>
                                             <div class="col-md-2">
                                                 <input id="prev_layers" name="prev_layers" placeholder="1, 3"
-                                                       class="form-control input-md" required="" type="text">
+                                                       class="form-control input-md prev_layers" required=""
+                                                       type="text">
                                             </div>
 
                                             <!-- Next Layer -->
                                             <label class="col-md-2" for="next_layer">Next Layers</label>
                                             <div class="col-md-2">
                                                 <input id="next_layer" name="next_layer" placeholder="2, 5"
-                                                       class="form-control input-md" required="" type="text">
+                                                       class="form-control input-md next_layer" required="" type="text">
                                             </div>
                                         </div>
 
@@ -159,7 +165,8 @@ include "../setSelectionLists.php";
                                             <!-- Flag -->
                                             <label class="col-sm-2" for="layer_type">Layer Type</label>
                                             <div class="col-sm-2">
-                                                <select id="layer_type" name="layer_type" class="form-control">
+                                                <select id="layer_type" name="layer_type"
+                                                        class="form-control layer_type">
                                                     <option value="1">Input</option>
                                                     <option value="2">Hidden</option>
                                                     <option value="3">Context</option>
@@ -170,7 +177,8 @@ include "../setSelectionLists.php";
                                             <!-- Error Function -->
                                             <label class="col-sm-2" for="error_function">Error Function</label>
                                             <div class="col-sm-2">
-                                                <select id="error_function" name="error_function" class="form-control">
+                                                <select id="error_function" name="error_function"
+                                                        class="form-control error_function">
                                                     <option value="1">Gaussian</option>
                                                     <option value="2">Ln</option>
                                                 </select>
@@ -181,7 +189,7 @@ include "../setSelectionLists.php";
                                                 Function</label>
                                             <div class="col-sm-2">
                                                 <select id="activation_function" name="activation_function"
-                                                        class="form-control">
+                                                        class="form-control activation_function">
                                                     <option value="1">Sigmoid</option>
                                                     <option value="2">ReLU</option>
                                                 </select>
@@ -194,14 +202,15 @@ include "../setSelectionLists.php";
                                             <label class="col-md-2" for="learning_rate">Learning Rate</label>
                                             <div class="col-md-2">
                                                 <input id="learning_rate" name="learning_rate" placeholder="0.1"
-                                                       class="form-control input-md" required="" type="text">
+                                                       class="form-control input-md learning_rate" required=""
+                                                       type="text">
                                             </div>
 
                                             <!-- Momentum -->
                                             <label class="col-md-2" for="momentum">Momentum</label>
                                             <div class="col-md-2">
                                                 <input id="momentum" name="momentum" placeholder="0.1"
-                                                       class="form-control input-md"
+                                                       class="form-control input-md momentum"
                                                        required="" type="text">
                                             </div>
 
@@ -209,7 +218,7 @@ include "../setSelectionLists.php";
                                             <label class="col-md-2" for="delay_unit">Delay Unit</label>
                                             <div class="col-md-2">
                                                 <input id="delay_unit" name="delay_unit" placeholder="1"
-                                                       class="form-control input-md" required="" type="text">
+                                                       class="form-control input-md delay_unit" required="" type="text">
                                             </div>
                                         </div>
 
@@ -220,7 +229,8 @@ include "../setSelectionLists.php";
                                             <!-- Flag -->
                                             <label class="col-md-2" for="unknown_flag">Flag</label>
                                             <div class="col-md-2">
-                                                <select id="unknown_flag" name="unknown_flag" class="form-control">
+                                                <select id="unknown_flag" name="unknown_flag"
+                                                        class="form-control unknown_flag">
                                                     <option value="1">Center</option>
                                                     <option value="2">Backward</option>
                                                     <option value="3">Forward</option>
@@ -231,21 +241,21 @@ include "../setSelectionLists.php";
                                     </form>
 
                                 </div>
-                                <div id="tab2" ></div>
-                                <div id="tab3" ></div>
-                                <div id="tab4" ></div>
-                                <div id="tab5" ></div>
-                                <div id="tab6" ></div>
-                                <div id="tab7" ></div>
-                                <div id="tab8" ></div>
-                                <div id="tab9" ></div>
-                                <div id="tab10" ></div>
+                                <div id="tab2"></div>
+                                <div id="tab3"></div>
+                                <div id="tab4"></div>
+                                <div id="tab5"></div>
+                                <div id="tab6"></div>
+                                <div id="tab7"></div>
+                                <div id="tab8"></div>
+                                <div id="tab9"></div>
+                                <div id="tab10"></div>
 
                             </div>
 
                             <div>
                                 <div></div>
-                                <input class="btn btn-primary" type="submit" value="Submit" onsubmit="grabInfo()">
+                                <input class="btn btn-primary" type="submit" value="Submit" onclick="grabInfo()">
                             </div>
 
                             <!-- Left and right controls -->
