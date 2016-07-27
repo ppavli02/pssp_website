@@ -89,9 +89,9 @@ function grabInfo() {
         async: false,
         success: function (data) {
             if (data != "") {
-                var pushedErrors = JSON.parse(data);
-                console.log(pushedErrors);
-                // console.log(data);
+                // var pushedErrors = JSON.parse(data);
+                // console.log(pushedErrors);
+                console.log(data);
             }
             else{
                 console.log(data);

@@ -17,6 +17,7 @@ $momentum = $json_decoded->{'momentum'};
 $delay_unit = $json_decoded->{'delay_unit'};
 $unknown_flag = $json_decoded->{'unknown_flag'};
 
+
 //Create File
 $token = md5(uniqid(rand(), 1));
 $newFile = 'parameter' . $token . 'txt';
@@ -38,6 +39,12 @@ $form_errors = array();
 $max = sizeof($no_neurons);
 for ($countLayers = 0; $countLayers < $max; $countLayers++) {
     //Check no_neurons validity - Error 1
+    if ($max == 1) {
+        $layer_neurons = $no_neurons;
+    } else {
+        $layer_neurons = $no_neurons[$countLayers];
+    }
+
     {
         $regEx = "/\\d/";
         if (!preg_match($regEx, $layer_neurons)) {
@@ -48,7 +55,12 @@ for ($countLayers = 0; $countLayers < $max; $countLayers++) {
     }
 
     //Check prev_layers validity - Error 2
-    $previous_layers = $prev_layers[$countLayers];
+    if ($max == 1) {
+        $previous_layers = $prev_layers;
+    } else {
+        $previous_layers = $prev_layers[$countLayers];
+    }
+
     if ($previous_layers == "") {
         $previous_layers = '-';
     } else {
@@ -59,9 +71,16 @@ for ($countLayers = 0; $countLayers < $max; $countLayers++) {
                 array_push($form_errors, "2");
             }
         }
+        $previous_layers = preg_replace('/\s+/', '', $previous_layers);
     }
 
     //Check next_layers validity - Error 3
+    if ($max == 1) {
+        $following_layers = $next_layers;
+    } else {
+        $following_layers = $next_layers[$countLayers];
+    }
+
     $following_layers = $next_layers[$countLayers];
     if ($following_layers == "") {
         $following_layers = '-';
@@ -73,6 +92,7 @@ for ($countLayers = 0; $countLayers < $max; $countLayers++) {
                 array_push($form_errors, "3");
             }
         }
+        $following_layers = preg_replace('/\s+/', '', $following_layers);
     }
 
     //Get Layer Type
@@ -99,7 +119,12 @@ for ($countLayers = 0; $countLayers < $max; $countLayers++) {
     $activation_function_text = $activation_function[$countLayers];
 
     //Check learning rate validity - Error 4
-    $get_learning_rate = $learning_rate[$countLayers];
+    if ($max == 1) {
+        $get_learning_rate = $learning_rate;
+    } else {
+        $get_learning_rate = $learning_rate[$countLayers];
+    }
+
     {
         $regEx1 = "/\\d.\\d/";
         $regEx2 = "/\\d/";
@@ -111,7 +136,12 @@ for ($countLayers = 0; $countLayers < $max; $countLayers++) {
     }
 
     //Check momentum validity - Error 5
-    $get_momentum = $momentum[$countLayers];
+    if ($max == 1) {
+        $get_momentum = $momentum;
+    } else {
+        $get_momentum = $momentum[$countLayers];
+    }
+
     {
         $regEx1 = "/\\d.\\d/";
         $regEx2 = "/\\d/";
@@ -123,7 +153,12 @@ for ($countLayers = 0; $countLayers < $max; $countLayers++) {
     }
 
     //Check delay unit validity - Error 6
-    $get_delay_unit = $delay_unit[$countLayers];
+    if ($max == 1) {
+        $get_delay_unit = $delay_unit;
+    } else {
+        $get_delay_unit = $delay_unit[$countLayers];
+    }
+
     {
         $regEx = "/\\d/";
         if (!preg_match($regEx, $get_momentum)) {
@@ -138,27 +173,29 @@ for ($countLayers = 0; $countLayers < $max; $countLayers++) {
     $flag = $unknown_flag[$countLayers];
     switch ($flag) {
         case "1":
-            $type_of_layer_text = 'C';
+            $flag_text = 'C';
             break;
         case "2":
-            $type_of_layer_text = 'B';
+            $flag_text = 'B';
             break;
         case "3":
-            $type_of_layer_text = 'F';
+            $flag_text = 'F';
             break;
         case "4":
-            $type_of_layer_text = 'O';
+            $flag_text = 'O';
             break;
     }
 
 
-    preg_match($re, $str, $matches);
+    $txt .= 'Layer ' . $countLayers . ':' . $layer_neurons . ':' . $previous_layers . ':' . $following_layers . ':' .
+        $type_of_layer_text . ':' . $error_function_text . ':' . $get_learning_rate . ':' . $get_momentum . ':' .
+        $get_delay_unit . ':' . $flag_text . "\n";
 
-
-    $txt .= 'Layer ' . $countLayers . ':' . $layer_neurons . ':' . $previous_layers . ':' . $next_layers . ':' .
-        $type_of_layer_text . ':' . $error_function_text . ':' . ':' . $get_learning_rate . ':' . $get_momentum . ':' .
-        $get_delay_unit . ':' . $flag . "\n";
 }
+
+$txt .= "maxIterations ".$iterations."\n";
+$txt .= "train_File "."\n";
+$txt .= "test_file "."\n";
 
 
 if (!empty($form_errors)) {
@@ -185,5 +222,3 @@ if (!empty($form_errors)) {
 //train_File trainSet.txt
 //test_File testSet.txt
 
-
-//phpinfo( );
