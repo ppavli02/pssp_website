@@ -69,6 +69,7 @@ include "../setSelectionLists.php";
     <!--     Banner -->
     <section id="banner">
         <div class="content">
+<!--            <form id="myform" onsubmit="grabInfo()">-->
             <form id="myform">
                 <div class="row uniform 50%">
                     <header class="major 12u$">
@@ -255,7 +256,7 @@ include "../setSelectionLists.php";
 
                             <div>
                                 <div></div>
-<!--                                <input class="btn btn-primary" type="submit" value="Submit" onclick="grabInfo()">-->
+<!--                                <input class="btn btn-primary" type="submit" value="Submit">-->
                                 <input class="btn btn-primary" value="Submit" onclick="grabInfo()">
                             </div>
 

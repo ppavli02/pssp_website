@@ -66,28 +66,42 @@ $.fn.serializeObject = function () {
     return o;
 };
 
+// function grabInfo() {
+//     var aa = $('form').serializeObject();
+//     var info = JSON.stringify(aa);
+//
+//     var result = $.parseJSON(info);
+//     $.each(result, function(k, v) {
+//         //display the key and value pair
+//         console.log(k + ' is ' + v);
+//     });
+//
+// }
+
 function grabInfo() {
     var aa = $('form').serializeObject();
     var info = JSON.stringify(aa);
-
-    var result = $.parseJSON(info);
-    $.each(result, function(k, v) {
-        //display the key and value pair
-        console.log(k + ' is ' + v);
+    console.log(info);
+    $.ajax({
+        url: "createParameterFile.php",
+        type: "POST",
+        data: info,
+        async: false,
+        success: function (data) {
+            if (data != "") {
+                var pushedErrors = JSON.parse(data);
+                console.log(pushedErrors);
+            }
+            else{
+                console.log(data);
+            }
+        },
+        cache: false,
+        contentType: false,
+        processData: false
     });
 
 }
 
 
-// $.ajax({
-//     url: ".php",
-//     type: "POST",
-//     data: info,
-//     async: false,
-//     success: function (data) {
-//
-//     },
-//     cache: false,
-//     contentType: false,
-//     processData: false
-// });
+
