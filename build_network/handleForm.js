@@ -91,6 +91,7 @@ function grabInfo() {
             if (data != "") {
                 var pushedErrors = JSON.parse(data);
                 console.log(pushedErrors);
+                // console.log(data);
             }
             else{
                 console.log(data);

@@ -18,67 +18,72 @@ $delay_unit = $json_decoded->{'delay_unit'};
 $unknown_flag = $json_decoded->{'unknown_flag'};
 
 //Create File
-$token = md5(uniqid(rand(),1));
-$newFile = 'parameter'.$token.'txt';
+$token = md5(uniqid(rand(), 1));
+$newFile = 'parameter' . $token . 'txt';
 //$myFile = fopen($newFile, "w") or die("Unable to open file!");
 $file = "/tmp/newfile.txt";
 
-if( !($fd = fopen($file,"w")) )
+if (!($fd = fopen($file, "w")))
     die("Could not open $file!");
 
 //$myFile = fopen("newfile.txt", "w") or die("Unable to open file!");
-if ($network==1){
-    $txt = 'BRNNE-BPTT'."\n";
+if ($network == 1) {
+    $txt = 'BRNNE-BPTT' . "\n";
 //    fwrite($fd, $txt);
-    }
+}
 
 $form_errors = array();
-$countLayers = 0;
-foreach($no_neurons as $layer_neurons) {
+//$countLayers = 0;
+
+$max = sizeof($no_neurons);
+for($countLayers = 0; $countLayers < $max; $countLayers++){
     //Check no_neurons validity - Error 1
     {
-        $re = "/\\d/";
-        if (!preg_match($re,$layer_neurons)) {
-            array_push($form_errors,"1");
+        $regEx = "/\\d/";
+        if (!preg_match($regEx, $layer_neurons)) {
+            if (!in_array("1", $form_errors)) {
+                array_push($form_errors, "1");
+            }
         }
     }
 
     //Check prev_layers validity - Error 2
     $previous_layers = $prev_layers[$countLayers];
-    if ($previous_layers==""){
-        $previous_layers='-';
-        }
-    else{
-        $re = "/\\d,\\s/";
-        if (!preg_match($re,$previous_layers)) {
-            array_push($form_errors,"2");
+    if ($previous_layers == "") {
+        $previous_layers = '-';
+    } else {
+        $regEx1 = "/\\d,\\s/";
+        $regEx2 = "/\\d/";
+        if (!preg_match($regEx1, $previous_layers) && !preg_match($regEx2, $previous_layers)) {
+            if (!in_array("2", $form_errors)) {
+                array_push($form_errors, "2");
+            }
         }
     }
 
     //Check next_layers validity - Error 3
     $following_layers = $next_layers[$countLayers];
-    if ($following_layers==""){
-        $following_layers='-';
-        }
-    else{
-        $re = "/\\d,\\s/";
-        if (!preg_match($re,$following_layers)) {
-            array_push($form_errors,"3");
+    if ($following_layers == "") {
+        $following_layers = '-';
+    } else {
+        $regEx1 = "/\\d,\\s/";
+        $regEx2 = "/\\d/";
+        if (!preg_match($regEx1, $following_layers) && !preg_match($regEx2, $following_layers)) {
+            if (!in_array("3", $form_errors)) {
+                array_push($form_errors, "3");
+            }
         }
     }
 
 
-    $txt.='Layer '.$countLayers.':'.$layer_neurons.':'.$previous_layers."\n";
-    $countLayers++;
+    $txt .= 'Layer ' . $countLayers . ':' . $layer_neurons . ':' . $previous_layers . "\n";
 }
 
 
-
-if (!empty($form_errors)){
+if (!empty($form_errors)) {
     echo json_encode($form_errors);
     return;
-}
-else{
+} else {
     fwrite($fd, $txt);
     fclose($fd);
 }
