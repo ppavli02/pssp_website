@@ -166,8 +166,9 @@ include "../setSelectionLists.php";
                                             <!-- Flag -->
                                             <label class="col-sm-2" for="layer_type">Layer Type</label>
                                             <div class="col-sm-2">
-                                                <select id="layer_type" name="layer_type"
+                                                <select required id="layer_type" name="layer_type"
                                                         class="form-control layer_type">
+                                                    <option value="">None</option>
                                                     <option value="1">Input</option>
                                                     <option value="2">Hidden</option>
                                                     <option value="3">Context</option>
@@ -179,7 +180,8 @@ include "../setSelectionLists.php";
                                             <label class="col-sm-2" for="error_function">Error Function</label>
                                             <div class="col-sm-2">
                                                 <select id="error_function" name="error_function"
-                                                        class="form-control error_function">
+                                                        class="form-control error_function" required>
+                                                    <option value="">None</option>
                                                     <option value="1">Gaussian</option>
                                                     <option value="2">Ln</option>
                                                 </select>
@@ -189,8 +191,9 @@ include "../setSelectionLists.php";
                                             <label class="col-sm-2" for="activation_function">Activation
                                                 Function</label>
                                             <div class="col-sm-2">
-                                                <select id="activation_function" name="activation_function"
+                                                <select required id="activation_function" name="activation_function"
                                                         class="form-control activation_function">
+                                                    <option value="">None</option>
                                                     <option value="1">Sigmoid</option>
                                                     <option value="2">ReLU</option>
                                                 </select>
@@ -230,8 +233,9 @@ include "../setSelectionLists.php";
                                             <!-- Flag -->
                                             <label class="col-md-2" for="unknown_flag">Flag</label>
                                             <div class="col-md-2">
-                                                <select id="unknown_flag" name="unknown_flag"
+                                                <select required id="unknown_flag" name="unknown_flag"
                                                         class="form-control unknown_flag">
+                                                    <option value="">None</option>
                                                     <option value="1">Center</option>
                                                     <option value="2">Backward</option>
                                                     <option value="3">Forward</option>

@@ -36,7 +36,7 @@ $form_errors = array();
 //$countLayers = 0;
 
 $max = sizeof($no_neurons);
-for($countLayers = 0; $countLayers < $max; $countLayers++){
+for ($countLayers = 0; $countLayers < $max; $countLayers++) {
     //Check no_neurons validity - Error 1
     {
         $regEx = "/\\d/";
@@ -75,8 +75,89 @@ for($countLayers = 0; $countLayers < $max; $countLayers++){
         }
     }
 
+    //Get Layer Type
+    $type_of_layer = $layer_type[$countLayers];
+    switch ($type_of_layer) {
+        case "1":
+            $type_of_layer_text = 'I';
+            break;
+        case "2":
+            $type_of_layer_text = 'H';
+            break;
+        case "3":
+            $type_of_layer_text = 'C';
+            break;
+        case "4":
+            $type_of_layer_text = 'O';
+            break;
+    }
 
-    $txt .= 'Layer ' . $countLayers . ':' . $layer_neurons . ':' . $previous_layers . "\n";
+    //Get Error Function
+    $error_function_text = $error_function[$countLayers];
+
+    //Get Activation Function
+    $activation_function_text = $activation_function[$countLayers];
+
+    //Check learning rate validity - Error 4
+    $get_learning_rate = $learning_rate[$countLayers];
+    {
+        $regEx1 = "/\\d.\\d/";
+        $regEx2 = "/\\d/";
+        if (!preg_match($regEx1, $get_learning_rate) && !preg_match($regEx2, $get_learning_rate)) {
+            if (!in_array("4", $form_errors)) {
+                array_push($form_errors, "4");
+            }
+        }
+    }
+
+    //Check momentum validity - Error 5
+    $get_momentum = $momentum[$countLayers];
+    {
+        $regEx1 = "/\\d.\\d/";
+        $regEx2 = "/\\d/";
+        if (!preg_match($regEx1, $get_momentum) && !preg_match($regEx2, $get_momentum)) {
+            if (!in_array("5", $form_errors)) {
+                array_push($form_errors, "5");
+            }
+        }
+    }
+
+    //Check delay unit validity - Error 6
+    $get_delay_unit = $delay_unit[$countLayers];
+    {
+        $regEx = "/\\d/";
+        if (!preg_match($regEx, $get_momentum)) {
+            if (!in_array("6", $form_errors)) {
+                array_push($form_errors, "6");
+            }
+        }
+    }
+
+
+    //Get Flag
+    $flag = $unknown_flag[$countLayers];
+    switch ($flag) {
+        case "1":
+            $type_of_layer_text = 'C';
+            break;
+        case "2":
+            $type_of_layer_text = 'B';
+            break;
+        case "3":
+            $type_of_layer_text = 'F';
+            break;
+        case "4":
+            $type_of_layer_text = 'O';
+            break;
+    }
+
+
+    preg_match($re, $str, $matches);
+
+
+    $txt .= 'Layer ' . $countLayers . ':' . $layer_neurons . ':' . $previous_layers . ':' . $next_layers . ':' .
+        $type_of_layer_text . ':' . $error_function_text . ':' . ':' . $get_learning_rate . ':' . $get_momentum . ':' .
+        $get_delay_unit . ':' . $flag . "\n";
 }
 
 
@@ -88,8 +169,21 @@ if (!empty($form_errors)) {
     fclose($fd);
 }
 
-
-
+//BRNNE-BPTT
+//Layer 0:60:-:1:I:1:1:0.1:0.1:1:C
+//Layer 1:11:0:8:H:1:1:0.1:0.1:1:C
+//Layer 2:11:4:3:C:1:1:0.1:0.1:1:F
+//Layer 3:11:2,9:4:H:1:1:0.1:0.1:1:F
+//Layer 4:11:3:2,8:H:1:1:0.1:0.1:1:F
+//Layer 5:11:7:6:C:1:1:0.1:0.1:1:B
+//Layer 6:11:5,10:7:H:1:1:0.1:0.1:1:B
+//Layer 7:11:6:5,8:H:1:1:0.1:0.1:1:B
+//Layer 8:3:4,1,7:-:O:1:1:0.1:0.1:1:O
+//Layer 9:60:-:3:I:1:1:0.1:0.1:1:F
+//Layer 10:60:-:6:I:1:1:0.1:0.1:1:B
+//maxIterations 2000
+//train_File trainSet.txt
+//test_File testSet.txt
 
 
 //phpinfo( );
