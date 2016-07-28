@@ -44,11 +44,6 @@ function addTabs(tabID, carouselSize) {
     });
 }
 
-// function grabInfo(){
-//     var serializedForm = $('form').serialize();
-//     console.log(serializedForm);
-//     alert("");
-// }
 
 $.fn.serializeObject = function () {
     var o = {};
@@ -63,38 +58,63 @@ $.fn.serializeObject = function () {
             o[this.name] = this.value || '';
         }
     });
+
+
+    // var x = document.getElementById("training_file");
+    // var tr = $('#training_file').val();
+    // console.log(tr);
+
     return o;
 };
 
-// function grabInfo() {
-//     var aa = $('form').serializeObject();
-//     var info = JSON.stringify(aa);
-//
-//     var result = $.parseJSON(info);
-//     $.each(result, function(k, v) {
-//         //display the key and value pair
-//         console.log(k + ' is ' + v);
-//     });
-//
-// }
-
 function grabInfo() {
-    var aa = $('form').serializeObject();
-    var info = JSON.stringify(aa);
+    var temporary_array = $('form').serializeObject();
+    var info = JSON.stringify(temporary_array);
     console.log(info);
     $.ajax({
         url: "createParameterFile.php",
         type: "POST",
         data: info,
         async: false,
+        //If the returned data is an array of errors, parse it and handle errors.
+        //Otherwise, take the token to handle the files.
         success: function (data) {
-            if (data != "") {
-                // var pushedErrors = JSON.parse(data);
+            var token;
+            try {
+                var pushedErrors = JSON.parse(data);
                 // console.log(pushedErrors);
-                console.log(data);
+                var errors = "";
+                $.each(pushedErrors, function (i, errorNumber) {
+                    if (errorNumber == 1) {
+                        // alert('Neuron field should only hold integer numbers.');
+                        errors += "Neuron field should only hold integer numbers.\n";
+                    }
+                    if (errorNumber == 2) {
+                        // alert('');
+                        errors += "Previous Layer: Please follow the example shown in the placeholder.\n";
+                    }
+                    if (errorNumber == 3) {
+                        // alert('Next Layer: Please follow the example shown in the placeholder.');
+                        errors += "Next Layer: Please follow the example shown in the placeholder.\n";
+                    }
+                    if (errorNumber == 4) {
+                        errors += "Learning Rate: Please follow the example shown in the placeholder. You can also pass an integer value.\n";
+                    }
+                    if (errorNumber == 5) {
+                        errors += "Momentum: Please follow the example shown in the placeholder. You can also pass an integer value.\n";
+                    }
+                    if (errorNumber == 6) {
+                        errors += "Delay Unit: Please follow the example shown in the placeholder.\n";
+                    }
+                    if (errorNumber == 7) {
+                        errors += "Iterations: Please follow the example shown in the placeholder.\n";
+                    }
+                });
+                alert(errors);
             }
-            else{
-                console.log(data);
+            catch (err) {
+                token = data;
+                // console.log(token);
             }
         },
         cache: false,

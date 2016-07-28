@@ -20,21 +20,21 @@ $unknown_flag = $json_decoded->{'unknown_flag'};
 
 //Create File
 $token = md5(uniqid(rand(), 1));
-$newFile = 'parameter' . $token . 'txt';
-//$myFile = fopen($newFile, "w") or die("Unable to open file!");
-$file = "/tmp/newfile.txt";
+$parameterFile = 'parameter_' . $token . '.txt';
+$trainingFile = 'training_' . $token . '.txt';
+$testingFile = 'testing_' . $token . '.txt';
+
+$file = "/webserver/parameterFiles/".$parameterFile;
 
 if (!($fd = fopen($file, "w")))
     die("Could not open $file!");
 
-//$myFile = fopen("newfile.txt", "w") or die("Unable to open file!");
+
 if ($network == 1) {
     $txt = 'BRNNE-BPTT' . "\n";
-//    fwrite($fd, $txt);
 }
 
 $form_errors = array();
-//$countLayers = 0;
 
 $max = sizeof($no_neurons);
 for ($countLayers = 0; $countLayers < $max; $countLayers++) {
@@ -193,9 +193,18 @@ for ($countLayers = 0; $countLayers < $max; $countLayers++) {
 
 }
 
+{
+    $regEx = "/\\d/";
+    if (!preg_match($regEx, $iterations)) {
+        if (!in_array("7", $form_errors)) {
+            array_push($form_errors, "7");
+        }
+    }
+}
+
 $txt .= "maxIterations ".$iterations."\n";
-$txt .= "train_File "."\n";
-$txt .= "test_file "."\n";
+$txt .= "train_File ". $trainingFile . "\n";
+$txt .= "test_file ". $testingFile . "\n";
 
 
 if (!empty($form_errors)) {
@@ -204,21 +213,7 @@ if (!empty($form_errors)) {
 } else {
     fwrite($fd, $txt);
     fclose($fd);
+//    array_push($form_errors, $token);
+//    echo json_encode($form_errors);
+    echo $token;
 }
-
-//BRNNE-BPTT
-//Layer 0:60:-:1:I:1:1:0.1:0.1:1:C
-//Layer 1:11:0:8:H:1:1:0.1:0.1:1:C
-//Layer 2:11:4:3:C:1:1:0.1:0.1:1:F
-//Layer 3:11:2,9:4:H:1:1:0.1:0.1:1:F
-//Layer 4:11:3:2,8:H:1:1:0.1:0.1:1:F
-//Layer 5:11:7:6:C:1:1:0.1:0.1:1:B
-//Layer 6:11:5,10:7:H:1:1:0.1:0.1:1:B
-//Layer 7:11:6:5,8:H:1:1:0.1:0.1:1:B
-//Layer 8:3:4,1,7:-:O:1:1:0.1:0.1:1:O
-//Layer 9:60:-:3:I:1:1:0.1:0.1:1:F
-//Layer 10:60:-:6:I:1:1:0.1:0.1:1:B
-//maxIterations 2000
-//train_File trainSet.txt
-//test_File testSet.txt
-
