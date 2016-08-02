@@ -9,7 +9,6 @@ $(document).ready(function () {
         var text = document.createTextNode("Log In");
         h.appendChild(text);
         lgn.appendChild(h);
-
         createOwn.removeChild(createOwn.childNodes[0]);
     }
     else{
@@ -28,7 +27,4 @@ $(document).ready(function () {
         k.appendChild(text2);
         createOwn.appendChild(k);
     }
-
-
-
 });

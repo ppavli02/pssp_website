@@ -1,11 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['isLoggedIn'])) {
-    echo "<script>flag=true;</script>";
-} else {
-    echo "<script>flag=false;</script>";
+if (!isset($_SESSION['isLoggedIn'])) {
+    header("Location: ../index.php");
 }
-include "../setSelectionLists.php";
 ?>
 
 <!DOCTYPE HTML>
@@ -61,7 +58,7 @@ include "../setSelectionLists.php";
                 <li><a href="#four">Help</a></li>
                 <!--                <li id="create_network"><a href="./build_network/login.php" class="button special">Log In</a></li>-->
                 <!--                <li id="login_btn"><a href="./member_functionality/login.php" class="button special">Log In</a></li>-->
-                <li id="login_btn"></li>
+                <li id="login_btn"><a href="../member_functionality/logout.php" class="button special">Log Out</li>
             </ul>
         </nav>
     </header>
@@ -69,8 +66,12 @@ include "../setSelectionLists.php";
     <!--     Banner -->
     <section id="banner">
         <div class="content">
-<!--            <form id="myform" onsubmit="grabInfo()">-->
-            <form id="myform">
+            <!--            <form id="myform" enctype="multipart/form-data" action="aa.php" method="post">-->
+            <!--            <form id="myform" enctype="multipart/form-data" method="post">-->
+
+            <form id="myform" enctype="multipart/form-data" onsubmit="buildTheNetwork()">
+                <!--            <form id="myform" enctype="multipart/form-data">-->
+                <!--            <form id="myform">-->
                 <div class="row uniform 50%">
                     <header class="major 12u$">
                         <h2>Build Your Own Network</h2>
@@ -105,20 +106,40 @@ include "../setSelectionLists.php";
                             <!-- Row 2 -->
                             <div class="form-group row top-buffer">
                                 <!-- Training File -->
-                                <label class="col-md-2" for="training_file">Training File</label>
+                                <label class="col-md-2" for="fasta_training_file">Fasta Training File</label>
                                 <div class="col-md-4">
-                                    <input id="training_file" name="training_file" class="input-file" type="file">
+                                    <!--                                    <input id="training_file" name="training_file" class="input-file" type="file">-->
+                                    <input type="file" name="fasta_training_file" class="input-file"
+                                           id="fasta_training_file">
+                                </div>
+
+                                <!-- Testing File -->
+                                <label class="col-md-2" for="fasta_testing_file">Fasta Testing File</label>
+                                <div class="col-md-4">
+                                    <input id="fasta_testing_file" name="fasta_testing_file" class="input-file"
+                                           type="file">
+                                </div>
+                            </div>
+
+                            <!-- Row 3 -->
+                            <div class="form-group row">
+                                <!-- Training File -->
+                                <label class="col-md-2" for="msa_training_file">MSA Training File</label>
+                                <div class="col-md-4">
+                                    <!--                                    <input id="training_file" name="training_file" class="input-file" type="file">-->
+                                    <input type="file" name="msa_training_file" class="input-file"
+                                           id="msa_training_file">
                                 </div>
 
 
                                 <!-- Testing File -->
-                                <label class="col-md-2" for="testing_file">Testing File</label>
+                                <label class="col-md-2" for="msa_testing_file">Testing File</label>
                                 <div class="col-md-4">
-                                    <input id="testing_file" name="testing_file" class="input-file" type="file">
+                                    <input id="msa_testing_file" name="msa_testing_file" class="input-file" type="file">
                                 </div>
                             </div>
 
-                            <div class="form-group row top-buffer">
+                            <div class="form-group row">
                                 <img class="col-md-12" src="../_/img/line.png" alt="line">
                             </div>
 
@@ -134,7 +155,7 @@ include "../setSelectionLists.php";
                             <div class="carousel-inner" role="listbox">
                                 <div id="tab1" class="item active">
                                     <form>
-                                        <!-- Row 3 -->
+                                        <!-- Row 4 -->
                                         <div class="form-group row top-buffer">
 
                                             <!-- No of Neurons -->
@@ -161,7 +182,7 @@ include "../setSelectionLists.php";
                                             </div>
                                         </div>
 
-                                        <!-- Row 4 -->
+                                        <!-- Row 5 -->
                                         <div class="form-group row top-buffer">
                                             <!-- Flag -->
                                             <label class="col-sm-2" for="layer_type">Layer Type</label>
@@ -200,7 +221,7 @@ include "../setSelectionLists.php";
                                             </div>
                                         </div>
 
-                                        <!-- Row 5 -->
+                                        <!-- Row 6 -->
                                         <div class="form-group row top-buffer">
                                             <!-- Learning Rate -->
                                             <label class="col-md-2" for="learning_rate">Learning Rate</label>
@@ -226,7 +247,7 @@ include "../setSelectionLists.php";
                                             </div>
                                         </div>
 
-                                        <!-- Row 6 -->
+                                        <!-- Row 7 -->
                                         <div class="form-group row top-buffer">
 
 
@@ -260,8 +281,8 @@ include "../setSelectionLists.php";
 
                             <div>
                                 <div></div>
-<!--                                <input class="btn btn-primary" type="submit" value="Submit">-->
-                                <input class="btn btn-primary" value="Submit" onclick="grabInfo()">
+                                <input class="btn btn-primary" type="submit" value="Submit">
+                                <!--                                <input class="btn btn-primary" value="Submit" onclick="grabInfo()">-->
                             </div>
 
                             <!-- Left and right controls -->

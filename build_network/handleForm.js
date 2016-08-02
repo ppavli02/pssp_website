@@ -67,6 +67,30 @@ $.fn.serializeObject = function () {
     return o;
 };
 
+
+function grabFiles() {
+    var formData = new FormData();
+
+    formData.append('fasta_training_file', $('input[type=file]')[0].files[0]);
+    formData.append('fasta_testing_file', $('input[type=file]')[1].files[0]);
+    formData.append('msa_training_file', $('input[type=file]')[2].files[0]);
+    formData.append('msa_testing_file', $('input[type=file]')[3].files[0]);
+    // var token = 32;
+    // formData.append('token', token);
+
+    $.ajax({
+        url: "uploadFiles.php",
+        type: "POST",
+        data: formData,
+        async: false,
+        success: function (data) {
+            alert(data);
+        },
+        contentType: false,
+        processData: false,
+    });
+}
+
 function grabInfo() {
     var temporary_array = $('form').serializeObject();
     var info = JSON.stringify(temporary_array);
@@ -111,18 +135,23 @@ function grabInfo() {
                     }
                 });
                 alert(errors);
+                return false;
             }
             catch (err) {
                 token = data;
-                // console.log(token);
+                console.log(token);
+                return true;
             }
         },
         cache: false,
         contentType: false,
         processData: false
     });
-
 }
 
-
+function buildTheNetwork(){
+    if (grabInfo()){
+        grabFiles();
+    }
+}
 

@@ -213,7 +213,6 @@ if (!empty($form_errors)) {
 } else {
     fwrite($fd, $txt);
     fclose($fd);
-//    array_push($form_errors, $token);
-//    echo json_encode($form_errors);
+    $_SESSION["token"] = $token;
     echo $token;
 }
