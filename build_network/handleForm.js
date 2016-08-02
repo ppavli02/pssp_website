@@ -75,8 +75,6 @@ function grabFiles() {
     formData.append('fasta_testing_file', $('input[type=file]')[1].files[0]);
     formData.append('msa_training_file', $('input[type=file]')[2].files[0]);
     formData.append('msa_testing_file', $('input[type=file]')[3].files[0]);
-    // var token = 32;
-    // formData.append('token', token);
 
     $.ajax({
         url: "uploadFiles.php",
@@ -92,6 +90,7 @@ function grabFiles() {
 }
 
 function grabInfo() {
+    var returnValue=0;
     var temporary_array = $('form').serializeObject();
     var info = JSON.stringify(temporary_array);
     console.log(info);
@@ -110,15 +109,12 @@ function grabInfo() {
                 var errors = "";
                 $.each(pushedErrors, function (i, errorNumber) {
                     if (errorNumber == 1) {
-                        // alert('Neuron field should only hold integer numbers.');
                         errors += "Neuron field should only hold integer numbers.\n";
                     }
                     if (errorNumber == 2) {
-                        // alert('');
                         errors += "Previous Layer: Please follow the example shown in the placeholder.\n";
                     }
                     if (errorNumber == 3) {
-                        // alert('Next Layer: Please follow the example shown in the placeholder.');
                         errors += "Next Layer: Please follow the example shown in the placeholder.\n";
                     }
                     if (errorNumber == 4) {
@@ -135,23 +131,29 @@ function grabInfo() {
                     }
                 });
                 alert(errors);
-                return false;
+                returnValue = 0;
             }
             catch (err) {
                 token = data;
-                console.log(token);
-                return true;
+                alert(token);
+                returnValue = 1;
             }
         },
         cache: false,
         contentType: false,
         processData: false
     });
+    return returnValue;
 }
 
 function buildTheNetwork(){
+    // var returnValue = grabInfo();
     if (grabInfo()){
         grabFiles();
     }
 }
+
+// $( document ).ready(function() {
+//     $("[name='my-checkbox']").bootstrapSwitch();
+// });
 

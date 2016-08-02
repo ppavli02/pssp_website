@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $fasta_training_file = $_FILES["fasta_training_file"]["name"];
 $fasta_testing_file = $_FILES["fasta_testing_file"]["name"];
 $msa_training_file = $_FILES["msa_training_file"]["name"];
@@ -37,19 +37,19 @@ function testFile($file){
             case UPLOAD_ERR_OK:
                 break;
             case UPLOAD_ERR_NO_FILE:
-                throw new RuntimeException('Error with ' . $filename . ': No file sent.');
+                throw new RuntimeException('Error with ' . $filename . ': No file sent.'."\n");
             case UPLOAD_ERR_INI_SIZE:
             case UPLOAD_ERR_FORM_SIZE:
-                throw new RuntimeException('Error with ' . $filename . ': Exceeded file size limit.');
+                throw new RuntimeException('Error with ' . $filename . ': Exceeded file size limit.'."\n");
             default:
-                throw new RuntimeException('Error with ' . $filename . ': Unknown errors.');
+                throw new RuntimeException('Error with ' . $filename . ': Unknown errors.'."\n");
         }
         //Check filesize
         if ($_FILES[$file]['size'] > 1000000) {
-            throw new RuntimeException('Error with ' . $filename . ': Exceeded filesize limit.');
+            throw new RuntimeException('Error with ' . $filename . ': Exceeded filesize limit.'."\n");
         }
         if ($_FILES[$file]['type'] != "text/plain") {
-            throw new RuntimeException('Error with ' . $filename . ': Please provide a text file.');
+            throw new RuntimeException('Error with ' . $filename . ': Please provide a text file.'."\n");
         }
     } catch (RuntimeException $e) {
         global $flag;
@@ -69,7 +69,7 @@ function uploadFile($file, $target_dir){
             if (move_uploaded_file($_FILES[$file]["tmp_name"], $target_file)) {
                 echo "The file " . basename($_FILES[$file]["name"]) . " has been uploaded.";
             } else {
-                throw new RuntimeException("Sorry, there was an error uploading your file.");
+                throw new RuntimeException("Sorry, there was an error uploading your file."."\n");
             }
         } catch (RuntimeException $p) {
             global $flag;
@@ -79,22 +79,3 @@ function uploadFile($file, $target_dir){
     }
 
 }
-
-//function uploadFile($file, $target_dir){
-//    $fileType = pathinfo($_FILES[$file]["name"],PATHINFO_EXTENSION);
-//    $token = $_POST["token"];
-//    $filename = $file . "_" . $token.".".$fileType;
-//    $target_file = $target_dir . $filename;
-//    try {
-//        if (move_uploaded_file($_FILES[$file]["tmp_name"], $target_file)) {
-//            echo "The file " . basename($_FILES[$file]["name"]) . " has been uploaded.";
-//        } else {
-//            throw new RuntimeException("Sorry, there was an error uploading your file.");
-//        }
-//    }
-//    catch (RuntimeException $p){
-//        global $flag;
-//        $flag=false;
-//        echo $p->getMessage();
-//    }
-//}

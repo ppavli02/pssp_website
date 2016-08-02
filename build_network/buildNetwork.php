@@ -33,10 +33,12 @@ if (!isset($_SESSION['isLoggedIn'])) {
     <!--Sweetalert-->
     <script src="../_/libs/sweetalert/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../_/libs/sweetalert/sweetalert.css">
+    <!--Bootstrap Switch-->
+    <script src="../_/libs/bootstrap_switch/bootstrap-switch.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_/libs/bootstrap_switch/bootstrap-switch.css">
     <!-- My code -->
     <script type="text/javascript" src="handleForm.js"></script>
-    <!--    <script src="../js/runAlgorithm.js"></script>-->
-    <!--    <script src="../handleIndex.js"></script>-->
+
 
 
 </head>
