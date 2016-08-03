@@ -28,6 +28,9 @@ if (flag) {
     uploadFile("msa_testing_file", "/webserver/testingFiles/");
 }
 
+if ($flag){
+    echo $flag;
+}
 
 function testFile($file){
     $filename = $_FILES[$file]["name"];
@@ -37,12 +40,12 @@ function testFile($file){
             case UPLOAD_ERR_OK:
                 break;
             case UPLOAD_ERR_NO_FILE:
-                throw new RuntimeException('Error with ' . $filename . ': No file sent.'."\n");
+                throw new RuntimeException('Error with ' . $file . ': No file sent.'."\n");
             case UPLOAD_ERR_INI_SIZE:
             case UPLOAD_ERR_FORM_SIZE:
-                throw new RuntimeException('Error with ' . $filename . ': Exceeded file size limit.'."\n");
+                throw new RuntimeException('Error with ' . $file . ': Exceeded file size limit.'."\n");
             default:
-                throw new RuntimeException('Error with ' . $filename . ': Unknown errors.'."\n");
+                throw new RuntimeException('Error with ' . $file . ': Unknown errors.'."\n");
         }
         //Check filesize
         if ($_FILES[$file]['size'] > 1000000) {
@@ -66,9 +69,7 @@ function uploadFile($file, $target_dir){
 
     if (!file_exists($target_file)) {
         try {
-            if (move_uploaded_file($_FILES[$file]["tmp_name"], $target_file)) {
-                echo "The file " . basename($_FILES[$file]["name"]) . " has been uploaded.";
-            } else {
+            if (!move_uploaded_file($_FILES[$file]["tmp_name"], $target_file)) {
                 throw new RuntimeException("Sorry, there was an error uploading your file."."\n");
             }
         } catch (RuntimeException $p) {
@@ -77,5 +78,4 @@ function uploadFile($file, $target_dir){
             echo $p->getMessage();
         }
     }
-
 }

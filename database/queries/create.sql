@@ -26,10 +26,10 @@ CREATE TABLE `PARAMETER_FILE` (
 
 CREATE TABLE `LOGFILE` (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `datetime` DATETIME NOT NULL, 
-    parameter_id VARCHAR(20) NOT NULL,
-    trainset_id VARCHAR(20) NOT NULL,
-    testset_id VARCHAR(20) NOT NULL
+    token VARCHAR(32) NOT NULL,
+    user_id VARCHAR(60) NOT NULL,
+    start_timestamp DATETIME NOT NULL, 
+    end_timestamp DATETIME NOT NULL
 );
 
 CREATE TABLE `MODEL` (

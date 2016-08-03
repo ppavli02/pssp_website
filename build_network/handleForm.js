@@ -8,7 +8,6 @@ function createCarousel() {
     $('#formCarousel').on('slide.bs.carousel', function (ev) {
         var id = ev.relatedTarget.id;
         tabNumber = id.charAt(id.length - 1);
-        // alert(tabNumber);
         var layer_context = tabNumber + '/' + carouselSize;
         $("#layers_layer").text(layer_context);
     });
@@ -58,19 +57,13 @@ $.fn.serializeObject = function () {
             o[this.name] = this.value || '';
         }
     });
-
-
-    // var x = document.getElementById("training_file");
-    // var tr = $('#training_file').val();
-    // console.log(tr);
-
     return o;
 };
 
 
 function grabFiles() {
     var formData = new FormData();
-
+    var returnValue=0;
     formData.append('fasta_training_file', $('input[type=file]')[0].files[0]);
     formData.append('fasta_testing_file', $('input[type=file]')[1].files[0]);
     formData.append('msa_training_file', $('input[type=file]')[2].files[0]);
@@ -83,10 +76,18 @@ function grabFiles() {
         async: false,
         success: function (data) {
             alert(data);
+            if (data=="1")
+                returnValue=1;
+            else{
+                returnValue=0;
+                alert(data);
+            }
+
         },
         contentType: false,
         processData: false,
     });
+    return returnValue;
 }
 
 function grabInfo() {
@@ -147,9 +148,11 @@ function grabInfo() {
 }
 
 function buildTheNetwork(){
-    // var returnValue = grabInfo();
+    //If the user has successfully build the network, check the files.
     if (grabInfo()){
-        grabFiles();
+        if (grabFiles()){
+
+        }
     }
 }
 
