@@ -51,11 +51,9 @@ try {
     }
 
 } catch (PDOException $e) {
-//    $errorMessage = "Error: " . $e->getMessage();
     array_push($form_errors, "3");
 }
 
-//ob_end_flush();
 $conn = null;
 
 function strip_input($data)

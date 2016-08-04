@@ -66,11 +66,12 @@
                     <p></p>
                     <div id="not_build">
                         <label for="parameter_token">Code</label>
-                        <p>If empty, the default file will be used.</p>
                         <div>
                             <input id="parameter_token" name="parameter_token" placeholder="Code goes here."
                                    class="form-control input-md" required="" type="text">
                         </div>
+                        <p></p>
+                        <p><b>Note:</b> If empty, the default file will be used.</p>
                     </div>
                 </div>
 

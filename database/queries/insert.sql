@@ -15,3 +15,8 @@ INSERT INTO `MODEL` (`id`, `title`) VALUES
 INSERT INTO `TRAIN_ALGORITHM` (`id`, `title`) VALUES
 (1, 'Training Algorithm 1'),
 (2, 'Training Algorithm 2');
+
+
+INSERT INTO `LOGFILE` (`token`, `user_id`, `start_timestamp`, `end_timestamp`) VALUES
+('50e1c42638098417b68d1f4f6a2a107e', 'pavlides_13@hotmail.com', '1470304577', '1470304673'),
+('4cd8c563c7fd2a927e4447ac92553a42',  'pavlides_13@hotmail.com', '1470304578', '1470304580');

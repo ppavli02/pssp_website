@@ -63,7 +63,7 @@ $.fn.serializeObject = function () {
 
 function grabFiles() {
     var formData = new FormData();
-    var returnValue=0;
+    var returnValue = 0;
     formData.append('fasta_training_file', $('input[type=file]')[0].files[0]);
     formData.append('fasta_testing_file', $('input[type=file]')[1].files[0]);
     formData.append('msa_training_file', $('input[type=file]')[2].files[0]);
@@ -76,10 +76,10 @@ function grabFiles() {
         async: false,
         success: function (data) {
             alert(data);
-            if (data=="1")
-                returnValue=1;
-            else{
-                returnValue=0;
+            if (data == "1")
+                returnValue = 1;
+            else {
+                returnValue = 0;
                 alert(data);
             }
 
@@ -91,7 +91,7 @@ function grabFiles() {
 }
 
 function grabInfo() {
-    var returnValue=0;
+    var returnValue = 0;
     var temporary_array = $('form').serializeObject();
     var info = JSON.stringify(temporary_array);
     console.log(info);
@@ -151,19 +151,21 @@ function crossCheck() {
     $.ajax({
         url: "checkFiles.php",
         type: "POST",
-        async: false,
+        async: true,
         success: function (data) {
-            alert(data);
+            if (data == "1" || data == "11") {
+                alert("Could not send the email.");
+            }
         },
     });
-    return returnValue;
 }
 
-function buildTheNetwork(){
+function buildTheNetwork() {
     //If the user has successfully build the network, check the files.
-    if (grabInfo()){
-        if (grabFiles()){
-            // crossCheck();
+    if (grabInfo()) {
+        if (grabFiles()) {
+            crossCheck();
+            alert("");
         }
     }
 }

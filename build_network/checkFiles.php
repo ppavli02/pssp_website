@@ -14,39 +14,41 @@ $message .= "Please review those errors and try uploading the files again." . "<
 $message .= "You can use this code to retrieve your parameter file, and not build it again: " . "</br>";
 $message .= $token . "</br>";
 $message .= "--------------------------------------------------------------------------------------------------------------" . "</br>";
-
+$message .= "</br>";
 
 if (is_array($output) && sizeof($output) == 1) {
     foreach ($output as $line) {
         if ($line == "[]") {
             $send_email_flag = false;
             break;
-        }
-        $line = str_replace("[", "", $line);
-        $line = str_replace("]", "", $line);
-        $line = str_replace("'", "", $line);
-        $err_array = (explode(",", $line));
-        foreach ($err_array as $temp_error) {
-            switch ($temp_error) {
-                case "1":
-                    $message .= "One or more files in the zip file don't have the '.hssp' extension." . "</br>";
-                    break;
-                case "2":
-                    $message .= "One or more lines of the msa files don't sum up to the expected range of values." . "</br>";
-                    break;
-                case "3":
-                    $message .= "There are invalid references in the FASTA file to the zip folder." . "</br>";
-                    break;
-                case "4":
-                    $message .= "The secondary structure in the FASTA file does not contain only the characters 'H', 
+        } else {
+            $line = str_replace("[", "", $line);
+            $line = str_replace("]", "", $line);
+            $line = str_replace("'", "", $line);
+            $err_array = (explode(",", $line));
+            foreach ($err_array as $temp_error) {
+                switch ($temp_error) {
+                    case "1":
+                        $message .= "One or more files in the zip file don't have the '.hssp' extension." . "</br>";
+                        break;
+                    case "2":
+                        $message .= "One or more lines of the msa files don't sum up to the expected range of values." . "</br>";
+                        break;
+                    case "3":
+                        $message .= "There are invalid references in the FASTA file to the zip folder." . "</br>";
+                        break;
+                    case "4":
+                        $message .= "The secondary structure in the FASTA file does not contain only the characters 'H', 
                     'C', 'E', '!'. " . "</br>";
-                    $message .= "(case insensitive)" . "</br>";
-                    break;
-                default:
-                    $message .= "Undefined error." . "</br>";
-                    break;
+                        $message .= "(case insensitive)" . "</br>";
+                        break;
+                    default:
+                        $message .= "Undefined error." . "</br>";
+                        break;
 
+                }
             }
+
         }
         //        $message .= "$line<br />";
     }
@@ -55,11 +57,9 @@ if (is_array($output) && sizeof($output) == 1) {
     $message .= "Undefined error." . "</br>";
     $message .= "Not the expected output from the test script" . "</br>";
 }
+$message .= "</br>";
 $message .= "--------------------------------------------------------------------------------------------------------------" . "</br>";
-$message .= "For further info, please review out help section." . "</br>";
-
-//echo $message;
-echo $user_email;
+$message .= "For further info, please review our help section." . "</br>";
 
 
 //Send Email
@@ -82,10 +82,14 @@ if ($send_email_flag) {
     $mail->MsgHTML($message);
     $mail->AddAddress($user_email, $user_email);
 
-    if ($mail->Send()) {
-        echo "Message sent!";
-    } else {
-        echo "Mailer Error: " . $mail->ErrorInfo;
+    if (!$mail->Send()) {
+        echo "1";
     }
+
+    
+
+} else {
+    $message="";
+    include 'runBuildApplication.php';
 }
 
