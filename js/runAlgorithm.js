@@ -84,7 +84,7 @@ function emailResponse(){
     }
 
     $.ajax({
-        url: "mail_system/send_mail.php",
+        url: "mailing_functionality/send_mail.php",
         type: "POST",
         data: runToJSON(),
         async: false,

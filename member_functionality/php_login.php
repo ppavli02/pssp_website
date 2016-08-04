@@ -5,8 +5,7 @@
    email and the password, we then start a session with
    these information, else we flash.
 */
-//session_abort();
-//session_destroy();
+
 session_start();
 
 require("../MySqlConnect.php");

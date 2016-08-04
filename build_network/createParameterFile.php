@@ -203,8 +203,8 @@ for ($countLayers = 0; $countLayers < $max; $countLayers++) {
 }
 
 $txt .= "maxIterations ".$iterations."\n";
-$txt .= "train_File ". $trainingFile . "\n";
-$txt .= "test_file ". $testingFile . "\n";
+$txt .= "train_File ". "fasta_".$trainingFile . "\n";
+$txt .= "test_file ". "fasta_".$testingFile . "\n";
 
 
 if (!empty($form_errors)) {

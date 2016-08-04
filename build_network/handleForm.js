@@ -147,11 +147,23 @@ function grabInfo() {
     return returnValue;
 }
 
+function crossCheck() {
+    $.ajax({
+        url: "checkFiles.php",
+        type: "POST",
+        async: false,
+        success: function (data) {
+            alert(data);
+        },
+    });
+    return returnValue;
+}
+
 function buildTheNetwork(){
     //If the user has successfully build the network, check the files.
     if (grabInfo()){
         if (grabFiles()){
-
+            // crossCheck();
         }
     }
 }
