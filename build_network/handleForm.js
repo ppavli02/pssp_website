@@ -181,10 +181,10 @@ function handleDefaultParameter() {
 function handleReuseParameter() {
     var returnValue = 0;
     var md5 = $("#md5_code").val();
-    if (md5==undefined || md5==""){
-        sweetAlert("No code.", "Please use the code from the email you have sent you.", "error");
+    if (md5 == undefined || md5 == "") {
+        sweetAlert("No code.", "Please provide the code is been sent to you.", "error");
     }
-    else{
+    else {
         $.ajax({
             url: "updateSession.php",
             type: "POST",
@@ -193,9 +193,12 @@ function handleReuseParameter() {
             }),
             async: false,
             success: function (data) {
-                if (data=="1"){
+                alert(data);
+                if (data == "1") {
                     sweetAlert("Please try again.", "Something went wrong!", "error");
-                }else{
+                } else if (data == "2") {
+                    sweetAlert("Invalid code.", "Please check the code and try again.", "error");
+                } else {
                     returnValue=1;
                 }
             }
@@ -227,7 +230,15 @@ function buildTheNetwork() {
 
             break;
         case 1:
-            handleReuseParameter();
+            // handleReuseParameter();
+            if (handleReuseParameter()) {
+                alert("passed handleReuseParameter");
+                if (grabFiles()) {
+                    alert("check3");
+                    crossCheck();
+                    alert("check4");
+                }
+            }
 
             break;
         case 2:
@@ -254,6 +265,7 @@ $(document).ready(function () {
      */
 
     // 8d0e982d4f6e8b5ca6433d1049fe1ca8
+    // f67dd0f6967553a77320ee3f10352c71
 
     $("[name='wizard_1']").bootstrapSwitch();
     $("[name='wizard_2']").bootstrapSwitch();

@@ -8,19 +8,22 @@ testZipFile("msa_training_file");
 testZipFile("msa_testing_file");
 
 $token = $_SESSION["token"];
-$tr_dir = "/webserver/trainingFiles/" . $token . "/";
-if (is_dir($tr_dir) === false) {
-    mkdir($tr_dir);
-}else{
-    $flag=false;
+if ($flag){
+    $tr_dir = "/webserver/trainingFiles/" . $token . "/";
+    if (is_dir($tr_dir) === false) {
+        mkdir($tr_dir);
+    }else{
+        $flag=false;
+    }
+
+    $ts_dir = "/webserver/testingFiles/" . $token . "/";
+    if (is_dir($ts_dir) === false) {
+        mkdir($ts_dir);
+    }else{
+        $flag=false;
+    }
 }
 
-$ts_dir = "/webserver/testingFiles/" . $token . "/";
-if (is_dir($ts_dir) === false) {
-    mkdir($ts_dir);
-}else{
-    $flag=false;
-}
 
 if (flag) {
     uploadFile("fasta_training_file", $tr_dir);
