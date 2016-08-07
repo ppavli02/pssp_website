@@ -174,3 +174,36 @@ function buildTheNetwork() {
 //     $("[name='my-checkbox']").bootstrapSwitch();
 // });
 
+// $( document ).ready(function() {
+//     alert("hey.");
+//     // $("#chooseParameters").modal();
+//
+// });
+
+$(document).ready(function () {
+    $("[name='wizard_1']").bootstrapSwitch();
+    $("[name='wizard_2']").bootstrapSwitch();
+
+    $("#wizard_div_2").hide();
+
+    $('input[name="wizard_1"]').on('switchChange.bootstrapSwitch', function (event, state) {
+        if(!state){
+            $("#wizard_div_2").show();
+            $("#wizard_div_1").hide();
+
+        }
+        console.log(this); // DOM element
+        console.log(event); // jQuery event
+        console.log(state); // true | false
+    });
+
+    $('input[name="wizard_2"]').on('switchChange.bootstrapSwitch', function (event, state) {
+        if(!state){
+            // $("#wizard_div_2").show();
+            // $("#wizard_div_1").hide();
+        }
+        console.log(this); // DOM element
+        console.log(event); // jQuery event
+        console.log(state); // true | false
+    });
+});

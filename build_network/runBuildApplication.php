@@ -58,3 +58,5 @@ if(!$mail->Send()) {
 }
 
 $conn = null;
+
+//create results file

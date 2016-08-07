@@ -40,47 +40,8 @@ if (!isset($_SESSION['isLoggedIn'])) {
     <script type="text/javascript" src="handleForm.js"></script>
 
 
-
 </head>
 <body class="landing">
-
-<!-- Modal -->
-<div class="modal fade" id="chooseParameters" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <!--                    <button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                <h4 class="modal-title">What about the parameter file?</h4>
-            </div>
-            <div class="modal-body">
-                <p>At this point, it is better to define the source of parameters the network will get.</p>
-                <label for="use_parameter_file">Use the form to build the file?</label>
-                <div>
-                    <input type="checkbox" name="my-checkbox" data-on-color="primary" data-off-color="warning"
-                           checked>
-                </div>
-                <p></p>
-                <div id="not_build">
-                    <label for="parameter_token">Code</label>
-                    <div>
-                        <input id="parameter_token" name="parameter_token" placeholder="Code goes here."
-                               class="form-control input-md" required="" type="text">
-                    </div>
-                    <p></p>
-                    <p><b>Note:</b> If empty, the default file will be used.</p>
-                </div>
-            </div>
-
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
 
 <div id="page-wrapper">
     <!-- Header -->
@@ -180,6 +141,26 @@ if (!isset($_SESSION['isLoggedIn'])) {
                                     <input id="msa_testing_file" name="msa_testing_file" class="input-file" type="file">
                                 </div>
                             </div>
+
+
+                            <div align="left" id="wizard_div_1">
+                                <label for="wizard_1" class="col-md-3">Use the default parameter file:</label>
+                                <input type="checkbox" name="wizard_1" data-on-color="primary"
+                                       data-off-color="warning"
+                                       checked>
+                            </div>
+
+                            <div align="left" id="wizard_div_2" class="row">
+                                <label for="user_md5" class="col-md-4">I have a unique code to retrieve parameter
+                                    file:</label>
+
+                                <input type="checkbox" name="wizard_2" data-on-color="primary"
+                                       data-off-color="warning"
+                                       checked>
+                                <input id="md5_code" name="md5_code" placeholder="100"
+                                       class="form-control input-md" style="width: 100px" required="" type="text">
+                            </div>
+
 
                             <div class="form-group row">
                                 <img class="col-md-12" src="../_/img/line.png" alt="line">
@@ -343,7 +324,6 @@ if (!isset($_SESSION['isLoggedIn'])) {
                 </div>
 
             </form>
-
 
 
         </div>

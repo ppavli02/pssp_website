@@ -59,6 +59,7 @@
 /* Containers */
 
 	.container {
+		padding-left: 0;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -2130,8 +2131,9 @@
 		line-height: 1.5em;
 	}
 
+	/*Change: margin: 0 0 4em 0;*/
 	header.major {
-		margin: 0 0 4em 0;
+		margin: 0 0 0.5em 0;
 		position: relative;
 		text-align: center;
 	}
@@ -4164,6 +4166,19 @@ DC7B52
 	font-weight: bold;
 }
 
+/*PSSP CUSTOMISATION*/
 .top-buffer {
-	margin-top: 1em;
+	margin-top: 0.5em;
 }
+
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+	margin-right: -1.5em;
+}
+
+.carousel-inner{
+	margin-bottom: -2em;
+}
+
+/*.major 12u${*/
+	/*margin-bottom: 1em;*/
+/*}*/
