@@ -1,4 +1,5 @@
 var carouselSize = 1;
+var locateParameterFile = 0;
 
 function createCarousel() {
 
@@ -161,6 +162,7 @@ function crossCheck() {
 }
 
 function buildTheNetwork() {
+    alert(locateParameterFile);
     //If the user has successfully build the network, check the files.
     if (grabInfo()) {
         if (grabFiles()) {
@@ -170,40 +172,40 @@ function buildTheNetwork() {
     }
 }
 
-// $( document ).ready(function() {
-//     $("[name='my-checkbox']").bootstrapSwitch();
-// });
-
-// $( document ).ready(function() {
-//     alert("hey.");
-//     // $("#chooseParameters").modal();
-//
-// });
-
 $(document).ready(function () {
+
+    /*
+    locateParameterFile variable is set to define the source of the parameter file.
+    0: use the default file
+    1: retrieve a known file
+    2: build your own
+    -1: error
+     */
+
     $("[name='wizard_1']").bootstrapSwitch();
     $("[name='wizard_2']").bootstrapSwitch();
 
     $("#wizard_div_2").hide();
+    // $("#formCarousel").hide();
+
 
     $('input[name="wizard_1"]').on('switchChange.bootstrapSwitch', function (event, state) {
         if(!state){
             $("#wizard_div_2").show();
             $("#wizard_div_1").hide();
-
+            locateParameterFile = -1;
         }
-        console.log(this); // DOM element
-        console.log(event); // jQuery event
-        console.log(state); // true | false
     });
 
     $('input[name="wizard_2"]').on('switchChange.bootstrapSwitch', function (event, state) {
         if(!state){
-            // $("#wizard_div_2").show();
-            // $("#wizard_div_1").hide();
+            // $("#formCarousel").show();
+            locateParameterFile = 2;
         }
-        console.log(this); // DOM element
-        console.log(event); // jQuery event
-        console.log(state); // true | false
+        else{
+            // $("#formCarousel").hide();
+            locateParameterFile = 1;
+        }
+
     });
 });
