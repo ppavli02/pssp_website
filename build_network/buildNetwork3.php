@@ -103,11 +103,10 @@ if (!isset($_SESSION['isLoggedIn'])) {
                                        placeholder="45kjhdsf5i342"
                                        class="form-control input-md" type="text">
                             </div>
-                            <label class="col-md-4">Note: Please provide only the files.</label>
                         </div>
 
                         <form>
-                            <!-- Row 2 -->
+                            <!-- Row 1 -->
                             <div class="form-group row top-buffer">
                                 <!-- Training File -->
                                 <label class="col-md-2" for="fasta_training_file">Fasta Training File</label>
@@ -125,7 +124,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
                                 </div>
                             </div>
 
-                            <!-- Row 3 -->
+                            <!-- Row 2 -->
                             <div class="form-group row">
                                 <!-- Training File -->
                                 <label class="col-md-2" for="msa_training_file">MSA Training File</label>
@@ -143,8 +142,8 @@ if (!isset($_SESSION['isLoggedIn'])) {
                                 </div>
                             </div>
 
-                            <!-- Row 1 -->
-                            <div class="form-group row top-buffer">
+                            <!-- Row 3 -->
+                            <div class="virtual_box form-group row top-buffer">
                                 <label class="col-md-2" for="network">Model</label>
                                 <div class="col-md-2">
                                     <select id="network" name="network" class="form-control">
@@ -174,7 +173,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 
                         </form>
 
-                        <div id="formCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <div id="formCarousel" class="virtual_box carousel slide" data-ride="carousel" data-interval="false">
                             <!-- Indicators -->
                             <ol class="carousel-indicators" id="carouselIndicators">
                                 <li data-target="#formCarousel" data-slide-to="0" class="active"></li>
@@ -308,11 +307,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 
                             </div>
 
-                            <div>
-                                <div></div>
-                                <!--                                <input class="btn btn-primary" type="submit" value="Submit">-->
-                                <input class="btn btn-primary" value="Submit" onclick="buildTheNetwork()">
-                            </div>
+
 
                             <!-- Left and right controls -->
                             <a class="left carousel-control" href="#formCarousel" role="button" data-slide="prev">
@@ -323,6 +318,12 @@ if (!isset($_SESSION['isLoggedIn'])) {
                                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
+                        </div>
+
+                        <div>
+                            <div></div>
+                            <!--                                <input class="btn btn-primary" type="submit" value="Submit">-->
+                            <input class="btn btn-primary" value="Submit" onclick="buildTheNetwork()">
                         </div>
 
 

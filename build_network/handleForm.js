@@ -83,7 +83,6 @@ function grabFiles() {
                 returnValue = 0;
                 alert(data);
             }
-
         },
         contentType: false,
         processData: false,
@@ -157,52 +156,130 @@ function crossCheck() {
             if (data == "1" || data == "11") {
                 alert("Could not send the email.");
             }
-        },
+        }
     });
 }
 
-function buildTheNetwork() {
-    alert(locateParameterFile);
-    //If the user has successfully build the network, check the files.
-    if (grabInfo()) {
-        if (grabFiles()) {
-            crossCheck();
-            alert("");
+function handleDefaultParameter() {
+    var returnValue = 0;
+    $.ajax({
+        url: "defaultSession.php",
+        type: "POST",
+        async: false,
+        success: function (data) {
+            alert(data);
+            if (data == "1") {
+                sweetAlert("Oops...", "Something went wrong!", "error");
+            } else {
+                returnValue = 1;
+            }
         }
+    });
+    return returnValue;
+}
+
+function handleReuseParameter() {
+    var returnValue = 0;
+    var md5 = $("#md5_code").val();
+    if (md5==undefined || md5==""){
+        sweetAlert("No code.", "Please use the code from the email you have sent you.", "error");
+    }
+    else{
+        $.ajax({
+            url: "updateSession.php",
+            type: "POST",
+            data: JSON.stringify({
+                "md5": md5,
+            }),
+            async: false,
+            success: function (data) {
+                if (data=="1"){
+                    sweetAlert("Please try again.", "Something went wrong!", "error");
+                }else{
+                    returnValue=1;
+                }
+            }
+        });
+    }
+    return returnValue;
+}
+
+
+function buildTheNetwork() {
+
+    alert(locateParameterFile);
+
+    //If the user has successfully build the network, check the files.
+
+    switch (locateParameterFile) {
+        case 0:
+
+            // handleDefaultParameter();
+
+            if (handleDefaultParameter()) {
+                alert("passed handleDefaultParameter");
+                if (grabFiles()) {
+                    alert("check");
+                    crossCheck();
+                    alert("check2");
+                }
+            }
+
+            break;
+        case 1:
+            handleReuseParameter();
+
+            break;
+        case 2:
+            if (grabInfo()) {
+                if (grabFiles()) {
+                    crossCheck();
+                    alert("");
+                }
+            }
+            break;
+        default:
+            sweetAlert("Oops...", "Something went wrong!", "error");
     }
 }
 
 $(document).ready(function () {
 
     /*
-    locateParameterFile variable is set to define the source of the parameter file.
-    0: use the default file
-    1: retrieve a known file
-    2: build your own
-    -1: error
+     locateParameterFile variable is set to define the source of the parameter file.
+     0: use the default file
+     1: retrieve a known file
+     2: build your own
+     -1: error
      */
+
+    // 8d0e982d4f6e8b5ca6433d1049fe1ca8
 
     $("[name='wizard_1']").bootstrapSwitch();
     $("[name='wizard_2']").bootstrapSwitch();
 
     $("#wizard_div_2").hide();
+
+    $(".virtual_box").hide();
     // $("#formCarousel").hide();
 
 
     $('input[name="wizard_1"]').on('switchChange.bootstrapSwitch', function (event, state) {
-        if(!state){
+        if (!state) {
             $("#wizard_div_2").show();
             $("#wizard_div_1").hide();
-            locateParameterFile = -1;
+            locateParameterFile = 1;
         }
     });
 
     $('input[name="wizard_2"]').on('switchChange.bootstrapSwitch', function (event, state) {
-        if(!state){
+        if (!state) {
+            $(".virtual_box").show();
             // $("#formCarousel").show();
             locateParameterFile = 2;
         }
-        else{
+        else {
+            $(".virtual_box").hide();
             // $("#formCarousel").hide();
             locateParameterFile = 1;
         }
