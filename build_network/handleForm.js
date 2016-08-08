@@ -152,8 +152,6 @@ function grabInfo() {
                     returnValue = 0;
                 }
                 catch (err) {
-                    token = data;
-                    alert(token);
                     returnValue = 1;
                 }
             },
@@ -186,7 +184,6 @@ function handleDefaultParameter() {
         type: "POST",
         async: false,
         success: function (data) {
-            alert(data);
             if (data == "1") {
                 sweetAlert("Oops...", "Something went wrong!", "error");
             } else {
@@ -212,7 +209,6 @@ function handleReuseParameter() {
             }),
             async: false,
             success: function (data) {
-                alert(data);
                 if (data == "1") {
                     sweetAlert("Please try again.", "Something went wrong!", "error");
                 } else if (data == "2") {
@@ -230,20 +226,13 @@ function handleReuseParameter() {
 
 function buildTheNetwork() {
 
-    alert("param value "+locateParameterFile);
-
-    //If the user has successfully build the network, check the files.
+    //If the user has successfully build the network, check everything and run the application.
 
     switch (locateParameterFile) {
         case 0:
-
-            // handleDefaultParameter();
             if (handleDefaultParameter()) {
-                alert("passed handleDefaultParameter");
                 if (grabFiles()) {
-                    alert("check");
                     crossCheck();
-                    alert("check2");
                 }
             }
 
@@ -251,11 +240,8 @@ function buildTheNetwork() {
         case 1:
             // handleReuseParameter();
             if (handleReuseParameter()) {
-                alert("passed handleReuseParameter");
                 if (grabFiles()) {
-                    alert("check3");
                     crossCheck();
-                    alert("check4");
                 }
             }
 
@@ -264,7 +250,6 @@ function buildTheNetwork() {
             if (grabInfo()) {
                 if (grabFiles()) {
                     crossCheck();
-                    alert("");
                 }
             }
             break;
@@ -281,9 +266,6 @@ $(document).ready(function () {
      1: retrieve a known file
      2: build your own
      */
-
-    // 8d0e982d4f6e8b5ca6433d1049fe1ca8
-    // f67dd0f6967553a77320ee3f10352c71
 
     $("[name='wizard_1']").bootstrapSwitch();
     $("[name='wizard_2']").bootstrapSwitch();
@@ -310,6 +292,5 @@ $(document).ready(function () {
             $(".virtual_box").hide();
             locateParameterFile = 1;
         }
-
     });
 });

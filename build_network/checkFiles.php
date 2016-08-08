@@ -1,3 +1,13 @@
+/**
+* User: ppavli02
+* Date: July - August 2016
+* Comment: This php file executes the python script, which checks the uploaded files
+* and sends an email to the user in case something is wrong. Otherwise, it calls the
+* runBuildApplication.php to execute the code.
+*
+* Returns: "1" if mail is not sent. Otherwise, the code returns nothing.
+*/
+
 <?php
 ignore_user_abort(true);
 set_time_limit(0);
@@ -73,11 +83,10 @@ if ($send_email_flag) {
     $mail->SMTPAuth = true;
     $mail->Host = "smtp.gmail.com";
     $mail->Port = 587;
-    $mail->Username = "andreasfrangou3@gmail.com";
-    $mail->Password = "katiaapanotou";
+    $mail->Username = "pssp.ucy.webapp@gmail.com";
+    $mail->Password = "webapp2016";
 
-
-    $mail->SetFrom('andreasfrangou3@gmail.com', 'PSSP');
+    $mail->SetFrom('pssp.ucy.webapp@gmail.com', 'PSSP');
     $mail->Subject = "Errors with file uploading.";
     $mail->MsgHTML($message);
     $mail->AddAddress($user_email, $user_email);
@@ -86,8 +95,7 @@ if ($send_email_flag) {
         echo "1";
     }
 } else {
-    $message="";
-    $output="";
+    $message = "";
+    $output = "";
     include 'runBuildApplication.php';
 }
-

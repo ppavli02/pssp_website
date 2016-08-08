@@ -1,9 +1,20 @@
+/**
+* User: ppavli02
+* Date: July - August 2016
+* Comment: This php file collects all the info from the form to construct the
+* new parameter file. The default parameter file is located in /webserver/.
+* It uses regular expression and other methods to identify whether it gets
+* unexpected input.
+*
+* Returns: $form_errors: an array with all the errors found.
+*/
+
 <?php
 session_start();
 $json_encoded = file_get_contents('php://input');
 $json_decoded = json_decode($json_encoded);
 
-//echo json_encode($form_errors);
+
 $network = $json_decoded->{'network'};
 $iterations = $json_decoded->{'iterations'};
 $no_neurons = $json_decoded->{'no_neurons'};
@@ -18,7 +29,7 @@ $delay_unit = $json_decoded->{'delay_unit'};
 $unknown_flag = $json_decoded->{'unknown_flag'};
 
 
-//Create File
+//Create the File
 $token = md5(uniqid(rand(), 1));
 $parameterFile = 'parameter_' . $token . '.txt';
 $trainingFile = 'training_' . $token . '.txt';

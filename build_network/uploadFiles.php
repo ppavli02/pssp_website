@@ -56,8 +56,7 @@ if ($flag) {
 }
 
 function testFile($file){
-
-    $filename = $_FILES[$file]["name"];
+    
     try {
         // Check $_FILES[<filename>]['error'] value.
         switch ($_FILES[$file]['error']) {

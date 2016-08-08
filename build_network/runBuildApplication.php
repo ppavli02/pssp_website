@@ -1,3 +1,15 @@
+/**
+* User: ppavli02
+* Date: July - August 2016
+* Comment: This php file is called from checkFiles.php if everything was ok.
+* It is responsible to execute the script which contains the network's code.
+* Then, it inserts the data into the database, executes the executable, send
+* an email to the user, informing him about the results and finally saves the
+* results into the /webserver/resultsFiles/ folder.
+*
+* Returns: "1" if mail is not sent. Otherwise, the code returns nothing.
+*/
+
 <?php
 ignore_user_abort(true);
 set_time_limit(0);
