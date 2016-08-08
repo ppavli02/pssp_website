@@ -2,12 +2,25 @@
 session_start();
 
 $flag = true;
-testFile("fasta_training_file");
-testFile("fasta_testing_file");
-testZipFile("msa_training_file");
-testZipFile("msa_testing_file");
 
-$token = $_SESSION["token"];
+//Test if files exist.
+$token=$_SESSION["token"];
+$fasta_training_path="/webserver/trainingFiles/".$token."/fasta_training_file_".$token.".txt";
+$fasta_testing_path="/webserver/testingFiles/".$token."/fasta_testing_file_".$token.".txt";
+$msa_training_path="/webserver/trainingFiles/".$token."/msa_training_file_".$token.".txt";;
+$msa_testing_path="/webserver/testingFiles/".$token."/msa_testing_file_".$token.".txt";;
+if (file_exists($fasta_training_path) || file_exists($fasta_testing_path) || file_exists($msa_training_path) || file_exists($msa_testing_path)){
+    echo "Files are already on server.";
+    return;
+}
+
+if($flag){
+    testFile("fasta_training_file");
+    testFile("fasta_testing_file");
+    testZipFile("msa_training_file");
+    testZipFile("msa_testing_file");
+}
+
 if ($flag){
     $tr_dir = "/webserver/trainingFiles/" . $token . "/";
     if (is_dir($tr_dir) === false) {
@@ -42,8 +55,8 @@ if ($flag) {
     echo $flag;
 }
 
-function testFile($file)
-{
+function testFile($file){
+
     $filename = $_FILES[$file]["name"];
     try {
         // Check $_FILES[<filename>]['error'] value.
@@ -133,36 +146,3 @@ function uploadFile($file, $target_dir)
         }
     }
 }
-
-//function uploadZipFile($file, $target_dir){
-//    $fileType = pathinfo($_FILES[$file]["name"], PATHINFO_EXTENSION);
-//    $token = $_SESSION["token"];
-//    $filename = $file . "_" . $token . "." . $fileType;
-//    $target_file = $target_dir . $filename;
-//
-//    if (!file_exists($target_file)) {
-//        try {
-//            if (move_uploaded_file($_FILES[$file]["tmp_name"], $target_file)) {
-//                $zip = new ZipArchive();
-//                $x = $zip->open($target_dir);
-//                if ($x === true) {
-//
-//                    $zip->extractTo($target_dir); // change this to the correct site path
-//                    $zip->close();
-//
-//                    unlink($target_dir);
-//                }
-//                $message = "Your .zip file was uploaded and unpacked.";
-//                throw new RuntimeException($message);
-//            }
-//            else{
-//                $message = "There was a problem with the upload. Please try again.";
-//                throw new RuntimeException($message);
-//            }
-//        } catch (RuntimeException $p) {
-//            global $flag;
-//            $flag = false;
-//            echo $p->getMessage();
-//        }
-//    }
-//}

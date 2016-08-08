@@ -5,6 +5,7 @@ set_time_limit(0);
 session_start();
 $token = $_SESSION["token"];
 $user_email = $_SESSION["user_email"];
+$file_message="";
 
 $parameterFile_loc = "/webserver/parameterFiles/parameter_".$token;
 echo $parameterFile_loc;
@@ -34,9 +35,10 @@ try{
 
 foreach ($output as &$line) {
     $message.= "$line<br/>";
+    $file_message .= "$line\n";
 }
 
-#Send Mail
+# Send Mail
 require_once('class.phpmailer.php');
 require_once('class.smtp.php');
 
@@ -45,10 +47,10 @@ $mail->IsSMTP();
 $mail->SMTPAuth = true;
 $mail->Host = "smtp.gmail.com";
 $mail->Port = 587;
-$mail->Username = "andreasfrangou3@gmail.com";
-$mail->Password = "katiaapanotou";
+$mail->Username = "pssp.ucy.webapp@gmail.com";
+$mail->Password = "webapp2016";
 
-$mail->SetFrom('andreasfrangou3@gmail.com', 'Web App');
+$mail->SetFrom('pssp.ucy.webapp@gmail.com', 'Web App');
 $mail->Subject = "Your PSSP Results";
 $mail->MsgHTML($message);
 $mail->AddAddress($user_email, $user_email);
@@ -59,4 +61,10 @@ if(!$mail->Send()) {
 
 $conn = null;
 
-//create results file
+# Create Results File.
+$result_path="/webserver/resultFiles/results_".$token.".txt";
+if (!($resultFile = fopen($result_path, "w")))
+    die("Could not open $result_path!");
+$txt = $file_message;
+fwrite($resultFile, $txt);
+fclose($resultFile);

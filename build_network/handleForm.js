@@ -1,10 +1,10 @@
 var carouselSize = 1;
 var locateParameterFile = 0;
+var tabNumber = 1;
 
 function createCarousel() {
 
     carouselSize++;
-    var tabNumber = 1;
 
     $('#formCarousel').on('slide.bs.carousel', function (ev) {
         var id = ev.relatedTarget.id;
@@ -76,12 +76,11 @@ function grabFiles() {
         data: formData,
         async: false,
         success: function (data) {
-            alert(data);
             if (data == "1")
                 returnValue = 1;
             else {
                 returnValue = 0;
-                alert(data);
+                sweetAlert("Error!", data, "error");
             }
         },
         contentType: false,
@@ -210,7 +209,7 @@ function handleReuseParameter() {
 
 function buildTheNetwork() {
 
-    alert(locateParameterFile);
+    alert("param value "+locateParameterFile);
 
     //If the user has successfully build the network, check the files.
 
@@ -261,7 +260,6 @@ $(document).ready(function () {
      0: use the default file
      1: retrieve a known file
      2: build your own
-     -1: error
      */
 
     // 8d0e982d4f6e8b5ca6433d1049fe1ca8
@@ -273,7 +271,6 @@ $(document).ready(function () {
     $("#wizard_div_2").hide();
 
     $(".virtual_box").hide();
-    // $("#formCarousel").hide();
 
 
     $('input[name="wizard_1"]').on('switchChange.bootstrapSwitch', function (event, state) {
@@ -287,12 +284,10 @@ $(document).ready(function () {
     $('input[name="wizard_2"]').on('switchChange.bootstrapSwitch', function (event, state) {
         if (!state) {
             $(".virtual_box").show();
-            // $("#formCarousel").show();
             locateParameterFile = 2;
         }
         else {
             $(".virtual_box").hide();
-            // $("#formCarousel").hide();
             locateParameterFile = 1;
         }
 

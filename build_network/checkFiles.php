@@ -85,11 +85,9 @@ if ($send_email_flag) {
     if (!$mail->Send()) {
         echo "1";
     }
-
-    
-
 } else {
     $message="";
+    $output="";
     include 'runBuildApplication.php';
 }
 

@@ -40,47 +40,8 @@ if (!isset($_SESSION['isLoggedIn'])) {
     <script type="text/javascript" src="handleForm.js"></script>
 
 
-
 </head>
 <body class="landing">
-
-<!-- Modal -->
-<div class="modal fade" id="chooseParameters" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <!--                    <button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                <h4 class="modal-title">What about the parameter file?</h4>
-            </div>
-            <div class="modal-body">
-                <p>At this point, it is better to define the source of parameters the network will get.</p>
-                <label for="use_parameter_file">Use the form to build the file?</label>
-                <div>
-                    <input type="checkbox" name="my-checkbox" data-on-color="primary" data-off-color="warning"
-                           checked>
-                </div>
-                <p></p>
-                <div id="not_build">
-                    <label for="parameter_token">Code</label>
-                    <div>
-                        <input id="parameter_token" name="parameter_token" placeholder="Code goes here."
-                               class="form-control input-md" required="" type="text">
-                    </div>
-                    <p></p>
-                    <p><b>Note:</b> If empty, the default file will be used.</p>
-                </div>
-            </div>
-
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
 
 <div id="page-wrapper">
     <!-- Header -->
@@ -111,8 +72,8 @@ if (!isset($_SESSION['isLoggedIn'])) {
             <!--            <form id="myform" enctype="multipart/form-data" action="aa.php" method="post">-->
             <!--            <form id="myform" enctype="multipart/form-data" method="post">-->
 
-            <form id="myform" enctype="multipart/form-data" onsubmit="buildTheNetwork()">
-                <!--            <form id="myform" enctype="multipart/form-data">-->
+            <!--            <form id="myform" enctype="multipart/form-data" onsubmit="buildTheNetwork()">-->
+            <form id="myform" enctype="multipart/form-data">
                 <!--            <form id="myform">-->
                 <div class="row uniform 50%">
                     <header class="major 12u$">
@@ -120,9 +81,69 @@ if (!isset($_SESSION['isLoggedIn'])) {
                     </header>
 
                     <div class="container">
+                        <div id="wizard_div_1">
+                            <label for="wizard_1" class="col-md-4">Use the default parameter file:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <div class="col-md-1">
+                                <input type="checkbox" name="wizard_1" data-on-color="primary"
+                                       data-off-color="warning"
+                                       checked>
+                            </div>
+                        </div>
+
+                        <div id="wizard_div_2" class="form-group row">
+                            <label for="md5_code" class="col-md-4">I have a unique code to retrieve parameter
+                                file:</label>
+                            <div class="col-md-1">
+                                <input type="checkbox" name="wizard_2" data-on-color="primary"
+                                       data-off-color="warning"
+                                       checked>
+                            </div>
+                            <div class="col-md-2 col-md-offset-1">
+                                <input id="md5_code" name="md5_code"
+                                       placeholder="45kjhdsf5i342"
+                                       class="form-control input-md" type="text">
+                            </div>
+                        </div>
+
                         <form>
                             <!-- Row 1 -->
+                            <div class="form-group row top-buffer">
+                                <!-- Training File -->
+                                <label class="col-md-2" for="fasta_training_file">Fasta Training File</label>
+                                <div class="col-md-4">
+                                    <!--                                    <input id="training_file" name="training_file" class="input-file" type="file">-->
+                                    <input type="file" name="fasta_training_file" class="input-file"
+                                           id="fasta_training_file">
+                                </div>
+
+                                <!-- Testing File -->
+                                <label class="col-md-2" for="fasta_testing_file">Fasta Testing File</label>
+                                <div class="col-md-4">
+                                    <input id="fasta_testing_file" name="fasta_testing_file" class="input-file"
+                                           type="file">
+                                </div>
+                            </div>
+
+                            <!-- Row 2 -->
                             <div class="form-group row">
+                                <!-- Training File -->
+                                <label class="col-md-2" for="msa_training_file">MSA Training File</label>
+                                <div class="col-md-4">
+                                    <!--                                    <input id="training_file" name="training_file" class="input-file" type="file">-->
+                                    <input type="file" name="msa_training_file" class="input-file"
+                                           id="msa_training_file">
+                                </div>
+
+
+                                <!-- Testing File -->
+                                <label class="col-md-2" for="msa_testing_file">MSA Testing File</label>
+                                <div class="col-md-4">
+                                    <input id="msa_testing_file" name="msa_testing_file" class="input-file" type="file">
+                                </div>
+                            </div>
+
+                            <!-- Row 3 -->
+                            <div class="virtual_box form-group row top-buffer">
                                 <label class="col-md-2" for="network">Model</label>
                                 <div class="col-md-2">
                                     <select id="network" name="network" class="form-control">
@@ -145,41 +166,6 @@ if (!isset($_SESSION['isLoggedIn'])) {
 
                             </div>
 
-                            <!-- Row 2 -->
-                            <div class="form-group row top-buffer">
-                                <!-- Training File -->
-                                <label class="col-md-2" for="fasta_training_file">Fasta Training File</label>
-                                <div class="col-md-4">
-                                    <!--                                    <input id="training_file" name="training_file" class="input-file" type="file">-->
-                                    <input type="file" name="fasta_training_file" class="input-file"
-                                           id="fasta_training_file">
-                                </div>
-
-                                <!-- Testing File -->
-                                <label class="col-md-2" for="fasta_testing_file">Fasta Testing File</label>
-                                <div class="col-md-4">
-                                    <input id="fasta_testing_file" name="fasta_testing_file" class="input-file"
-                                           type="file">
-                                </div>
-                            </div>
-
-                            <!-- Row 3 -->
-                            <div class="form-group row">
-                                <!-- Training File -->
-                                <label class="col-md-2" for="msa_training_file">MSA Training File</label>
-                                <div class="col-md-4">
-                                    <!--                                    <input id="training_file" name="training_file" class="input-file" type="file">-->
-                                    <input type="file" name="msa_training_file" class="input-file"
-                                           id="msa_training_file">
-                                </div>
-
-
-                                <!-- Testing File -->
-                                <label class="col-md-2" for="msa_testing_file">MSA Testing File</label>
-                                <div class="col-md-4">
-                                    <input id="msa_testing_file" name="msa_testing_file" class="input-file" type="file">
-                                </div>
-                            </div>
 
                             <div class="form-group row">
                                 <img class="col-md-12" src="../_/img/line.png" alt="line">
@@ -187,7 +173,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 
                         </form>
 
-                        <div id="formCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <div id="formCarousel" class="virtual_box carousel slide" data-ride="carousel" data-interval="false">
                             <!-- Indicators -->
                             <ol class="carousel-indicators" id="carouselIndicators">
                                 <li data-target="#formCarousel" data-slide-to="0" class="active"></li>
@@ -321,11 +307,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 
                             </div>
 
-                            <div>
-                                <div></div>
-                                <input class="btn btn-primary" type="submit" value="Submit">
-                                <!--                                <input class="btn btn-primary" value="Submit" onclick="grabInfo()">-->
-                            </div>
+
 
                             <!-- Left and right controls -->
                             <a class="left carousel-control" href="#formCarousel" role="button" data-slide="prev">
@@ -338,12 +320,17 @@ if (!isset($_SESSION['isLoggedIn'])) {
                             </a>
                         </div>
 
+                        <div>
+                            <div></div>
+                            <!--                                <input class="btn btn-primary" type="submit" value="Submit">-->
+                            <input class="btn btn-primary" value="Submit" onclick="buildTheNetwork()">
+                        </div>
+
 
                     </div>
                 </div>
 
             </form>
-
 
 
         </div>
