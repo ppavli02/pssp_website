@@ -37,15 +37,6 @@ $(document).ready(function () {
                 else{
                     location.reload();
                 }
-                // else{
-                //     alert("f");
-                //     var url = window.location.href;
-                //     alert(url);
-                //     var res = url.split("/");
-                //     var newURL = res[0]+"/"+res[1]+"/"+res[2]+"/"+res[3]+"/"+res[4]+"/";
-                //     alert(newURL);
-                //     window.location = newURL;
-                // }
             },
             cache: false,
             contentType: false,

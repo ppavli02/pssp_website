@@ -345,7 +345,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 <script src="../js/core_js/util.js"></script>
 <!--[if lte IE 8]>
 <script src="../js/ie/respond.min.js"></script><![endif]-->
-<script src="../js/core_js/main.js"></script>
+<!--<script src="../js/core_js/main.js"></script>-->
 
 
 </body>
