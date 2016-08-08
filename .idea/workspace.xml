@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b3850c5-0594-46b3-80d5-85d9fed5e516" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_network/checkFiles.php" afterPath="$PROJECT_DIR$/build_network/checkFiles.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_network/createParameterFile.php" afterPath="$PROJECT_DIR$/build_network/createParameterFile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_network/defaultSession.php" afterPath="$PROJECT_DIR$/build_network/defaultSession.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_network/handleForm.js" afterPath="$PROJECT_DIR$/build_network/handleForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_network/runBuildApplication.php" afterPath="$PROJECT_DIR$/build_network/runBuildApplication.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_network/updateSession.php" afterPath="$PROJECT_DIR$/build_network/updateSession.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_network/uploadFiles.php" afterPath="$PROJECT_DIR$/build_network/uploadFiles.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/member_functionality/send_mail.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/logout.php" afterPath="$PROJECT_DIR$/member_functionality/logout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/php_login.php" afterPath="$PROJECT_DIR$/member_functionality/php_login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/php_signup.php" afterPath="$PROJECT_DIR$/member_functionality/php_signup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/member_functionality/verify.php" afterPath="$PROJECT_DIR$/member_functionality/verify.php" />
     </list>
     <ignored path="pssp_website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,21 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="buildNetwork.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="buildNetwork.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build_network/buildNetwork.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3504">
-              <caret line="328" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="handleForm.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build_network/handleForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4065">
-              <caret line="271" column="16" selection-start-line="271" selection-start-column="16" selection-end-line="271" selection-end-column="16" />
+            <state relative-caret-position="144">
+              <caret line="104" column="19" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -74,11 +62,8 @@
       <list>
         <option value="$PROJECT_DIR$/aa.php" />
         <option value="$PROJECT_DIR$/session.php" />
-        <option value="$PROJECT_DIR$/member_functionality/php_signup.php" />
         <option value="$PROJECT_DIR$/member_functionality/handleRegistration.js" />
-        <option value="$PROJECT_DIR$/member_functionality/verify.php" />
         <option value="$PROJECT_DIR$/tests/logout.php" />
-        <option value="$PROJECT_DIR$/member_functionality/logout.php" />
         <option value="$PROJECT_DIR$/member_functionality/login_success.php" />
         <option value="$PROJECT_DIR$/member_functionality/handleLogIn.js" />
         <option value="$PROJECT_DIR$/index.php" />
@@ -103,7 +88,6 @@
         <option value="$PROJECT_DIR$/_/libs/bootstrap_switch/bootstrap-switch.css" />
         <option value="$PROJECT_DIR$/build_network/uploadZipFiles.php" />
         <option value="$PROJECT_DIR$/js/runAlgorithm.js" />
-        <option value="$PROJECT_DIR$/member_functionality/php_login.php" />
         <option value="$PROJECT_DIR$/md5_functionality/runTheApplication.php" />
         <option value="$PROJECT_DIR$/build_network/runApplication.php" />
         <option value="$PROJECT_DIR$/build_network/aa.php" />
@@ -123,6 +107,10 @@
         <option value="$PROJECT_DIR$/build_network/updateSession.php" />
         <option value="$PROJECT_DIR$/build_network/uploadFiles.php" />
         <option value="$PROJECT_DIR$/build_network/handleForm.js" />
+        <option value="$PROJECT_DIR$/member_functionality/logout.php" />
+        <option value="$PROJECT_DIR$/member_functionality/php_login.php" />
+        <option value="$PROJECT_DIR$/member_functionality/php_signup.php" />
+        <option value="$PROJECT_DIR$/member_functionality/verify.php" />
       </list>
     </option>
   </component>
@@ -196,7 +184,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="member_functionality" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -683,16 +671,16 @@
       <workItem from="1469804168721" duration="3128000" />
       <workItem from="1470070189378" duration="25934000" />
       <workItem from="1470317695353" duration="2588000" />
-      <workItem from="1470500121071" duration="27686000" />
+      <workItem from="1470500121071" duration="28356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156710000" />
+    <option name="totallyTimeSpent" value="157380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="173" y="23" width="1232" height="848" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -705,7 +693,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21260504" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21260504" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32717678" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -742,20 +730,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/member_functionality/php_signup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-435">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_PLUGINS_DIR$/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/SPL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parameters.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -816,13 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/member_functionality/send_mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trained_algorithm/test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -838,13 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/member_functionality/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_functionality/logIn_SignUp.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-839">
@@ -856,13 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/member_functionality/php_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -883,17 +836,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build_network/aa.php" />
-    <entry file="file://$PROJECT_DIR$/member_functionality/verify.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="32" selection-end-column="1" />
-          <folding>
-            <marker date="1468500717000" expanded="true" signature="128:178" ph="SELECT * FRO... USER" />
-            <marker date="1468500717000" expanded="true" signature="590:657" ph="UPDATE `USER... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mailing_functionality/send_mail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -1045,14 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build_network/buildNetwork.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3504">
-          <caret line="328" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build_network/s.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1089,16 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build_network/checkFiles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#356#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build_network/uploadFiles.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1130,8 +1054,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build_network/handleForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4065">
-          <caret line="271" column="16" selection-start-line="271" selection-start-column="16" selection-end-line="271" selection-end-column="16" />
+        <state relative-caret-position="180">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/php_signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="7" selection-end-column="3" />
+          <folding>
+            <element signature="e#6#236#0#PHP" expanded="true" />
+            <marker date="1470667106000" expanded="true" signature="1760:2001" ph="INSERT INTO `USER`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/php_login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding>
+            <element signature="e#6#270#0#PHP" expanded="true" />
+            <marker date="1470666895000" expanded="true" signature="673:746" ph="SELECT * FRO... USER" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/send_mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build_network/checkFiles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="e#6#356#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/member_functionality/verify.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="77" selection-start-line="5" selection-start-column="77" selection-end-line="5" selection-end-column="77" />
+          <folding>
+            <marker date="1470667397000" expanded="true" signature="334:384" ph="SELECT * FRO... USER" />
+            <marker date="1470667397000" expanded="true" signature="810:877" ph="UPDATE `USER... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build_network/buildNetwork.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="104" column="19" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
           <folding />
         </state>
       </provider>

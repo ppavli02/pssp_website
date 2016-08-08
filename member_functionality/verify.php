@@ -1,4 +1,10 @@
 <?php
+/**
+ * User: ppavli02
+ * Date: July - August 2016
+ * Comment: This php file verifies the user who recently signed up to our
+ * application. Then, informs the user by email that is now a confirmed user.
+ */
 
 $token = $_GET['q'];
 
@@ -22,6 +28,7 @@ try {
 
     if ($user_accountType == 'ADV') {
         echo "This member has already been verified.";
+        exit;
     } else {
         $stmt = $conn->prepare("UPDATE `USER` SET `accountType`='ADV' WHERE `verification`='$token'");
         $stmt->execute();
@@ -30,6 +37,7 @@ try {
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
+    exit;
 }
 
 $conn = null;
@@ -61,8 +69,6 @@ $mail->Subject = "You have been approved!";
 $mail->MsgHTML($message);
 $mail->AddAddress($user_email, $user_firstname);
 
-if ($mail->Send()) {
-//    echo "Message sent!";
-} else {
+if (!$mail->Send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }

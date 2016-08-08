@@ -1,10 +1,12 @@
 <?php
-/*
-   We receive the information from the login form and
-   if we can match a member from the database with the
-   email and the password, we then start a session with
-   these information, else we flash.
-*/
+/**
+ * User: ppavli02
+ * Date: July - August 2016
+ * Comment: We receive the information from the login form and
+ * if we can match a member from the database with the
+ * email and the password, we then start a session with
+ * these information, else we flash.
+ */
 
 session_start();
 

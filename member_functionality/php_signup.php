@@ -1,4 +1,11 @@
 <?php
+/**
+ * User: ppavli02
+ * Date: July - August 2016
+ * Comment: Handles the sign up form. Creates an entry in the database.
+ * Afterwards, it sends email to the admin asking for user verification.
+ * Returns: An array of errors.
+ */
 
 //PLEASE DO NOT DELETE ANY COMMENTS.
 
@@ -62,9 +69,7 @@ try {
     $sql = "INSERT INTO `USER` (`verification`, `firstname`, `lastname`, `email`, `password`, `timesVisited`, `accountType`)
         VALUES ('$verification', '$firstname', '$lastname', '$user_username', '$user_password', '$timesVisited', '$accountType')";
     $conn->exec($sql);
-//    echo "New record created successfully";
 } catch (PDOException $e) {
-    //    echo $sql . "<br>" . $e->getMessage();
     array_push($form_errors,"5");
 }
 
@@ -75,7 +80,7 @@ $conn = null;
 require_once('class.phpmailer.php');
 require_once('class.smtp.php');
 
-#Set email settingsarray_push($form_errors,"2");
+#Set email settings
 $mail = new PHPMailer();
 $mail->IsSMTP();
 $mail->SMTPAuth = true;
@@ -85,7 +90,6 @@ $mail->Username = "andreasfrangou3@gmail.com";
 $mail->Password = "katiaapanotou";
 
 #Fill in email gaps
-
 $message = "Please review this request for membership.<br />";
 $message .= "<br />";
 $message .= "----------------------------------------";
@@ -111,11 +115,8 @@ $mail->Subject = "A new member needs approval!";
 $mail->MsgHTML($message);
 $mail->AddAddress("panayiotis.pavlides@gmail.com", "Panayiotis Pavlides");
 
-if ($mail->Send()) {
-//    echo "Message sent!";
-} else {
-    //    echo "Mailer Error: " . $mail->ErrorInfo;
-    array_push($form_errors,"6");
+if (!$mail->Send()) {
+    array_push($form_errors, "6");
 }
 
 if (!empty($form_errors)){
