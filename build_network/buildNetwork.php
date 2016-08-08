@@ -69,12 +69,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
     <!--     Banner -->
     <section id="banner">
         <div class="content">
-            <!--            <form id="myform" enctype="multipart/form-data" action="aa.php" method="post">-->
-            <!--            <form id="myform" enctype="multipart/form-data" method="post">-->
-
-            <!--            <form id="myform" enctype="multipart/form-data" onsubmit="buildTheNetwork()">-->
             <form id="myform" enctype="multipart/form-data">
-                <!--            <form id="myform">-->
                 <div class="row uniform 50%">
                     <header class="major 12u$">
                         <h2>Build Your Own Network</h2>
@@ -119,7 +114,8 @@ if (!isset($_SESSION['isLoggedIn'])) {
                                 <!-- Testing File -->
                                 <label class="col-md-2" for="fasta_testing_file">Fasta Testing File</label>
                                 <div class="col-md-4">
-                                    <input id="fasta_testing_file" required="" name="fasta_testing_file" class="input-file"
+                                    <input id="fasta_testing_file" required="" name="fasta_testing_file"
+                                           class="input-file"
                                            type="file">
                                 </div>
                             </div>
@@ -138,7 +134,8 @@ if (!isset($_SESSION['isLoggedIn'])) {
                                 <!-- Testing File -->
                                 <label class="col-md-2" for="msa_testing_file">MSA Testing File</label>
                                 <div class="col-md-4">
-                                    <input id="msa_testing_file" required="" name="msa_testing_file" class="input-file" type="file">
+                                    <input id="msa_testing_file" required="" name="msa_testing_file" class="input-file"
+                                           type="file">
                                 </div>
                             </div>
 
@@ -173,7 +170,8 @@ if (!isset($_SESSION['isLoggedIn'])) {
 
                         </form>
 
-                        <div id="formCarousel" class="virtual_box carousel slide" data-ride="carousel" data-interval="false">
+                        <div id="formCarousel" class="virtual_box carousel slide" data-ride="carousel"
+                             data-interval="false">
                             <!-- Indicators -->
                             <ol class="carousel-indicators" id="carouselIndicators">
                                 <li data-target="#formCarousel" data-slide-to="0" class="active"></li>
@@ -308,7 +306,6 @@ if (!isset($_SESSION['isLoggedIn'])) {
                             </div>
 
 
-
                             <!-- Left and right controls -->
                             <a class="left carousel-control" href="#formCarousel" role="button" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -322,7 +319,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 
                         <div>
                             <div></div>
-<!--                            <input class="btn btn-primary" type="submit" value="Submit" onclick="buildTheNetwork()">-->
+                            <!--                            <input class="btn btn-primary" type="submit" value="Submit" onclick="buildTheNetwork()">-->
                             <input class="btn btn-primary" value="Submit" onclick="buildTheNetwork()">
                         </div>
 

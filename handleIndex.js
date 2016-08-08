@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var lgn = document.getElementById("login_btn");
     var createOwn = document.getElementById("create_network");
-    if (!flag){
+    if (!flag) {
         // LogIn
         var h = document.createElement("a");
         h.setAttribute("href", "./member_functionality/login.php");
@@ -11,7 +11,7 @@ $(document).ready(function () {
         lgn.appendChild(h);
         createOwn.removeChild(createOwn.childNodes[0]);
     }
-    else{
+    else {
         // LogOut
         var h = document.createElement("a");
         h.setAttribute("class", "button special");
@@ -19,7 +19,7 @@ $(document).ready(function () {
         var text = document.createTextNode("Log Out");
         h.appendChild(text);
         lgn.appendChild(h);
-        
+
         // Build
         var k = document.createElement("a");
         k.setAttribute("href", "./build_network/buildNetwork.php");
