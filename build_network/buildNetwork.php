@@ -112,14 +112,14 @@ if (!isset($_SESSION['isLoggedIn'])) {
                                 <label class="col-md-2" for="fasta_training_file">Fasta Training File</label>
                                 <div class="col-md-4">
                                     <!--                                    <input id="training_file" name="training_file" class="input-file" type="file">-->
-                                    <input type="file" name="fasta_training_file" class="input-file"
+                                    <input type="file" required="" name="fasta_training_file" class="input-file"
                                            id="fasta_training_file">
                                 </div>
 
                                 <!-- Testing File -->
                                 <label class="col-md-2" for="fasta_testing_file">Fasta Testing File</label>
                                 <div class="col-md-4">
-                                    <input id="fasta_testing_file" name="fasta_testing_file" class="input-file"
+                                    <input id="fasta_testing_file" required="" name="fasta_testing_file" class="input-file"
                                            type="file">
                                 </div>
                             </div>
@@ -130,7 +130,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
                                 <label class="col-md-2" for="msa_training_file">MSA Training File</label>
                                 <div class="col-md-4">
                                     <!--                                    <input id="training_file" name="training_file" class="input-file" type="file">-->
-                                    <input type="file" name="msa_training_file" class="input-file"
+                                    <input type="file" required="" name="msa_training_file" class="input-file"
                                            id="msa_training_file">
                                 </div>
 
@@ -138,7 +138,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
                                 <!-- Testing File -->
                                 <label class="col-md-2" for="msa_testing_file">MSA Testing File</label>
                                 <div class="col-md-4">
-                                    <input id="msa_testing_file" name="msa_testing_file" class="input-file" type="file">
+                                    <input id="msa_testing_file" required="" name="msa_testing_file" class="input-file" type="file">
                                 </div>
                             </div>
 
@@ -322,7 +322,7 @@ if (!isset($_SESSION['isLoggedIn'])) {
 
                         <div>
                             <div></div>
-                            <!--                                <input class="btn btn-primary" type="submit" value="Submit">-->
+<!--                            <input class="btn btn-primary" type="submit" value="Submit" onclick="buildTheNetwork()">-->
                             <input class="btn btn-primary" value="Submit" onclick="buildTheNetwork()">
                         </div>
 

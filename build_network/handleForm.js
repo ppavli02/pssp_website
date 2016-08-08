@@ -48,17 +48,34 @@ function addTabs(tabID, carouselSize) {
 $.fn.serializeObject = function () {
     var o = {};
     var a = this.serializeArray();
+    var error=false;
+
     $.each(a, function () {
-        if (o[this.name] !== undefined) {
-            if (!o[this.name].push) {
-                o[this.name] = [o[this.name]];
+        if (this.name != 'md5_code'){
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                if (this.value=='' || this.value=="" || this.value==undefined){
+                    sweetAlert("Error:", "Please fill in all gaps.", "error");
+                    error = true;
+                }else{
+                    o[this.name].push(this.value);
+                }
+            } else {
+                if (this.value=='' || this.value=="" || this.value==undefined){
+                    sweetAlert("Error:", "Please fill in all gaps.", "error");
+                    error = true;
+                }else{
+                    o[this.name] = this.value;
+                }
             }
-            o[this.name].push(this.value || '');
-        } else {
-            o[this.name] = this.value || '';
         }
     });
-    return o;
+    if (error)
+        return ""
+    else
+        return o;
 };
 
 
@@ -92,57 +109,60 @@ function grabFiles() {
 function grabInfo() {
     var returnValue = 0;
     var temporary_array = $('form').serializeObject();
-    var info = JSON.stringify(temporary_array);
-    console.log(info);
-    $.ajax({
-        url: "createParameterFile.php",
-        type: "POST",
-        data: info,
-        async: false,
-        //If the returned data is an array of errors, parse it and handle errors.
-        //Otherwise, take the token to handle the files.
-        success: function (data) {
-            var token;
-            try {
-                var pushedErrors = JSON.parse(data);
-                // console.log(pushedErrors);
-                var errors = "";
-                $.each(pushedErrors, function (i, errorNumber) {
-                    if (errorNumber == 1) {
-                        errors += "Neuron field should only hold integer numbers.\n";
-                    }
-                    if (errorNumber == 2) {
-                        errors += "Previous Layer: Please follow the example shown in the placeholder.\n";
-                    }
-                    if (errorNumber == 3) {
-                        errors += "Next Layer: Please follow the example shown in the placeholder.\n";
-                    }
-                    if (errorNumber == 4) {
-                        errors += "Learning Rate: Please follow the example shown in the placeholder. You can also pass an integer value.\n";
-                    }
-                    if (errorNumber == 5) {
-                        errors += "Momentum: Please follow the example shown in the placeholder. You can also pass an integer value.\n";
-                    }
-                    if (errorNumber == 6) {
-                        errors += "Delay Unit: Please follow the example shown in the placeholder.\n";
-                    }
-                    if (errorNumber == 7) {
-                        errors += "Iterations: Please follow the example shown in the placeholder.\n";
-                    }
-                });
-                alert(errors);
-                returnValue = 0;
-            }
-            catch (err) {
-                token = data;
-                alert(token);
-                returnValue = 1;
-            }
-        },
-        cache: false,
-        contentType: false,
-        processData: false
-    });
+    if (temporary_array!=""){
+        var info = JSON.stringify(temporary_array);
+        console.log(info);
+        $.ajax({
+            url: "createParameterFile.php",
+            type: "POST",
+            data: info,
+            async: false,
+            //If the returned data is an array of errors, parse it and handle errors.
+            //Otherwise, take the token to handle the files.
+            success: function (data) {
+                var token;
+                try {
+                    var pushedErrors = JSON.parse(data);
+                    // console.log(pushedErrors);
+                    var errors = "";
+                    $.each(pushedErrors, function (i, errorNumber) {
+                        if (errorNumber == 1) {
+                            errors += "Neuron field should only hold integer numbers.\n";
+                        }
+                        if (errorNumber == 2) {
+                            errors += "Previous Layer: Please follow the example shown in the placeholder.\n";
+                        }
+                        if (errorNumber == 3) {
+                            errors += "Next Layer: Please follow the example shown in the placeholder.\n";
+                        }
+                        if (errorNumber == 4) {
+                            errors += "Learning Rate: Please follow the example shown in the placeholder. You can also pass an integer value.\n";
+                        }
+                        if (errorNumber == 5) {
+                            errors += "Momentum: Please follow the example shown in the placeholder. You can also pass an integer value.\n";
+                        }
+                        if (errorNumber == 6) {
+                            errors += "Delay Unit: Please follow the example shown in the placeholder.\n";
+                        }
+                        if (errorNumber == 7) {
+                            errors += "Iterations: Please follow the example shown in the placeholder.\n";
+                        }
+                    });
+                    sweetAlert("Error:", errors, "error");
+                    returnValue = 0;
+                }
+                catch (err) {
+                    token = data;
+                    alert(token);
+                    returnValue = 1;
+                }
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    }
+
     return returnValue;
 }
 
@@ -207,6 +227,7 @@ function handleReuseParameter() {
 }
 
 
+
 function buildTheNetwork() {
 
     alert("param value "+locateParameterFile);
@@ -217,7 +238,6 @@ function buildTheNetwork() {
         case 0:
 
             // handleDefaultParameter();
-
             if (handleDefaultParameter()) {
                 alert("passed handleDefaultParameter");
                 if (grabFiles()) {

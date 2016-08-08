@@ -11,7 +11,7 @@ $msa_training_path="/webserver/trainingFiles/".$token."/msa_training_file_".$tok
 $msa_testing_path="/webserver/testingFiles/".$token."/msa_testing_file_".$token.".txt";;
 if (file_exists($fasta_training_path) || file_exists($fasta_testing_path) || file_exists($msa_training_path) || file_exists($msa_testing_path)){
     echo "Files are already on server.";
-    return;
+    exit;
 }
 
 if($flag){
@@ -64,24 +64,25 @@ function testFile($file){
             case UPLOAD_ERR_OK:
                 break;
             case UPLOAD_ERR_NO_FILE:
-                throw new RuntimeException('Error with ' . $file . ': No file sent.' . "\n");
+                throw new RuntimeException(' No file/s sent.' . "\n");
             case UPLOAD_ERR_INI_SIZE:
             case UPLOAD_ERR_FORM_SIZE:
-                throw new RuntimeException('Error with ' . $file . ': Exceeded file size limit.' . "\n");
+                throw new RuntimeException('Some of the files exceeded file size limit.' . "\n");
             default:
-                throw new RuntimeException('Error with ' . $file . ': Unknown errors.' . "\n");
+                throw new RuntimeException('Unknown errors.' . "\n");
         }
         //Check filesize
         if ($_FILES[$file]['size'] > 1000000) {
-            throw new RuntimeException('Error with ' . $filename . ': Exceeded filesize limit.' . "\n");
+            throw new RuntimeException('One or more files exists the file size limit.' . "\n");
         }
         if ($_FILES[$file]['type'] != "text/plain") {
-            throw new RuntimeException('Error with ' . $filename . ': Please provide a text file.' . "\n");
+            throw new RuntimeException(' Please provide file/s.' . "\n");
         }
     } catch (RuntimeException $e) {
         global $flag;
         $flag = false;
         echo $e->getMessage();
+        exit;
     }
 }
 
@@ -123,6 +124,7 @@ function testZipFile($file)
         global $flag;
         $flag = false;
         echo $e->getMessage();
+        exit;
     }
 }
 
@@ -143,6 +145,7 @@ function uploadFile($file, $target_dir)
             global $flag;
             $flag = false;
             echo $p->getMessage();
+            exit;
         }
     }
 }
