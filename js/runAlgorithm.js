@@ -1,19 +1,42 @@
+var user_email="";
+
+/**
+ * Calls the php file to get user's email.
+ *
+ * @return void.
+ */
+function getEmail() {
+    $.ajax({
+        url: "getEmail.php",
+        type: "POST",
+        async: true,
+        success: function (data) {
+            alert(data);
+            user_email=data;
+        }
+    });
+}
+
 function runAlgorithm(){
-    // alert("in the");
-    if ($('#email').val() == ""){
-        // alert("dfsfdf");
-        anonymousResponse();
+    if (flag){
+        getEmail();
+    } else{
+
     }
-    else{
-        emailResponse();
-    }
+    // if ($('#email').val() == ""){
+    //     // alert("dfsfdf");
+    //     anonymousResponse();
+    // }
+    // else{
+    //     emailResponse();
+    // }
 
 }
 
 function anonymousResponse(){
     var pendingResults=0;
     $.ajax({
-        url: "anonymous_system/pending_results.php",
+        url: "md5_functionality/pending_results.php",
         type: "GET",
         async: false,
         success: function (data) {
@@ -24,7 +47,7 @@ function anonymousResponse(){
         processData: false
     });
 
-    if (pendingResults > 3){
+    if (pendingResults > 10){
         alert("Unfortunately our server is currently occupied with other processes. Please again later.");
         return;
         }
@@ -34,13 +57,13 @@ function anonymousResponse(){
 
     //Generate MD5 code and create a record in the db.
     $.ajax({
-        url: "anonymous_system/generateMD5.php",
+        url: "md5_functionality/generateMD5.php",
         type: "GET",
         async: true,
         success: function (data) {
             alert("Please save this code:"+data);
             $.ajax({
-                url: "anonymous_system/runTheApplication.php",
+                url: "md5_functionality/runTheApplication.php",
                 type: "GET",
                 data: "q="+data,
                 async: true,
@@ -66,7 +89,7 @@ function emailResponse(){
     var pendingResults=0;
     //Get the number of pending results
     $.ajax({
-        url: "anonymous_system/pending_results.php",
+        url: "md5_functionality/pending_results.php",
         type: "GET",
         async: false,
         success: function (data) {
@@ -77,8 +100,8 @@ function emailResponse(){
         processData: false
     });
 
-    //if the number overpasses the number 3, then ignore the request.
-    if (pendingResults > 3){
+    //if the number overpasses the number 10, then ignore the request.
+    if (pendingResults > 10){
         alert("Unfortunately our server is currently occupied with other processes. Please again later.");
         return;
     }
@@ -124,19 +147,19 @@ function retrieveResults(){
     var md5 = $('#getResults').val();
 
     $.ajax({
-        url: "anonymous_system/check_results.php",
+        url: "md5_functionality/check_results.php",
         type: "GET",
         data: "q="+md5,
         async: false,
         success: function (data) {
             // alert(data);
             $.ajax({
-                url: "anonymous_system/download.php",
+                url: "md5_functionality/download.php",
                 type: "POST",
                 data: "q="+md5,
                 async: false,
                 success: function (data) {
-                    window.location.assign('anonymous_system/download.php?q='+md5);
+                    window.location.assign('md5_functionality/download.php?q='+md5);
                 },
                 cache: false,
                 contentType: false,

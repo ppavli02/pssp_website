@@ -38,7 +38,7 @@ include "setSelectionLists.php";
     <!-- My code -->
     <script src="js/runAlgorithm.js"></script>
     <script src="handleIndex.js"></script>
-
+    <script src="handleModals_main.js"></script>
 
 </head>
 <body class="landing">
@@ -46,11 +46,9 @@ include "setSelectionLists.php";
 <div id="page-wrapper">
     <!-- Header -->
     <header id="header">
-        <!--        <h1 id="logo"><a href="index.php">Landed</a></h1>-->
         <nav id="nav">
             <ul>
-                <!--                <li><a href="index.php">Home</a></li>-->
-                <!--                <li><a href="#"></a></li>-->
+
                 <li><?php
                     if (isset($_SESSION['isLoggedIn'])) {
                         echo $_SESSION['user_email'];
@@ -58,7 +56,6 @@ include "setSelectionLists.php";
                     ?></li>
                 <li><a href="#four">Help</a></li>
                 <li id="create_network"></li>
-<!--                <li id="login_btn"><a href="./member_functionality/login.php" class="button special">Log In</a></li>-->
                 <li id="login_btn"></li>
             </ul>
         </nav>
@@ -72,20 +69,7 @@ include "setSelectionLists.php";
                     <header class="major 12u$">
                         <h2>Run a trained Neural Network</h2>
                     </header>
-                    <div class="container center_label">
-                        <label for="protein">Enter the amino acids of proteins:</label>
-                    </div>
-                    <div class="container center_input">
-                        <div id="div_protein" class="form-group ">
-                            <label class="control-label" style="display: none" id="protein_required" for="protein">Required</label>
-                            <input type="text" class="form-control" aria-describedby="protein_ErrorStatus"
-                                   name="protein" id="protein" value="" placeholder="protein"/>
-                            <span class="glyphicon glyphicon-remove form-control-feedback" style="display: none"
-                                  id="protein_xMark" aria-hidden="true"></span>
-                            <span id="protein_ErrorStatus" style="display: none" class="sr-only">(error)</span>
 
-                        </div>
-                    </div>
                     <div class="container center_label">
                         <label for="Network">Choose Network:</label>
                     </div>
@@ -112,8 +96,7 @@ include "setSelectionLists.php";
                     </div>
                     <div class="12u$">
                         <ul class="actions">
-                            <li><input type="reset" id="reset1" value="Reset"/></li>
-                            <li><a href="#banner" id="results" class="button ">Get Results</a></li>
+                            <li><a id="defineContact" class="button ">Run</a></li>
                         </ul>
                     </div>
 
@@ -130,10 +113,10 @@ include "setSelectionLists.php";
                 <form>
                     <div class="row uniform 50%">
                         <header class="major 12u$">
-                            <h2>Retrive Results from Network</h2>
+                            <h2>Retrieve Results from Network</h2>
                         </header>
                         <div class="container center_label">
-                            <label for="protein">Place your code to get your results:</label>
+                            <label for="div_placeCode">Place your code to get your results:</label>
                         </div>
                         <div class="container center_input">
                             <div id="div_placeCode" class="form-group">
@@ -149,7 +132,7 @@ include "setSelectionLists.php";
                         <div class="12u$">
                             <ul class="actions">
                                 <li><input type="reset" id="reset2" value="Reset"/></li>
-                                <li><a href="#two" id="submit" class="button">Submit</a></li>
+                                <li><a href="#two" id="submit" class="button">Get Results</a></li>
                             </ul>
                         </div>
                     </div>
@@ -164,10 +147,10 @@ include "setSelectionLists.php";
         <div class="container">
             <header class="major">
                 <h2>What this project is all about</h2>
-                <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
+                <p>Powered by UCY.</p>
             </header>
             <div class="box alt">
-                <p>Proteins are ...</p>
+                <p>Coming soon.</p>
                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modal_contact_us">
                     Contact Us
                 </button>
@@ -185,10 +168,10 @@ include "setSelectionLists.php";
         <div class="modal-content" id="modalA_content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">How can we deliver you the results?</h4>
             </div>
             <div class="modal-body" id="modalA_body">
-                <p>To get the results we can eather send them to your email or you can take a code and...</p>
+                <p>You can choose to give either your email or take a unique code to retrieve the results later on.</p>
                 <div class="row">
                     <label for="email" id="emailLabel">Email:</label>
                     <input class="form-control" type="email" name="email" id="email" value="" placeholder="Email"
@@ -201,10 +184,6 @@ include "setSelectionLists.php";
                     <input type="checkbox" id="code" name="code">
                     <label for="code">Generate Code</label>
                 </div>
-                <!--                        <div class="row" id="div_GenerateCode">-->
-                <!--<!--                            <label for="generatedCode" id="emailLabel" >Generated Code:</label>-->
-                <!--                            <input class="form-control" type="text"  name="generatedCode" id="generatedCode" value="" readonly />-->
-                <!--                        </div>-->
                 <label class="control-label" style="display: none;width:100%" id="choose">* You must choose email or
                     generate code</label>
 
@@ -254,58 +233,6 @@ include "setSelectionLists.php";
     </div>
 </div>
 <!-- Scripts -->
-<script>
-    $(document).ready(function () {
-
-
-        $("#submit").click(function () {
-            if ($("#getResults").val() != "") {
-                retrieveResults();
-
-
-                $("#div_placeCode").removeClass('has-error has-feedback');
-                $("#placeCode_required").css("display", "none");
-                $("#placeCode_ErrorStatus").css("display", "none");
-                $("#placeCode_xMark").css("display", "none");
-//						alert($("#getResults").val());
-            } else {
-                $("#div_placeCode").addClass('has-error has-feedback');
-                $("#placeCode_required").css("display", "block");
-                $("#placeCode_ErrorStatus").css("display", "block");
-                $("#placeCode_xMark").css("display", "block");
-            }
-        });
-        $("#results").click(function () {
-            if ($("#protein").val() != "") {
-                $("#modal_email_generateCode").modal();
-                $("#div_protein").removeClass('has-error has-feedback');
-                $("#protein_required").css("display", "none");
-                $("#protein_xMark").css("display", "none");
-                $("#protein_ErrorStatus").css("display", "none");
-            } else {
-                $("#div_protein").addClass('has-error has-feedback');
-                $("#protein_required").css("display", "block");
-                $("#protein_xMark").css("display", "block");
-                $("#protein_ErrorStatus").css("display", "block");
-            }
-        });
-        $("#modelSubmit").click(function () {
-            if (!$("#email").val() && !$("#code").is(":checked")) {
-                $("#modalA_body").parents('div').addClass('has-error has-feedback');
-                $("#choose").css("display", "block");
-            } else {
-                // alert("something");
-                runAlgorithm();
-                $("#modalA_body").parents('div').removeClass('has-error has-feedback');
-                $("#choose").css("display", "none");
-                $("#modal_email_generateCode").modal('hide');
-//                        if ($("#code").is(":checked")){
-//                            alert ("Your code is: ")
-//                        }
-            }
-        });
-    });
-</script>
 <script src="js/core_js/jquery.scrolly.min.js"></script>
 <script src="js/core_js/jquery.dropotron.min.js"></script>
 <script src="js/core_js/jquery.scrollex.min.js"></script>
@@ -314,6 +241,7 @@ include "setSelectionLists.php";
 <!--[if lte IE 8]>
 <script src="js/ie/respond.min.js"></script><![endif]-->
 <script src="js/core_js/main.js"></script>
+
 
 <!-- Footer -->
 <footer id="footer">
@@ -328,9 +256,10 @@ include "setSelectionLists.php";
     </ul>
     <ul class="copyright">
         <li>&copy; UCY. All rights reserved.</li>
+        <li>Implementation: ppavli02 - Panayiotis Pavlides <a href="https://github.com/ppavli02" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
         <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
     </ul>
-</footer>
+<itooter>
 
 </body>
 </html>

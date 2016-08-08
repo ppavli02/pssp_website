@@ -8,12 +8,11 @@ $json_encoded = file_get_contents('php://input');
 $json_decoded = json_decode($json_encoded);
 
 $name=$json_decoded->{'name_trained'};
-$name = stripslashes($name);
-$name = mysql_real_escape_string($name);
+$name = strip_input($name);
+
 
 $email=$json_decoded->{'email_trained'};
-$email = stripslashes($email);
-$email = mysql_real_escape_string($email);
+$email = strip_input($email);
 
 //echo 1;
 
