@@ -1,14 +1,14 @@
-/**
-* User: ppavli02
-* Date: July - August 2016
-* Comment: This php file executes the python script, which checks the uploaded files
-* and sends an email to the user in case something is wrong. Otherwise, it calls the
-* runBuildApplication.php to execute the code.
-*
-* Returns: "1" if mail is not sent. Otherwise, the code returns nothing.
-*/
-
 <?php
+/**
+ * User: ppavli02
+ * Date: July - August 2016
+ * Comment: This php file executes the python script, which checks the uploaded files
+ * and sends an email to the user in case something is wrong. Otherwise, it calls the
+ * runBuildApplication.php to execute the code.
+ *
+ * Returns: "1" if mail is not sent. Otherwise, the code returns nothing.
+ */
+
 ignore_user_abort(true);
 set_time_limit(0);
 

@@ -1,15 +1,15 @@
-/**
-* User: ppavli02
-* Date: July - August 2016
-* Comment: This php file copies the default parameter, located in /webserver/,
-* and places it in the parameterFiles folder with its new identity. Also, it
-* replaces the lines in the file which refer to the training and testing files.
-*
-* Returns:  1 - if an exception is fired.
-*           2 - if everything is ok.
-*/
-
 <?php
+/**
+ * User: ppavli02
+ * Date: July - August 2016
+ * Comment: This php file copies the default parameter, located in /webserver/,
+ * and places it in the parameterFiles folder with its new identity. Also, it
+ * replaces the lines in the file which refer to the training and testing files.
+ *
+ * Returns:  1 - if an exception is fired.
+ *           2 - if everything is ok.
+ */
+
 session_start();
 
 $token = md5(uniqid(rand(), 1));

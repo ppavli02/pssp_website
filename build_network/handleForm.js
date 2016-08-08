@@ -2,8 +2,12 @@ var carouselSize = 1;
 var locateParameterFile = 0;
 var tabNumber = 1;
 
+/**
+ * Create the carousel and writes in a label the active tab.
+ * Note: It allows only 10 layers to the network. In case of change,
+ * simply change the if statement.
+ */
 function createCarousel() {
-
     carouselSize++;
 
     $('#formCarousel').on('slide.bs.carousel', function (ev) {
@@ -25,7 +29,12 @@ function createCarousel() {
     }
 }
 
-
+/**
+ * Adds new tabs to the carousel.
+ * @param tabID, the current tab number
+ * @param carouselSize, the total size of the carousel
+ * @return void.
+ */
 function addTabs(tabID, carouselSize) {
     var dot = $("<li></li>");
     var newCarouselSize = carouselSize - 1;
@@ -44,7 +53,12 @@ function addTabs(tabID, carouselSize) {
     });
 }
 
-
+/**
+ * Serializes the form and converts the object to an array
+ * JSON.parse understands.
+ * @return "" - if input fields are empty.
+ *         array o - the serialized form.
+ */
 $.fn.serializeObject = function () {
     var o = {};
     var a = this.serializeArray();
@@ -73,12 +87,18 @@ $.fn.serializeObject = function () {
         }
     });
     if (error)
-        return ""
+        return "";
     else
         return o;
 };
 
-
+/**
+ * Collects the files and appends them into a FormData object.
+ * Then it calls the uploadFiles.php to upload the files.
+ *
+ * @return returnValue 0 - something went wrong in the php file.
+ *         returnValue 1 - everything is ok so far.
+ */
 function grabFiles() {
     var formData = new FormData();
     var returnValue = 0;
@@ -106,6 +126,14 @@ function grabFiles() {
     return returnValue;
 }
 
+/**
+ * Calls the serializeObject function, then calls the php script to create
+ * the parameter file based on what the user entered and finally informs the
+ * user if the php file returned any errors.
+ *
+ * @return returnValue 0 - something went wrong in the php file.
+ *         returnValue 1 - everything is ok so far.
+ */
 function grabInfo() {
     var returnValue = 0;
     var temporary_array = $('form').serializeObject();
@@ -120,10 +148,8 @@ function grabInfo() {
             //If the returned data is an array of errors, parse it and handle errors.
             //Otherwise, take the token to handle the files.
             success: function (data) {
-                var token;
                 try {
                     var pushedErrors = JSON.parse(data);
-                    // console.log(pushedErrors);
                     var errors = "";
                     $.each(pushedErrors, function (i, errorNumber) {
                         if (errorNumber == 1) {
@@ -164,19 +190,30 @@ function grabInfo() {
     return returnValue;
 }
 
+/**
+ * Calls the php file which checks the files.
+ *
+ * @return void.
+ */
 function crossCheck() {
     $.ajax({
         url: "checkFiles.php",
         type: "POST",
         async: true,
         success: function (data) {
-            if (data == "1" || data == "11") {
-                alert("Could not send the email.");
+            if (data!=""){
+                sweetAlert("Error:", data, "error");
             }
         }
     });
 }
 
+/**
+ * Calls a php file to copy the default parameter file.
+ *
+ * @return returnValue 0 - something went wrong in the php file.
+ *         returnValue 1 - everything is ok so far.
+ */
 function handleDefaultParameter() {
     var returnValue = 0;
     $.ajax({
@@ -194,6 +231,12 @@ function handleDefaultParameter() {
     return returnValue;
 }
 
+/**
+ * Calls a php file to change the $_SESSION["token"] variable.
+ *
+ * @return returnValue 0 - something went wrong in the php file.
+ *         returnValue 1 - everything is ok so far.
+ */
 function handleReuseParameter() {
     var returnValue = 0;
     var md5 = $("#md5_code").val();
@@ -222,12 +265,13 @@ function handleReuseParameter() {
     return returnValue;
 }
 
-
-
+/**
+ * Handles the three different ways to run the application. If everything
+ * was ok during the testing, calls the function to run the application.
+ *
+ * @return void.
+ */
 function buildTheNetwork() {
-
-    //If the user has successfully build the network, check everything and run the application.
-
     switch (locateParameterFile) {
         case 0:
             if (handleDefaultParameter()) {
@@ -235,16 +279,13 @@ function buildTheNetwork() {
                     crossCheck();
                 }
             }
-
             break;
         case 1:
-            // handleReuseParameter();
             if (handleReuseParameter()) {
                 if (grabFiles()) {
                     crossCheck();
                 }
             }
-
             break;
         case 2:
             if (grabInfo()) {
@@ -259,7 +300,6 @@ function buildTheNetwork() {
 }
 
 $(document).ready(function () {
-
     /*
      locateParameterFile variable is set to define the source of the parameter file.
      0: use the default file

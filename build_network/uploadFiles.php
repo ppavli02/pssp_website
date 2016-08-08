@@ -1,4 +1,16 @@
 <?php
+/**
+ * User: ppavli02
+ * Date: July - August 2016
+ * Comment: This php file uploads the files to the server. First, it checks if
+ * files already exist in the given folder, then it testes if those files
+ * fire some errors based on the $_FILES[<name>]['error'] attribute and finally
+ * uploads the file. If something goes wrong at any point it returns an
+ * exception.
+ *
+ * Returns: Exceptions. See the code (it is self explained).
+ */
+
 session_start();
 
 $flag = true;
@@ -56,7 +68,7 @@ if ($flag) {
 }
 
 function testFile($file){
-    
+
     try {
         // Check $_FILES[<filename>]['error'] value.
         switch ($_FILES[$file]['error']) {

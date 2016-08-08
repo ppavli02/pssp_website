@@ -1,15 +1,15 @@
-/**
-* User: ppavli02
-* Date: July - August 2016
-* Comment: This php file collects all the info from the form to construct the
-* new parameter file. The default parameter file is located in /webserver/.
-* It uses regular expression and other methods to identify whether it gets
-* unexpected input.
-*
-* Returns: $form_errors: an array with all the errors found.
-*/
-
 <?php
+/**
+ * User: ppavli02
+ * Date: July - August 2016
+ * Comment: This php file collects all the info from the form to construct the
+ * new parameter file. The default parameter file is located in /webserver/.
+ * It uses regular expression and other methods to identify whether it gets
+ * unexpected input.
+ *
+ * Returns: $form_errors: an array with all the errors found.
+ */
+
 session_start();
 $json_encoded = file_get_contents('php://input');
 $json_decoded = json_decode($json_encoded);
