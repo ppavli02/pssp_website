@@ -36,9 +36,9 @@ include "setSelectionLists.php";
     <script src="_/libs/sweetalert/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="_/libs/sweetalert/sweetalert.css">
     <!-- My code -->
-    <script src="js/runAlgorithm.js"></script>
-    <script src="handleIndex.js"></script>
-    <script src="handleModals_main.js"></script>
+    <script src="trained_functionality/runAlgorithm.js"></script>
+    <script src="trained_functionality/handleIndex.js"></script>
+    <script src="trained_functionality/handleModals.js"></script>
 
 </head>
 <body class="landing">
@@ -64,7 +64,8 @@ include "setSelectionLists.php";
     <!-- Banner -->
     <section id="banner">
         <div class="content">
-            <form id="myform">
+            <form id="myform" enctype="multipart/form-data">
+<!--            <form id="myform">-->
                 <div class="row uniform 50%">
                     <header class="major 12u$">
                         <h2>Run a trained Neural Network</h2>
@@ -86,14 +87,23 @@ include "setSelectionLists.php";
                             </div>
                         </div>
                     </div>
+
                     <div class="container center_label">
-                        <label for="Testing file">Choose a testing file:</label>
+                        <label for="Testing file">Upload your FASTA & MSA files:</label>
                     </div>
+                    <!-- Fasta -->
                     <div class="container center_input">
                         <div class="form-group">
-                            <input type="file" name="testingUpload" id="testingUpload">
+                            <input type="file" required="" name="run_fasta_testing" id="run_fasta_testing" class="input-file">
                         </div>
                     </div>
+                    <!-- MSA -->
+                    <div class="container center_input">
+                        <div class="form-group">
+                            <input type="file" required="" name="run_msa_testing" id="run_msa_testing" class="input-file">
+                        </div>
+                    </div>
+
                     <div class="12u$">
                         <ul class="actions">
                             <li><a id="defineContact" class="button ">Run</a></li>
@@ -181,7 +191,7 @@ include "setSelectionLists.php";
                     <label>Or</label>
                 </div>
                 <div class="6u 12u$(medium)" id="generateCode">
-                    <input type="checkbox" id="code" name="code">
+                    <input type="checkbox" id="code" name="code" checked>
                     <label for="code">Generate Code</label>
                 </div>
                 <label class="control-label" style="display: none;width:100%" id="choose">* You must choose email or
@@ -256,10 +266,12 @@ include "setSelectionLists.php";
     </ul>
     <ul class="copyright">
         <li>&copy; UCY. All rights reserved.</li>
-        <li>Implementation: ppavli02 - Panayiotis Pavlides <a href="https://github.com/ppavli02" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+        <li>Implementation: ppavli02 - Panayiotis Pavlides <a href="https://github.com/ppavli02"
+                                                              class="icon alt fa-github"><span
+                    class="label">GitHub</span></a></li>
         <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
     </ul>
-<itooter>
+    <itooter>
 
 </body>
 </html>

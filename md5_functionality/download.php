@@ -2,7 +2,7 @@
 
 $token = $_GET['q'];
 
-$file = "/tmp/".$token.".txt";
+$file = "/webserver/model_trained/tmp/".$token.".txt";
 
 
 if (file_exists($file)) {

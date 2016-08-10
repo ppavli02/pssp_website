@@ -125,7 +125,6 @@ if (!isset($_SESSION['isLoggedIn'])) {
                                 <!-- Training File -->
                                 <label class="col-md-2" for="msa_training_file">MSA Training File</label>
                                 <div class="col-md-4">
-                                    <!--                                    <input id="training_file" name="training_file" class="input-file" type="file">-->
                                     <input type="file" required="" name="msa_training_file" class="input-file"
                                            id="msa_training_file">
                                 </div>

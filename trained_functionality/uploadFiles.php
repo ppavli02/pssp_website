@@ -11,56 +11,34 @@
  * Returns: Exceptions. See the code (it is self explained).
  */
 
-session_start();
 
 $flag = true;
 
 //Test if files exist.
-$token=$_SESSION["token"];
-$fasta_training_path="/webserver/trainingFiles/".$token."/fasta_training_file_".$token.".txt";
-$fasta_testing_path="/webserver/testingFiles/".$token."/fasta_testing_file_".$token.".txt";
-$msa_training_path="/webserver/trainingFiles/".$token."/msa_training_file_".$token.".zip";
-$msa_testing_path="/webserver/testingFiles/".$token."/msa_testing_file_".$token.".zip";
-if (file_exists($fasta_training_path) || file_exists($fasta_testing_path) || file_exists($msa_training_path) || file_exists($msa_testing_path)){
+$token = md5(uniqid(rand(),1));
+
+$fasta_dir="/webserver/model_trained/tmp_uploaded_files/fasta/";
+$msa_dir="/webserver/model_trained/tmp_uploaded_files/msa/";
+
+$fasta_testing_path=$fasta_dir.$token.".txt";
+$msa_testing_path=$msa_dir.$token.".zip";
+
+if (file_exists($fasta_testing_path) || file_exists($msa_testing_path)){
     echo "Files are already on server.";
     exit;
 }
 
 if($flag){
-    testFile("fasta_training_file");
-    testFile("fasta_testing_file");
-    testZipFile("msa_training_file");
-    testZipFile("msa_testing_file");
-}
-
-if ($flag){
-    $tr_dir = "/webserver/trainingFiles/" . $token . "/";
-    if (is_dir($tr_dir) === false) {
-        mkdir($tr_dir);
-    }else{
-        $flag=false;
-    }
-
-    $ts_dir = "/webserver/testingFiles/" . $token . "/";
-    if (is_dir($ts_dir) === false) {
-        mkdir($ts_dir);
-    }else{
-        $flag=false;
-    }
+    testFile("run_fasta_testing");
+    testZipFile("run_msa_testing");
 }
 
 
 if (flag) {
-    uploadFile("fasta_training_file", $tr_dir);
+    uploadFile("run_fasta_testing", $fasta_dir);
 }
 if (flag) {
-    uploadFile("fasta_testing_file", $ts_dir);
-}
-if (flag) {
-    uploadFile("msa_training_file", $tr_dir);
-}
-if (flag) {
-    uploadFile("msa_testing_file", $ts_dir);
+    uploadFile("run_msa_testing", $msa_dir);
 }
 
 if ($flag) {
@@ -68,7 +46,6 @@ if ($flag) {
 }
 
 function testFile($file){
-
     try {
         // Check $_FILES[<filename>]['error'] value.
         switch ($_FILES[$file]['error']) {
@@ -97,8 +74,7 @@ function testFile($file){
     }
 }
 
-function testZipFile($file)
-{
+function testZipFile($file){
     $filename = $_FILES[$file]["name"];
     try {
         // Check $_FILES[<filename>]['error'] value.
@@ -144,8 +120,8 @@ function uploadFile($file, $target_dir)
     $fileType = pathinfo($_FILES[$file]["name"], PATHINFO_EXTENSION);
     if ($fileType!="zip")
         $fileType="txt";
-    $token = $_SESSION["token"];
-    $filename = $file . "_" . $token . "." . $fileType;
+    global $token;
+    $filename = $token . "." . $fileType;
     $target_file = $target_dir . $filename;
     if (!file_exists($target_file)) {
         try {

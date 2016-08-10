@@ -8,13 +8,11 @@ $json_encoded = file_get_contents('php://input');
 $json_decoded = json_decode($json_encoded);
 
 $name=$json_decoded->{'name_trained'};
-$name = strip_input($name);
-
+$name = stripslashes($name);
 
 $email=$json_decoded->{'email_trained'};
-$email = strip_input($email);
+$email = stripslashes($email);
 
-//echo 1;
 
 //REGISTER THE PROCESS INTO THE DATABASE
 require("../MySqlConnect.php");
@@ -30,7 +28,7 @@ catch(PDOException $e) {
 
 
 #Execute the algorithm
-exec('./dokimi 2>&1', $output);
+exec('/webserver/model_trained/code/dokimi 2>&1', $output);
 $message="";
 
 foreach ($output as &$line) {
@@ -46,13 +44,14 @@ $mail->IsSMTP();
 $mail->SMTPAuth = true;
 $mail->Host = "smtp.gmail.com";
 $mail->Port = 587;
-$mail->Username = "andreasfrangou3@gmail.com";
-$mail->Password = "katiaapanotou";
+$mail->Username = "pssp.ucy.webapp@gmail.com";
+$mail->Password = "webapp2016";
 
-$mail->SetFrom('andreasfrangou3@gmail.com', 'Web App');
+$mail->SetFrom('pssp.ucy.webapp@gmail.com', 'Web App');
 $mail->Subject = "Your PSSP Results";
 $mail->MsgHTML($message);
 $mail->AddAddress($email, $name);
+
 
 if($mail->Send()) {
     echo "Message sent!";
@@ -62,7 +61,6 @@ if($mail->Send()) {
 
 try {
     // sql to delete a record
-
     $sql = "DELETE FROM `PENDING_RESULTS` WHERE `id`='$email'";
     // use exec() because no results are returned
     $conn->exec($sql);
@@ -74,4 +72,3 @@ catch(PDOException $e)
 }
 
 $conn = null;
-?>
