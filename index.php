@@ -64,7 +64,7 @@ include "setSelectionLists.php";
     <section id="banner">
         <div class="content">
             <form id="myform" enctype="multipart/form-data">
-<!--            <form id="myform">-->
+                <!--            <form id="myform">-->
                 <div class="row uniform 50%">
                     <header class="major 12u$">
                         <h2>Run a trained Neural Network</h2>
@@ -93,13 +93,15 @@ include "setSelectionLists.php";
                     <!-- Fasta -->
                     <div class="container center_input">
                         <div class="form-group">
-                            <input type="file" required="" name="run_fasta_testing" id="run_fasta_testing" class="input-file">
+                            <input type="file" required="" name="run_fasta_testing" id="run_fasta_testing"
+                                   class="input-file">
                         </div>
                     </div>
                     <!-- MSA -->
                     <div class="container center_input">
                         <div class="form-group">
-                            <input type="file" required="" name="run_msa_testing" id="run_msa_testing" class="input-file">
+                            <input type="file" required="" name="run_msa_testing" id="run_msa_testing"
+                                   class="input-file">
                         </div>
                     </div>
 
@@ -160,9 +162,11 @@ include "setSelectionLists.php";
             </header>
             <div class="box alt">
                 <p>Coming soon.</p>
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modal_contact_us">
-                    Contact Us
-                </button>
+                <a href="mailto:pssp.ucy.webapp@gmail.com" target="_top">
+                    <button type="button" class="btn btn-info btn-lg">
+                        Contact Us
+                    </button>
+                </a>
             </div>
         </div>
     </section>
@@ -255,14 +259,6 @@ include "setSelectionLists.php";
 <!-- Footer -->
 <footer id="footer">
 
-    <ul class="icons">
-        <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-        <li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-        <li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-    </ul>
     <ul class="copyright">
         <li>&copy; UCY. All rights reserved.</li>
         <li>Implementation: ppavli02 - Panayiotis Pavlides <a href="https://github.com/ppavli02"

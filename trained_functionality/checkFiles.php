@@ -7,9 +7,11 @@
  * Returns: "1" if files are ok.
  *          $message - message about the errors.
  */
+$json_encoded = file_get_contents('php://input');
+$json_decoded = json_decode($json_encoded);
 
+$token = $json_decoded->{'md5'};
 
-$token = "4";
 $all_ok_flag = false;
 $exception_flag = false;
 
@@ -17,7 +19,6 @@ exec('/usr/local/bin/python /webserver/model_trained/check_run.py ' . $token . '
 
 if (is_array($output) && sizeof($output) == 1) {
     foreach ($output as $line) {
-        echo $line;
         if ($line == "[]") {
             $all_ok_flag = true;
             break;

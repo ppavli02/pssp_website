@@ -24,27 +24,27 @@ $(document).ready(function () {
                     var pushedErrors = JSON.parse(data);
                     $.each(pushedErrors, function (i, errorNumber) {
                         if (errorNumber == 1) {
-                            alert('First name contains something else than letters.');
+                            sweetAlert("Error:", 'First name contains something else than letters.', "error");
                         }
                         if (errorNumber == 2) {
-                            alert('Last name contains something else than letters.');
+                            sweetAlert("Error:", 'Last name contains something else than letters.', "error");
                         }
                         if (errorNumber == 3) {
-                            alert('Password and Repeat Password are not the same.');
+                            sweetAlert("Error:", 'Password and Repeat Password are not the same.', "error");
                         }
                         if (errorNumber == 4) {
-                            alert('Invalid email format.');
+                            sweetAlert("Error:", 'Invalid email format.', "error");
                         }
                         if (errorNumber == 5) {
-                            alert('There is something wrong with the database. Please contact an engineer.');
+                            sweetAlert("Error:", 'Email can not be sent. Please contact an engineer.', "error");
                         }
                         if (errorNumber == 6) {
-                            alert('Email can not be sent. Please contact an engineer.');
+                            sweetAlert("Error:", 'Email can not be sent. Please contact an engineer.', "error");
                         }
                     });
                 }
                 else {
-                    alert('Thank you! Please wait for approval. An email will be sent to you shortly.');
+                    swal("Thank you!", "Please wait for approval. An email will be sent to you shortly.", "info");
                 }
             },
             cache: false,

@@ -13,6 +13,7 @@ $name = stripslashes($name);
 $email=$json_decoded->{'email_trained'};
 $email = stripslashes($email);
 
+$token = $json_decoded->{'token'};
 
 //REGISTER THE PROCESS INTO THE DATABASE
 require("../MySqlConnect.php");

@@ -52,8 +52,8 @@ $mail->IsSMTP();
 $mail->SMTPAuth = true;
 $mail->Host = "smtp.gmail.com";
 $mail->Port = 587;
-$mail->Username = "andreasfrangou3@gmail.com";
-$mail->Password = "katiaapanotou";
+$mail->Username = "pssp.ucy.webapp@gmail.com";
+$mail->Password = "webapp2016";
 
 #Fill in email gaps
 $message = "-------------------------------------------------------------<br />";
@@ -64,7 +64,7 @@ $message .= "Log in here: ";
 $message .= "<br />";
 $message .= "-------------------------------------------------------------<br />";
 
-$mail->SetFrom('andreasfrangou3@gmail.com', 'PSSP');
+$mail->SetFrom('pssp.ucy.webapp@gmail.com', 'PSSP');
 $mail->Subject = "You have been approved!";
 $mail->MsgHTML($message);
 $mail->AddAddress($user_email, $user_firstname);

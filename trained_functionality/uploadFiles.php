@@ -42,7 +42,7 @@ if (flag) {
 }
 
 if ($flag) {
-    echo $flag;
+    echo $token;
 }
 
 function testFile($file){

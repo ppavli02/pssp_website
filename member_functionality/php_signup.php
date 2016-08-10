@@ -19,7 +19,6 @@ $user_username = $json_decoded->{'user_username'};
 $user_password = $json_decoded->{'user_password'};
 $user_repeat_password = $json_decoded->{'user_repeat_password'};
 $user_reason = $json_decoded->{'user_reason'};
-$timesVisited = 0;
 $accountType = 'UNKNOWN';
 
 #Strip strings
@@ -53,7 +52,7 @@ if (!filter_var($user_username, FILTER_VALIDATE_EMAIL)) {
 
 if (!empty($form_errors)){
     echo json_encode($form_errors);
-    return;
+    exit;
 }
 
 
@@ -66,11 +65,13 @@ $verification = md5(uniqid(rand(),1));
 require("../MySqlConnect.php");
 
 try {
-    $sql = "INSERT INTO `USER` (`verification`, `firstname`, `lastname`, `email`, `password`, `timesVisited`, `accountType`)
-        VALUES ('$verification', '$firstname', '$lastname', '$user_username', '$user_password', '$timesVisited', '$accountType')";
+    $sql = "INSERT INTO `USER` (`verification`, `firstname`, `lastname`, `email`, `password`, `accountType`)
+        VALUES ('$verification', '$firstname', '$lastname', '$user_username', '$user_password', '$accountType')";
     $conn->exec($sql);
 } catch (PDOException $e) {
     array_push($form_errors,"5");
+    echo json_encode($form_errors);
+    exit;
 }
 
 $conn = null;
@@ -86,8 +87,8 @@ $mail->IsSMTP();
 $mail->SMTPAuth = true;
 $mail->Host = "smtp.gmail.com";
 $mail->Port = 587;
-$mail->Username = "andreasfrangou3@gmail.com";
-$mail->Password = "katiaapanotou";
+$mail->Username = "pssp.ucy.webapp@gmail.com";
+$mail->Password = "webapp2016";
 
 #Fill in email gaps
 $message = "Please review this request for membership.<br />";
@@ -110,10 +111,10 @@ $message .= "<br />";
 $message .= "========================================";
 $message .= "<br />";
 
-$mail->SetFrom('andreasfrangou3@gmail.com', 'Verify Member');
+$mail->SetFrom('pssp.ucy.webapp@gmail.com', 'Verify Member');
 $mail->Subject = "A new member needs approval!";
 $mail->MsgHTML($message);
-$mail->AddAddress("panayiotis.pavlides@gmail.com", "Panayiotis Pavlides");
+$mail->AddAddress("pssp.ucy.webapp@gmail.com", "UCY");
 
 if (!$mail->Send()) {
     array_push($form_errors, "6");
@@ -121,7 +122,7 @@ if (!$mail->Send()) {
 
 if (!empty($form_errors)){
     echo json_encode($form_errors);
-    return;
+    exit;
 }
 
 function strip_input($data) {
@@ -130,4 +131,3 @@ function strip_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-

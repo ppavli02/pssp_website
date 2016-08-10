@@ -5,6 +5,12 @@ set_time_limit(0);
 
 $md5 = $_GET['q'];
 
+$json_encoded = file_get_contents('php://input');
+$json_decoded = json_decode($json_encoded);
+
+$md5=$json_decoded->{'md5'};
+$token=$json_decoded->{'token'};
+
 require("../MySqlConnect.php");
 
 #Execute the algorithm
