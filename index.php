@@ -36,7 +36,6 @@ include "setSelectionLists.php";
     <script src="_/libs/sweetalert/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="_/libs/sweetalert/sweetalert.css">
     <!-- My code -->
-    <script src="trained_functionality/runAlgorithm.js"></script>
     <script src="trained_functionality/handleIndex.js"></script>
     <script src="trained_functionality/handleModals.js"></script>
 
