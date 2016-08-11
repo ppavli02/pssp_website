@@ -123,9 +123,8 @@ function anonymousResponse() {
     $.ajax({
         url: "md5_functionality/generateMD5.php",
         type: "GET",
-        async: true,
+        async: false,
         success: function (data) {
-            // alert("Please save this code:"+data);
             swal("Please save this code to retrieve your results:", data, "success");
             $.ajax({
                 url: "md5_functionality/executeMD5.php",

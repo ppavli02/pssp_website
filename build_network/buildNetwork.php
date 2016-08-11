@@ -316,21 +316,21 @@ if (!isset($_SESSION['isLoggedIn'])) {
                             </a>
                         </div>
 
-                        <div>
-                            <div></div>
-                            <!--                            <input class="btn btn-primary" type="submit" value="Submit" onclick="buildTheNetwork()">-->
-                            <input class="btn btn-primary" value="Submit" onclick="buildTheNetwork()">
-                        </div>
-
-
-                    </div>
-                </div>
-
-            </form>
+            <div>
+                <div></div>
+                <!--                            <input class="btn btn-primary" type="submit" value="Submit" onclick="buildTheNetwork()">-->
+                <input class="btn btn-primary" value="Submit" onclick="buildTheNetwork()">
+            </div>
 
 
         </div>
-    </section>
+</div>
+
+</form>
+
+
+</div>
+</section>
 </div>
 
 

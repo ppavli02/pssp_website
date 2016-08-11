@@ -84,3 +84,4 @@ if (!($resultFile = fopen($result_path, "w"))){
 $txt = $file_message;
 fwrite($resultFile, $txt);
 fclose($resultFile);
+header("location:../index.php");

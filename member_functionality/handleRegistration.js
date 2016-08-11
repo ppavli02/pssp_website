@@ -24,27 +24,27 @@ $(document).ready(function () {
                     var pushedErrors = JSON.parse(data);
                     $.each(pushedErrors, function (i, errorNumber) {
                         if (errorNumber == 1) {
-                            sweetAlert("Error:", 'First name contains something else than letters.', "error");
+                            alert('First name contains something else than letters.');
                         }
                         if (errorNumber == 2) {
-                            sweetAlert("Error:", 'Last name contains something else than letters.', "error");
+                            alert('Last name contains something else than letters.');
                         }
                         if (errorNumber == 3) {
-                            sweetAlert("Error:", 'Password and Repeat Password are not the same.', "error");
+                            alert('Password and Repeat Password are not the same.');
                         }
                         if (errorNumber == 4) {
-                            sweetAlert("Error:", 'Invalid email format.', "error");
+                            alert('Invalid email format.');
                         }
                         if (errorNumber == 5) {
-                            sweetAlert("Error:", 'Email can not be sent. Please contact an engineer.', "error");
+                            alert('User already exists.');
                         }
                         if (errorNumber == 6) {
-                            sweetAlert("Error:", 'Email can not be sent. Please contact an engineer.', "error");
+                            alert('Email can not be sent. Please contact an engineer.');
                         }
                     });
                 }
                 else {
-                    swal("Thank you!", "Please wait for approval. An email will be sent to you shortly.", "info");
+                    alert('Thank you! Please wait for approval. An email will be sent to you shortly.');
                 }
             },
             cache: false,

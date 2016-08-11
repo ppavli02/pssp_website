@@ -8,8 +8,7 @@ require("../MySqlConnect.php");
 try {
     $stmt = $conn->prepare("SELECT * FROM `PENDING_RESULTS` WHERE `id`='$token'");
     $stmt->execute();
-
-//        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    
 
     if (!$stmt->rowCount()) {
         echo "No such id.";
